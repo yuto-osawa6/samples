@@ -8,4 +8,24 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    %header 
+      .TopContents__navi
+        .TopContents__navi__left
+          = image_pack_tag 'samplelogo.png'
+        .TopContents__navi__right
+          %ul
+            %li
+              ABOUT
+            %li
+              CASE
+            %li
+              CLIENT
+            %li
+              MERIT
+            %li
+              PLAN
+            %li
+              FAQ
+            %li
+              お問い合わせ
     = yield

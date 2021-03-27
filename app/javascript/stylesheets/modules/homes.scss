@@ -1,0 +1,85 @@
+.MainContents{
+  font-family: 'Noto Sans JP', sans-serif;
+
+
+  .TopContents{
+    background-image: url('../images/alex-kotliarskyi-QBpZGqEMsKg-unsplash1.jpg');
+    background-size: cover;
+    height: 100vh;
+
+    flex-flow: column;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+   &__container{
+
+
+    &__message{
+
+      font-size: 3.0rem;
+      color: white;
+      font-weight: bold;
+      line-height: 1.5;
+
+    }
+
+    &__message2{
+
+      margin: 10px 0px;
+      text-align: center;
+      font-size: 1.2rem;
+      color: #fff;
+    }
+
+    &__button{
+      display: flex;
+      justify-content: space-around;
+      margin: 30px 10px;
+
+
+      &__left{
+
+        a{
+        text-align: center;
+        line-height: 50px;
+        width: 200px;
+        height: 50px;
+        /* text-align: center; */
+        display: block;
+        text-decoration: none;
+        /* padding: 20px; */
+        background-color: #fff;
+        color: #111111;
+        }
+
+      }
+
+      &__right{
+        a{
+        text-align: center;
+        line-height: 50px;
+        width: 200px;
+        height: 50px;
+        /* text-align: center; */
+        display: block;
+        text-decoration: none;
+        /* padding: 20px; */
+        background-color: #fff;
+        color: #111111;
+
+        }
+      }
+
+
+    }
+
+   }
+
+
+  }
+
+
+
+}

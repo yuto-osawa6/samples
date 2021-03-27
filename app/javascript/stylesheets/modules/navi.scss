@@ -1,0 +1,33 @@
+.TopContents__navi{
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.1);
+    position: fixed;
+
+  &__left{
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 20px;
+
+    img{
+      width: 20vw;
+      display: block;
+    }
+  }
+
+  &__right{
+
+    ul{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      list-style: none;
+      width: 70vw;
+      height: 10vh;
+      color: #fff;
+    }
+  }
+}
