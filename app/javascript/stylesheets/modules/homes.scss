@@ -1,6 +1,37 @@
 .MainContents{
   font-family: 'Noto Sans JP', sans-serif;
 
+  .ShareContainer{
+    // height: 100vh;
+    flex-flow: column;
+    display: flex;
+    align-items: center;
+    // margin: 10vh;
+  }
+
+  // .ShareRows2::after{
+  // width: 90px;
+  // content: '';
+  // display: block;
+  // margin: 25px 0 30px;
+  // border-bottom: 6px solid #003399;
+  // margin: 25px auto 30px;
+  // }
+
+  .ShareRows{
+    line-height: 1.7;
+    text-align: center;
+    margin: 10vh 10px 50px 10px;
+    font-weight: bold;
+    font-size: 2.0rem;
+  }
+
+  .ShareRows2{
+    line-height: 1.7;
+    text-align: center;
+    margin:50px 10px 50px 10px;
+  }
+
 
   .TopContents{
     background-image: url('../images/alex-kotliarskyi-QBpZGqEMsKg-unsplash1.jpg');
@@ -79,6 +110,426 @@
 
 
   }
+
+  //
+  .SectionBoxA{
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-auto-rows: 1fr 1fr;
+    height:100vh ;
+  .SectionBoxB{
+    // margin: 10vh;
+  }
+  .services{
+    display: flex;
+    justify-content: center;
+  }
+
+  .SectionBoxC{
+    .swiper-container{
+    height: 100%;
+    }
+  }
+
+  }
+
+  //
+  .sectionBoxAA{
+    color:#fff;
+
+    // .About__BoxAA{
+    //   color: #fff;
+    // }
+
+    height: 100vh;
+    background-color: #000;
+
+    .About{
+      height: 100%;
+      display: grid;
+      grid-template-columns: 3fr 4fr;
+      grid-auto-rows: 1fr;
+
+      &__left{
+        background-color: #000;
+        margin: 80px;
+        &__title{
+          margin: 10vh 10px 10px 10px;
+          font-size: 2.0rem;
+
+         
+        }
+
+        &__first__title{
+          margin: 20px 10px;
+          font-size: 2.0rem;
+          font-weight: bold;
+          line-height: 1.5;
+
+        }
+
+        &__first__discribe{
+          margin: 20px 10px;
+          font-size: 1.2rem;
+          /* font-weight: bold; */
+          line-height: 1.4;
+        }
+
+        .About__left__title::after{
+          width: 50%;
+          content: '';
+          display: block;
+          /* margin: 25px 0 30px; */
+          border-bottom: 6px solid #fff;
+          /* margin: 25px auto 30px; */
+          margin: 30px 0px;
+          }
+      }
+
+      
+
+      &__right{
+
+        img{
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+        }
+      }
+    }
+  }
+
+  .sectionBoxAB{
+    height: 100vh;
+
+    .sectionBocABC{
+
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-auto-rows: 50vh 50vh;
+
+      .About2{
+        height: 100%;
+        display: grid;
+        grid-template-columns: 3fr 4fr;
+        grid-auto-rows: 1fr;
+
+        .About2__left{
+        height: 50vh;
+
+        flex-flow: column;
+        display: flex;
+        flex-wrap: wrap;
+        /* align-items: center; */
+        justify-content: center;
+        background-color: #000;
+        color: #fff;
+          .About2__left__box{
+            margin:0px 80px;
+
+            &__first__title2{
+              font-size: 1.5rem;
+              line-height: 1.5;
+            }
+            &__first__discribe2{
+              line-height: 1.4;
+              margin: 10px 0px 0px;
+            }
+
+          }
+
+
+        }
+
+        .About2__right{
+          height: 50vh;
+          img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+          }
+        }
+      }
+
+    }
+
+
+  }
+
+  .sectionboxG{
+    position: relative;
+    height: 100vh;  
+
+    .sectionboxG__grid{
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 3fr 2fr;
+
+      .sectionboxG__grid__up{
+        margin: 10vh 0px 0px;
+        flex-flow: column;
+        display: flex;
+        align-items: center;
+        
+    .price__discribe{
+      height: 30vh;
+      text-align: center;
+      /* margin: 10vh 10px 50px 10px; */
+      font-weight: bold;
+      font-size: 2.0rem;
+      line-height: 1.7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+      
+
+    }
+
+
+    .sectionboxG__grid__down{
+      background-color: #000;
+    }
+
+  }
+
+  .price__type{
+    position: absolute;
+    top: 45%;
+    display: flex;
+
+
+    .price__patarnA{
+      margin:0px 10px 0px 20px;
+      padding: 20px;
+      background-color: #333333;
+      color: #fff;
+
+
+    max-height: 55vh;
+    box-sizing: border-box;
+    overflow-y: scroll;
+
+    }
+    .price__patarnB{
+      margin:0px 10px 0px 10px;
+      padding: 20px;
+      background-color: #fff;
+
+
+    max-height: 55vh;
+    box-sizing: border-box;
+    overflow-y: scroll;
+
+    }
+
+    .price__patarnC{
+      margin: 0px 20px 0px 10px;
+      background-color: #333333;
+      color: #fff;
+      padding: 20px;
+
+
+    max-height: 55vh;
+    box-sizing: border-box;
+    overflow-y: scroll;
+
+
+    }
+
+    .patarnAL__title{
+      display: flex;
+      justify-content: center;
+      margin: 10px;
+      font-size: 1.5rem;
+
+    }
+    .patarnAL__discribe{
+      line-height: 1.5;
+      font-size: 1.0rem;
+      margin: 10px;
+      padding: 10px;
+    }
+
+    .patarnAL__features{
+      .patarnAL__features__1{
+        background-color: #444;
+        display: flex;
+        justify-content: center;
+        margin: 30px 0px;
+        font-size: 0.9rem;
+        padding: 20px;
+        line-height: 1.5;
+      }
+      .patarnAL__features__2{
+        background-color: #f8f8f8;
+        display: flex;
+        justify-content: center;
+        margin: 30px 0px;
+        font-size: 0.9rem;
+        padding: 20px;
+        line-height: 1.5;
+      }
+    }
+
+    .patarnAL__price{
+      
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+        font-size: 1.1rem;
+        padding: 10px;
+
+
+    }
+
+
+
+  }
+
+  }
+
+  .sectionboxN{
+      height: 100vh;
+      
+      
+    .News{
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 4fr;
+
+      box-sizing: border-box;
+   
+      padding-top: 10vh;
+    
+      
+
+      .News__grid{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        .News__title{
+
+          font-size: 2.0rem;
+
+        }
+
+        .News__discribe{
+
+          font-size: 1.0rem;
+          margin: 30px 0px 20px 0px;
+        }
+
+      }
+      .News__grid2{
+
+        .News__contents{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+        grid-auto-rows: 1fr;
+
+        .News__contents__lists__1{
+
+          .armin__image{
+
+            img{
+            height: auto;
+            // height :100px;
+            max-width: 100%;
+            vertical-align: bottom;
+            }
+          }
+
+          .armin__title{
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+          }
+          .armin__discribe{
+            font-size: 0.8rem;
+            margin: 10px;
+          }
+          .armin__days{
+            text-align: right;
+            margin: 10px;
+          }
+        }
+
+
+
+        }
+      }
+
+    }
+
+  }
+
+  .sectionboxCO{
+    height: 100vh;
+    
+    .ContactUs{
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 4fr;
+
+      box-sizing: border-box;
+   
+      padding-top: 10vh;
+
+      .ContactUs__grid{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+
+        .ContactUs__title{
+
+          font-size: 2.0rem;
+        }
+        .ContactUs__discribe{
+
+          font-size: 1.0rem;
+          margin: 30px 0px 20px 0px;
+
+        }
+      }
+
+      .ContactUs__grid2{
+
+      }
+    }
+  }
+
+
+
+  footer{
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .footer__logo{
+      
+      img{
+        width: 200px;
+      }
+    }
+    .footer__adress{
+
+    }
+    .footer__copyright{
+
+    }
+
+  }
+
 
 
 

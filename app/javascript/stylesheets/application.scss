@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 
+//awesome
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+
 @import "modules/homes.scss";
 @import "modules/reset.scss";
 @import "modules/navi.scss";
+@import "modules/swiper.scss";

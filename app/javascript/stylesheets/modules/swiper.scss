@@ -1,0 +1,157 @@
+//ページナビゲーション
+.swiper-pagination-bullet {
+  width: 30px !important;
+  height: 30px !important;
+  opacity: 0.5 ;
+  color: #000000;
+  font-size: 1.3rem;
+  line-height: 30px;
+  background: #ffffff !important;
+}
+/* 現在のスライドのスタイル */
+.swiper-pagination-bullet-active {
+	background-color: #000000;
+	color: "#111111";
+}
+
+//
+.swiper-slide{
+
+
+}
+
+.swiper-button-next{
+  top:88% !important;
+  right: 35% !important;
+}
+.swiper-button-prev{
+  top:88% !important;
+  left: 35% !important;
+}
+
+//
+.swiper-button-next::after{
+  display: none;
+
+}
+.swiper-button-prev::after{
+  display: none;
+
+}
+
+//
+.mikan{
+  width: 40px!important;
+  display: block;
+  height: 40px;
+}
+
+.swiper-pagination{
+  margin: 0 0 20px;
+}
+
+//スライド
+.sectionboxD{
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+  margin: 30px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  background-color: #fff;
+}
+
+.swiper-slide{
+  flex-flow: column;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  // margin: 0px 30px;
+  width: 692.667px;
+
+  .S__logo{
+    background-color: black;
+    color: #fff;
+    /* padding: 20px; */
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+
+  }
+  .S__title{
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+
+
+  }
+  .S__discribe{
+  
+    padding: 20px;
+
+  }
+}
+
+//swiper2
+// .swiper-container2 .swiper-wrapper2 {
+//   transition-timing-function: linear !important;
+// }
+
+.swiper-container2{
+  background-color: #222222;
+  // height: 15vh;
+  touch-action: pan-y;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+}
+
+.sectionboxE{
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+  margin: 2vw;
+  // padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  background-color: #fff;
+
+
+  .S2__image{
+    // height: 100px;
+    // width: 100px;
+    img{
+      width: 100%;
+      height: 15vw;
+      object-fit: cover;
+    }
+  }
+
+  .sectionboxEA{
+    overflow-y: scroll;
+    height: 13vw;
+
+    .S2__company{
+      margin: 10px;
+      font-size: 1.3rem;
+      font-weight: bold;
+
+    }
+    .S2__discribe{
+      margin: 10px;
+      font-size: 1.0rem;
+      /* font-weight: bold; */
+      line-height: 1.2;
+
+    }
+
+  }
+}
