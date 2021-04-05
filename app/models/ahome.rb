@@ -1,0 +1,2 @@
+class Ahome < ApplicationRecord
+end

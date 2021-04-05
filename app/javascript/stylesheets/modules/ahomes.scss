@@ -1,0 +1,16 @@
+.TopContents__ahomes{
+  display: none;
+  position: fixed;
+
+  z-index: 150;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  position: fixed;
+  background-color: #333;
+  width: 80%;
+  height: 80%;
+  overflow: scroll;
+}

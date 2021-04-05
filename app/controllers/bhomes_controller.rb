@@ -1,0 +1,2 @@
+class BhomesController < ApplicationController
+end

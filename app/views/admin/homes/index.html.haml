@@ -1,0 +1,624 @@
+.MainContents
+  .TopContents
+    .TopContents__container{id: "ahomes_area--box2-#{@ahomes.id}"}
+      .TopContents__container__message
+        = @ahomes.title
+        %br
+        クリエイターを最短で
+      .TopContents__container__message2
+        全く新しい "月額制" の受託スタイル
+      .TopContents__container__button
+        .TopContents__container__button__left
+          = link_to destroy_user_session_path, method: :delete , class:"homes__button__left" do
+            月額プランを見る
+        
+
+
+        .TopContents__container__button__right
+          = link_to "" , class:"homes__button__right" do
+            お問い合わせ
+      
+       
+          
+
+    .TopContents__ahomes{id: "ahomes_area--box3-#{@ahomes.id}"}
+      .ahomes_secondary
+        FirstPageの編集
+      =form_with url: ahomes_path(@ahomes.id),method: :patch,remote:true do |f|
+        .ahomes__form
+          .ahomes__title
+            上段のタイトル
+            = f.text_field :title, class: "ahomes__title__field",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
+          .ahomes__title2
+            下段のタイトル
+            = f.text_field :title2, class: "ahomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
+          .ahomes__title2
+            詳細
+            = f.text_field :discribe, class: "ahomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
+
+          .ahomes__title2
+            左側のボタン名
+            = f.text_field :button_left, class: "ahomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
+          
+          .ahomes__title2
+            右側のボタン名
+            = f.text_field :button_right, class: "ahomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
+          
+          .ahomes__title2
+            左側のボタンに関連するリンク
+            = f.text_field :url__left, class: "ahomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
+          
+          .ahomes__submit
+            = f.submit "更新"
+
+      .cr-edit-button{id: "cr-edit-button#{@ahomes.id}", :style => "display: none;"}
+        .aaaaa.cr-cancel-button{"data-cancel-id" => "#{@ahomes.id}"}
+          閉じる
+
+
+    .TopContents__ahomes__edit
+      .TopContents__ahomes__edit__button{"data-ahomes__id": "#{@ahomes.id}"}
+        = icon("fas","edit")
+        編集する
+
+
+
+  -# %h1 Swiperを使ってカルーセル
+  / Slider main container
+  .SectionBoxA
+    
+    .services.ShareContainer
+      .SectionBoxB
+        .services__container.ShareRows
+          CINEMATO（シネマト）は、動画で企業の経営課題を解決する
+          %br
+          動画マーケティング総合支援サービス。
+        .services__container2.ShareRows2
+          動画制作・映像制作、広告運用支援、広告パフォーマンス改善、コンサルティングをワンストップで対応できます。
+    .SectionBoxC
+      .swiper-container
+        / Additional required wrapper
+        .swiper-wrapper
+          / Slides
+          .swiper-slide 
+            .sectionboxD
+              .S__logo
+                1
+              .S__title
+                動画広告配信
+              .S__discribe
+                Youtube、GSN、YDN、SNS、TikTok、タクシー広告など、目的に合わせて適切な媒体の選定・配信を行います。
+          .swiper-slide
+            .sectionboxD
+              .S__logo
+                ２
+              .S__title
+                動画コンサルティング
+              .S__discribe
+                経営戦略、コストダウン、売上UP、組織戦略まで。コンサル仕込の動画マーケティング戦略で、事業成長をサポートします。
+          .swiper-slide
+            .sectionboxD
+              .S__logo
+                ３
+              .S__title
+                Youtube運用
+              .S__discribe
+                チャンネル運用代行、戦略立案、テーマ設定、動画SEOなど、Youtubeマーケティングに関する圧倒的なノウハウを提供します。
+          .swiper-slide
+            .sectionboxD
+              .S__logo
+                ４
+              .S__title
+                動画広告配信
+              .S__discribe
+                Youtube、GSN、YDN、SNS、TikTok、タクシー広告など、目的に合わせて適切な媒体の選定・配信を行います。
+          .swiper-slide
+            .sectionboxD
+              .S__logo
+                ５
+              .S__title
+                動画広告配信
+              .S__discribe
+                Youtube、GSN、YDN、SNS、TikTok、タクシー広告など、目的に合わせて適切な媒体の選定・配信を行います。
+              
+        / If we need pagination
+        .swiper-pagination
+          
+        / If we need navigation buttons
+        .swiper-button-prev
+          =icon("fas","chevron-circle-left",class:"mikan")
+   
+          
+          -# = icon("fas","search",class: "mikan")
+        .swiper-button-next
+          = icon("fas","chevron-circle-right",class: "mikan")
+        / If we need scrollbar
+        -# .swiper-scrollbar
+        -# %script{:src => "https://unpkg.com/swiper/swiper-bundle.js"}
+        -# %script{:src => "https://unpkg.com/swiper/swiper-bundle.min.js"}
+        -# = javascript_pack_tag "swiper/swiper.js"
+  .sectionBoxAA
+    .About
+      -# .About__BoxAA
+      .About__left
+        .About__left__title
+          特長
+        .About__left__first__title
+          独自のビジネスモデルで納得価格
+        .About__left__first__discribe
+          コンサルタント出身のプロデューサーが、ビジネスプロデューサーとクリエイティブディレクターを兼任できるから、中間マージン不要。 代理店を挟まない独自のビジネスモデルで、高品質動画制作と納得の価格を実現。
+
+
+      .About__right
+        = image_pack_tag "jakob-owens-CiUR8zISX60-unsplash.jpg"
+
+  .sectionBoxAB
+    .sectionBocABC
+      .About2
+        -# .About__BoxAA
+        -# .About2__left
+          
+        -#   .About__left__box
+        -#     .About2__left___box__first__title2
+        -#       独自のビジネスモデルで納得価格
+        -#     .About2__left__box__first__discribe2
+        -#       コンサルタント出身のプロデューサーが、ビジネスプロデューサーとクリエイティブディレクターを兼任できるから、中間マージン不要。 代理店を挟まない独自のビジネスモデルで、高品質動画制作と納得の価格を実現。
+
+
+        .About2__right
+          = image_pack_tag "jakob-owens-mQxttWjHFjA-unsplash.jpg"
+        
+        .About2__left
+          
+          .About2__left__box
+            .About2__left__box__first__title2
+              独自のビジネスモデルで納得価格
+            .About2__left__box__first__discribe2
+              コンサルタント出身のプロデューサーが、ビジネスプロデューサーとクリエイティブディレクターを兼任できるから、中間マージン不要。 代理店を挟まない独自のビジネスモデルで、高品質動画制作と納得の価格を実現。
+        
+      .About2
+        -# .About__BoxAA
+        .About2__left
+          .About2__left__box
+          
+            .About2__left__box__first__title2
+              独自のビジネスモデルで納得価格
+            .About2__left__box__first__discribe2
+              コンサルタント出身のプロデューサーが、ビジネスプロデューサーとクリエイティブディレクターを兼任できるから、中間マージン不要。 代理店を挟まない独自のビジネスモデルで、高品質動画制作と納得の価格を実現。
+
+
+        .About2__right
+          = image_pack_tag "ross-sneddon-0MBt0sGU8UA-unsplash.jpg"
+
+  .SectionBoxA
+    
+    .services.ShareContainer
+      .SectionBoxB
+        .services__container2.ShareRows
+          動画制作実績・事例
+        .services__container2.ShareRows2
+          CINEMATOの動画制作実績です。映像表現や用途から条件を絞り込みしていただけます。動画制作をご検討中なら、参考にしていただけますと幸いです。
+    .SectionBoxC
+      .swiper-container2
+        / Additional required wrapper
+        .swiper-wrapper
+          / Slides
+          .swiper-slide
+            .sectionboxE
+              .S2__image
+                = image_pack_tag "roma-kaiuk-dQAwQLHGseM-unsplash.jpg"
+              .sectionboxEA
+                .S2__company
+                  動画広告配信
+                .S2__discribe
+                  Youtube、GSN、YDN、SNS、TikTok、タクシー広告など、目的に合わせて適切な媒体の選定・配信を行います。
+          
+          .swiper-slide 
+            .sectionboxE
+              .S2__image
+                = image_pack_tag "andrew-thornebrooke-I2h9MRMnJwc-unsplash.jpg"
+              .sectionboxEA
+                .S2__company
+                  株式会社〇〇様
+                .S2__discribe
+                  クラウド会計ソフト 企業向けプラン
+          
+          .swiper-slide 
+            .sectionboxE
+              .S2__image
+                = image_pack_tag "eddi-aguirre-o9iUbtfve1Q-unsplash.jpg"
+              .sectionboxEA
+                .S2__company
+                  株式会社〇〇様
+                .S2__discribe
+                  サービス紹介動画
+          
+          .swiper-slide 
+            .sectionboxE
+              .S2__image
+                = image_pack_tag "joshua-coleman-0bZNGLbTKvo-unsplash.jpg"
+              .sectionboxEA
+                .S2__company
+                  株式会社
+                .S2__discribe
+                  サービス紹介動画
+          
+          .swiper-slide 
+            .sectionboxE
+              .S2__image
+                = image_pack_tag "joshua-earle-X_roZ7toBJY-unsplash.jpg"
+              .sectionboxEA
+                .S2__company
+                  株式会社
+                .S2__discribe
+                  サービス紹介動画
+          
+          .swiper-slide 
+            .sectionboxE
+              .S2__image
+                = image_pack_tag "ylann-meyer-_uB9B5GXhbY-unsplash.jpg"
+              .sectionboxEA
+                .S2__company
+                  株式会社
+                .S2__discribe
+                  サービス紹介動画
+          
+          
+
+          / If we need pagination
+        -# .swiper-pagination
+          
+        -# / If we need navigation buttons
+        -# .swiper-button-prev
+        -#   =icon("fas","chevron-circle-left",class:"mikan")
+   
+          
+        -#   -# = icon("fas","search",class: "mikan")
+        -# .swiper-button-next
+        -#   = icon("fas","chevron-circle-right",class: "mikan")
+        / If we need scrollbar
+        -# .swiper-scrollbar
+        -# %script{:src => "https://unpkg.com/swiper/swiper-bundle.js"}
+        -# %script{:src => "https://unpkg.com/swiper/swiper-bundle.min.js"}
+        -# = javascript_pack_tag "swiper/swiper.js"
+  
+  .SectionBoxA
+    
+    .services.ShareContainer
+      .SectionBoxB
+        .services__container.ShareRows
+          メリット
+          %br
+          価値を映す
+        .services__container2.ShareRows2
+          クレーンやレール、サーモグラフィや高速度撮影用カメラなどを使用し、通常の人間の視点では、見ることのできない映像を表現します。
+          
+    .SectionBoxC
+      .swiper-container
+        / Additional required wrapper
+        .swiper-wrapper
+          / Slides
+          .swiper-slide 
+            .sectionboxD
+              .S__logo
+                1
+              .S__title
+                撮影特別機材
+              .S__discribe
+                クレーンやレール、サーモグラフィや高速度撮影用カメラなどを使用し、通常の人間の視点では、見ることのできない映像を表現します。
+          .swiper-slide
+            .sectionboxD
+              .S__logo
+                ２
+              .S__title
+                スタジオ設備
+              .S__discribe
+                カメラ・照明・マイクといった基本的な機材や、家具や観葉植物など、被写体や目的に応じてセットを組みます。
+                カメラワークを考えて組むので、効果的な撮影が可能です。
+                人物と背景画像やパソコン画面など、その場で合成します。実際に現地で撮影しなくても、現物を持込まなくても、合成し効率よく撮影します。
+          .swiper-slide
+            .sectionboxD
+              .S__logo
+                ３
+              .S__title
+                2Ｄ･3Ｄアニメ・
+                3DCG制作
+              .S__discribe
+                サービスや製品のプロモーションに最適なアニメーション動画や、機械・イメージなどを紹介するのに最適な３ＤＣＧの技術。サムシングファンは、フィリピンの拠点を中心にアニメーション制作、ＣＧ制作のサービスを提供しています。
+          .swiper-slide
+            .sectionboxD
+              .S__logo
+                ４
+              .S__title
+                動画広告配信
+              .S__discribe
+                Youtube、GSN、YDN、SNS、TikTok、タクシー広告など、目的に合わせて適切な媒体の選定・配信を行います。
+          .swiper-slide
+            .sectionboxD
+              .S__logo
+                ５
+              .S__title
+                動画広告配信
+              .S__discribe
+                Youtube、GSN、YDN、SNS、TikTok、タクシー広告など、目的に合わせて適切な媒体の選定・配信を行います。
+              
+        / If we need pagination
+        .swiper-pagination
+          
+        / If we need navigation buttons
+        .swiper-button-prev
+          =icon("fas","chevron-circle-left",class:"mikan")
+   
+          
+          -# = icon("fas","search",class: "mikan")
+        .swiper-button-next
+          = icon("fas","chevron-circle-right",class: "mikan")
+        / If we need scrollbar
+        -# .swiper-scrollbar
+  
+  .sectionboxG
+    .sectionboxG__grid
+      .sectionboxG__grid__up
+
+        .price__discribe
+          豊富なプランをご用意。
+          %br
+          特定領域だけの対応から全領域の一貫対応まで、
+          %br
+          あなたのチームに最適なプランをお選びください。
+      .sectionboxG__grid__down
+
+      
+    .price__type
+      .price__patarnA
+        .patarnAL__title
+          Plan.A
+        .patarnAL__discribe
+          デザイナーのみ、エンジニアのみなど
+          チーム体制に合わせた必要領域の
+          補強に特化したプラン
+        .patarnAL__features
+          .patarnAL__features__1
+            チーム状況に応じたスポット対応
+          .patarnAL__features__1
+            お好きな領域の選択が可能
+          .patarnAL__features__1
+            TAGの試験的な導入として人気
+        .patarnAL__price
+          月額 ¥300,000 (3ヶ月更新)
+
+      .price__patarnB
+        .patarnAL__title
+          Plan.B
+        .patarnAL__discribe
+          デザイナーとフロントエンジニアの
+          2名がチームに加わり、ビジュアル側の
+          対応を一手に引き受けます
+        .patarnAL__features
+          .patarnAL__features__2
+            チーム状況に応じたスポット対応
+          .patarnAL__features__2
+            お好きな領域の選択が可能
+          .patarnAL__features__2
+            TAGの試験的な導入として人気
+        .patarnAL__price
+          月額 ¥300,000 (3ヶ月更新)
+      .price__patarnC
+
+        .patarnAL__title
+          Plan.C
+        .patarnAL__discribe
+          デザイナーとフロントエンジニアの
+          2名がチームに加わり、ビジュアル側の
+          対応を一手に引き受けます
+        .patarnAL__features
+          .patarnAL__features__1
+            チーム状況に応じたスポット対応
+          .patarnAL__features__1
+            お好きな領域の選択が可能
+          .patarnAL__features__1
+            TAGの試験的な導入として人気
+        .patarnAL__price
+          月額 ¥300,000 (3ヶ月更新)
+
+  .sectionboxN
+    .News
+      .News__grid
+        .News__title
+          Our Blog
+        .News__discribe
+          日々の活動を記録しています。
+      .News__grid2
+        .News__contents
+          .News__contents__lists__1
+            .armin__image
+              = image_pack_tag "ylann-meyer-_uB9B5GXhbY-unsplash.jpg"
+
+              
+            .armin__title
+              海でバーベーキュー
+
+            .armin__discribe
+              社員旅行
+
+            .armin__days
+              4/20
+          .News__contents__lists__1
+            .armin__image
+              = image_pack_tag "jakob-owens-CiUR8zISX60-unsplash.jpg"
+              
+            .armin__title
+              我々が考える未来予想図
+
+            .armin__discribe
+              今後20年という期間の展望で我々が何をしていくか
+
+            .armin__days
+              4/12
+          .News__contents__lists__1
+            .armin__image
+              = image_pack_tag "ylann-meyer-_uB9B5GXhbY-unsplash.jpg"
+              
+            .armin__title
+              社員の夢
+
+
+            .armin__discribe
+              とある我が社員の考えていること
+
+            .armin__days
+              4/1
+          
+          .News__contents__lists__1
+            .armin__image
+              = image_pack_tag "ylann-meyer-_uB9B5GXhbY-unsplash.jpg"
+
+              
+            .armin__title
+              海でバーベーキュー
+
+            .armin__discribe
+              社員旅行
+
+            .armin__days
+              4/20
+          .News__contents__lists__1
+            .armin__image
+              = image_pack_tag "jakob-owens-CiUR8zISX60-unsplash.jpg"
+              
+            .armin__title
+              我々が考える未来予想図
+
+            .armin__discribe
+              今後20年という期間の展望で我々が何をしていくか
+
+            .armin__days
+              4/12
+          .News__contents__lists__1
+            .armin__image
+              = image_pack_tag "ylann-meyer-_uB9B5GXhbY-unsplash.jpg"
+              
+            .armin__title
+              社員の夢
+
+
+            .armin__discribe
+              とある我が社員の考えていること
+
+            .armin__days
+              4/1
+          
+          .News__contents__lists__1
+            .armin__image
+              = image_pack_tag "ylann-meyer-_uB9B5GXhbY-unsplash.jpg"
+
+              
+            .armin__title
+              海でバーベーキュー
+
+            .armin__discribe
+              社員旅行
+
+            .armin__days
+              4/20
+          .News__contents__lists__1
+            .armin__image
+              = image_pack_tag "jakob-owens-CiUR8zISX60-unsplash.jpg"
+              
+            .armin__title
+              我々が考える未来予想図
+
+            .armin__discribe
+              今後20年という期間の展望で我々が何をしていくか
+
+            .armin__days
+              4/12
+          .News__contents__lists__1
+            .armin__image
+              = image_pack_tag "ylann-meyer-_uB9B5GXhbY-unsplash.jpg"
+              
+            .armin__title
+              社員の夢
+
+
+            .armin__discribe
+              とある我が社員の考えていること
+
+            .armin__days
+              4/1
+          
+          .News__contents__lists__1
+            .armin__image
+              = image_pack_tag "ylann-meyer-_uB9B5GXhbY-unsplash.jpg"
+
+              
+            .armin__title
+              海でバーベーキュー
+
+            .armin__discribe
+              社員旅行
+
+            .armin__days
+              4/20
+          .News__contents__lists__1
+            .armin__image
+              = image_pack_tag "jakob-owens-CiUR8zISX60-unsplash.jpg"
+              
+            .armin__title
+              我々が考える未来予想図
+
+            .armin__discribe
+              今後20年という期間の展望で我々が何をしていくか
+
+            .armin__days
+              4/12
+          .News__contents__lists__1
+            .armin__image
+              = image_pack_tag "ylann-meyer-_uB9B5GXhbY-unsplash.jpg"
+              
+            .armin__title
+              社員の夢
+
+
+            .armin__discribe
+              とある我が社員の考えていること
+
+            .armin__days
+              4/1
+  .sectionboxCO
+    .ContactUs
+      .ContactUs__grid
+        .ContactUs__title
+          お気軽にご連絡下さい。
+        .ContactUs__discribe
+          御社のプロジェクト内容に適したクリエイターより、
+          通常3営業日以内にはご連絡させて頂きます。
+      .ContactUs__grid2
+  
+  %footer 
+    .footer__logo
+      = image_pack_tag 'samplelogo.png'
+    
+    .footer__adress
+      住所が入ります。
+
+    .footer__copyright
+      copy 2020 MILKCANDY__ARGMW7
+
+
+
+
+  .allcover__sheet
+
+
+
+
+%script{:src => "https://unpkg.com/swiper/swiper-bundle.js"}
+%script{:src => "https://unpkg.com/swiper/swiper-bundle.min.js"}
+= javascript_pack_tag "swiper/swiper.js"
+
+
+  
+
+
+      

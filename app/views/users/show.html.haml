@@ -1,0 +1,54 @@
+
+= form_with url:ahomes_path(@ahomes.id),method: :patch ,local:true  do |f|
+  -# - if @laramin.errors.any?
+  -#   #error_explanation{style:"background-color: white;"}
+  -#     %h2{style:"color: red;"}= "Could not be saved"
+  -#     -# %ul
+  -#     -#   - @laramin.errors.each do |message|
+  -#     -#     %li= message
+  -#     - if @ahomes.errors.include?(:text)
+  -#       %p.ahomes{style:"color: red;padding:5px;"}
+          
+  -#         No title entered:
+          
+  -#         = @ahomes.errors[:text].first
+          
+      -# - if @laramin.errors.include?(:"details.location")
+      -#   %p.laramins{style:"color: red;padding:5px;"}
+      -#     No location entered:
+          
+      -#     = @laramin.errors[:"details.location"].first
+            
+  .fiecl.fie
+
+    .field__c
+      =f.text_field :title,class: "creative_text",placeholder:"タイトルを入力してください（必須）例:（家族旅行）",autocomplete: "off"
+
+      = f.submit "更新"
+
+= form_with url:ahomes_path(@ahomes.id),method: :patch ,local:true  do |f|
+  -# - if @laramin.errors.any?
+  -#   #error_explanation{style:"background-color: white;"}
+  -#     %h2{style:"color: red;"}= "Could not be saved"
+  -#     -# %ul
+  -#     -#   - @laramin.errors.each do |message|
+  -#     -#     %li= message
+  -#     - if @ahomes.errors.include?(:text)
+  -#       %p.ahomes{style:"color: red;padding:5px;"}
+          
+  -#         No title entered:
+          
+  -#         = @ahomes.errors[:text].first
+          
+      -# - if @laramin.errors.include?(:"details.location")
+      -#   %p.laramins{style:"color: red;padding:5px;"}
+      -#     No location entered:
+          
+      -#     = @laramin.errors[:"details.location"].first
+            
+  .fiecl.fie
+
+    .field__c
+      =f.text_field :title2,class: "creative_text",placeholder:"タイトルを入力してください（必須）例:（家族旅行）",autocomplete: "off"
+
+      = f.submit "更新"

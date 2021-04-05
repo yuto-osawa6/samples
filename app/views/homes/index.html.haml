@@ -13,7 +13,7 @@
         全く新しい "月額制" の受託スタイル
       .TopContents__container__button
         .TopContents__container__button__left
-          = link_to "" , class:"homes__button__left" do
+          = link_to destroy_user_session_path, method: :delete , class:"homes__button__left" do
             月額プランを見る
 
         .TopContents__container__button__right

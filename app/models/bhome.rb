@@ -1,0 +1,2 @@
+class Bhome < ApplicationRecord
+end
