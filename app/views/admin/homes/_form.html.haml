@@ -1,0 +1,35 @@
+.TopContents__ahomes{id: "ahomes_area--box3-#{@ahomes.id}"}
+  .ahomes_secondary
+    FirstPageの編集
+  -# =form_with url: ahomes_path(@ahomes.id),method: :patch,remote:true do |f|
+  =form_with model:@bhomes,remote:true do |f|
+
+    .ahomes__form
+      .ahomes__title
+        上段のタイトル
+        = f.text_field :title, class: "ahomes__title__field",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
+      .ahomes__title2
+        下段のタイトル
+        = f.text_field :title2, class: "ahomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
+      .ahomes__title2
+        詳細
+        = f.text_field :discribe, class: "ahomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
+
+      .ahomes__title2
+        左側のボタン名
+        = f.text_field :button_left, class: "ahomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
+      
+      .ahomes__title2
+        右側のボタン名
+        = f.text_field :button_right, class: "ahomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
+      
+      .ahomes__title2
+        左側のボタンに関連するリンク
+        = f.text_field :url__left, class: "ahomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
+      
+      .ahomes__submit
+        = f.submit "更新"
+
+  .cr-edit-button{id: "cr-edit-button#{@ahomes.id}", :style => "display: none;"}
+    .aaaaa.cr-cancel-button{"data-cancel-id" => "#{@ahomes.id}"}
+      閉じる

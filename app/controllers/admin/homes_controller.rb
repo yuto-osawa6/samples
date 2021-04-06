@@ -1,9 +1,15 @@
 class Admin::HomesController < ApplicationController
   before_action :if_not_admin
-  before_action :set_homes, only: [:show, :edit, :destroy]
+  # before_action :set_homes, only: [:show, :edit, :destroy]
 
   def index
     @ahomes = Ahome.find(1)
+    @bhomes = Bhome.find(1)
+    @chomes = Chome.find(1)
+    @dhomes = Dhome.find(1)
+    @ehomes = Ehome.find(1)
+    # @bhomes = Bhome.find_by(id:1)
+    # @bhomes.bbhomes
 
 
   end
@@ -18,6 +24,6 @@ class Admin::HomesController < ApplicationController
   end
 
   def set_homes
-    @homes = Homes.find(params[:id])
+    # @homes = Homes.find(params[:id])
   end
 end

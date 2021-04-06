@@ -1,0 +1,2 @@
+class Dhome < ApplicationRecord
+end

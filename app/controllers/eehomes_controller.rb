@@ -1,0 +1,2 @@
+class EehomesController < ApplicationController
+end

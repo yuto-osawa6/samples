@@ -1,15 +1,11 @@
-class BhomesController < ApplicationController
-  def edit
-    @bhomes = Bhome.find(params[:id])
-    @bbhomes = @bhomes.bbhomes
-
-  end
-
+class EhomesController < ApplicationController
+  before_action :if_not_admin
+  
   def update
-    @bhomes = Bhome.find(1)
+    @ehomes = Ehome.find(1)
     # @bbhomes = @bhomes.bbhomes
-    @bhomes.update(bhomes_params)
-    if @bhomes.save
+    @ehomes.update(ehomes_params)
+    if @ehomes.save
       redirect_to request.referer
     else
       render :new
@@ -25,11 +21,11 @@ class BhomesController < ApplicationController
     end
   end
 
-  def bhomes_params 
+  def ehomes_params 
 
 
       # params.require(:bhome).permit(:title,:title2,:discribe,bbhomes_attributes:[:title,:discribe,:id])
-      params.require(:bhome).permit(:title,:title2,:discribe,bbhomes_attributes:[:title,:discribe,:id])
+      params.require(:ehome).permit(:title,:discribe,eehomes_attributes:[:title,:discribe,:image, :id ,:_destroy])
 
 
   

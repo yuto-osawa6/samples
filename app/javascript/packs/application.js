@@ -10,7 +10,10 @@ require("@rails/activestorage").start()
 require("channels")
 
 require('jquery')
+import "cocoon";
 require('../javascripts/homes.js')
+
+// require("cocoon")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

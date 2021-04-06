@@ -1,0 +1,7 @@
+.nested-fields
+  .field__c.list__c
+    = f.text_field :title,class: "creative_text",autocomplete: "off",placeholder:"タイトル"
+  %p.field__c.list__c
+    = f.date_field :discribe,placeholder: "詳細",autocomplete: "off",value: Time.now.strftime("%Y-%m-%d")
+  
+  -# = link_to_remove_association "削除", f,class: "desvv2"

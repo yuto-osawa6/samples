@@ -67,7 +67,7 @@
   / Slider main container
   .SectionBoxA
     
-    .services.ShareContainer
+    .services.ShareContainer{id: "bhomes_area--box2b"}
       .SectionBoxB
         .services__container.ShareRows
           CINEMATO（シネマト）は、動画で企業の経営課題を解決する
@@ -75,7 +75,7 @@
           動画マーケティング総合支援サービス。
         .services__container2.ShareRows2
           動画制作・映像制作、広告運用支援、広告パフォーマンス改善、コンサルティングをワンストップで対応できます。
-    .SectionBoxC
+    .SectionBoxC{id: "bhomes_area--box2bb"}
       .swiper-container
         / Additional required wrapper
         .swiper-wrapper
@@ -137,6 +137,52 @@
         -# %script{:src => "https://unpkg.com/swiper/swiper-bundle.js"}
         -# %script{:src => "https://unpkg.com/swiper/swiper-bundle.min.js"}
         -# = javascript_pack_tag "swiper/swiper.js"
+
+
+    .TopContents__ahomes{id: "bhomes_area--box3-#{@bhomes.id}"}
+      .ahomes_secondary
+        SecondPageの編集
+        =@bhomes.title
+        -# =form_with url: bhomes_path(@bhomes.id),method: :patch,remote:true do |f|
+        -# =form_with model:Bhome.find(1),remote:true do |f|
+      =form_with model: @bhomes,url:bhomes_path,method: :patch, remote:true do |f|
+        .ahomes__form
+          .ahomes__title
+            上段のタイトル
+            = f.text_field :title, class: "bhomes__title__field",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-ahome-edit-#{@bhomes.id}"
+          .ahomes__title2
+            下段のタイトル
+            = f.text_field :title2, class: "bhomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@bhomes.id}"
+          .ahomes__title2
+            詳細
+            
+            = f.text_field :discribe, class: "bhomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@bhomes.id}"
+
+          -# - @bhomes.bbhomes.each do |d|
+          = f.fields_for :bbhomes do |c|
+            -# = render "bbhomes_fields", f: c
+            -# - @bhomes.bbhomes.each do |d|
+            .form-group
+              = c.label :title
+              = c.text_field :title
+          -#     = c.label :discribe
+          -#     = c.text_field :discribe
+          
+          
+          
+        .ahomes__submit
+          = f.submit "更新"
+
+      .bcr-edit-button{id: "bcr-edit-button#{@bhomes.id}", :style => "display: none;"}
+        .aaaaa.bcr-cancel-button{"data-cancel-idb" => "#{@bhomes.id}"}
+          閉じる
+
+
+    .TopContents__bhomes__edit
+      .TopContents__bhomes__edit__button{"data-bhomes__id": "#{@bhomes.id}"}
+        = icon("fas","edit")
+        編集する
+    
   .sectionBoxAA
     .About
       -# .About__BoxAA
@@ -151,6 +197,38 @@
 
       .About__right
         = image_pack_tag "jakob-owens-CiUR8zISX60-unsplash.jpg"
+    .TopContents__ahomes{id: "chomes_area--box3-#{@chomes.id}"}
+      .ahomes_secondary
+        thirdPageの編集
+ 
+      =form_with model: @chomes,url:chomes_path,method: :patch, remote:true do |f|
+        .ahomes__form
+          .ahomes__title
+            上段のタイトル
+            = f.text_field :title, class: "chomes__title__field",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-chome-edit-#{@chomes.id}"
+          .ahomes__title2
+            下段のタイトル
+            = f.text_field :title2, class: "chomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-chome-edit-#{@chomes.id}"
+          .ahomes__title2
+            詳細
+            
+            = f.text_field :discribe, class: "chomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-chome-edit-#{@chomes.id}"
+          
+          
+          
+        .ahomes__submit
+          = f.submit "更新"
+
+      .ccr-edit-button{id: "ccr-edit-button#{@chomes.id}", :style => "display: none;"}
+        .aaaaa.ccr-cancel-button{"data-cancel-idc" => "#{@chomes.id}"}
+          閉じる
+
+
+    .TopContents__chomes__edit
+      .TopContents__chomes__edit__button{"data-chomes__id": "#{@chomes.id}"}
+        = icon("fas","edit")
+        編集する
+
 
   .sectionBoxAB
     .sectionBocABC
@@ -189,6 +267,41 @@
 
         .About2__right
           = image_pack_tag "ross-sneddon-0MBt0sGU8UA-unsplash.jpg"
+
+    .TopContents__ahomes{id: "dhomes_area--box3-#{@dhomes.id}"}
+      .ahomes_secondary
+        fourthPageの編集
+ 
+      =form_with model: @dhomes,url:dhomes_path,method: :patch, remote:true do |f|
+        .ahomes__form
+          .ahomes__title
+            １つ目のタイトル
+            = f.text_field :title, class: "dhomes__title__field",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-dhome-edit-#{@dhomes.id}"
+          .ahomes__title2
+            詳細
+            
+            = f.text_field :discribe, class: "dhomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-dhome-edit-#{@dhomes.id}"
+          .ahomes__title
+            2つ目のタイトル
+            = f.text_field :title2, class: "dhomes__title__field",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-dhome-edit-#{@dhomes.id}"
+          .ahomes__title2
+            詳細
+            
+            = f.text_field :discribe, class: "dhomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-dhome-edit-#{@dhomes.id}"
+          
+          
+        .ahomes__submit
+          = f.submit "更新"
+
+      .dcr-edit-button{id: "dcr-edit-button#{@dhomes.id}", :style => "display: none;"}
+        .aaaaa.dcr-cancel-button{"data-cancel-idd" => "#{@dhomes.id}"}
+          閉じる
+
+
+    .TopContents__dhomes__edit
+      .TopContents__dhomes__edit__button{"data-dhomes__id": "#{@dhomes.id}"}
+        = icon("fas","edit")
+        編集する
 
   .SectionBoxA
     
@@ -262,25 +375,44 @@
                   株式会社
                 .S2__discribe
                   サービス紹介動画
+  
+    .TopContents__ahomes{id: "ehomes_area--box3-#{@ehomes.id}"}
+      .ahomes_secondary
+        fourthPageの編集
+ 
+      =form_with model: @ehomes,url:ehomes_path,method: :patch, remote:true do |f|
+        .ahomes__form
+          .ahomes__title
+            １つ目のタイトル
+            = f.text_field :title, class: "ehomes__title__field",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-ehome-edit-#{@ehomes.id}"
+          .ahomes__title2
+            詳細
+            
+            = f.text_field :discribe, class: "ehomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ehome-edit-#{@ehomes.id}"
+          
+        = f.fields_for :eehomes do |c|       
+          .form-group
+            = render 'eehome_fields', f: c
+        .links
+          = link_to_add_association 'add eehome', f, :eehomes
+            
+          
+        .ahomes__submit
+          = f.submit "更新"
+
+      .ecr-edit-button{id: "ecr-edit-button#{@ehomes.id}", :style => "display: none;"}
+        .aaaaa.ecr-cancel-button{"data-cancel-ide" => "#{@ehomes.id}"}
+          閉じる
+
+
+    .TopContents__ehomes__edit
+      .TopContents__ehomes__edit__button{"data-ehomes__id": "#{@ehomes.id}"}
+        = icon("fas","edit")
+        編集する
           
           
 
-          / If we need pagination
-        -# .swiper-pagination
           
-        -# / If we need navigation buttons
-        -# .swiper-button-prev
-        -#   =icon("fas","chevron-circle-left",class:"mikan")
-   
-          
-        -#   -# = icon("fas","search",class: "mikan")
-        -# .swiper-button-next
-        -#   = icon("fas","chevron-circle-right",class: "mikan")
-        / If we need scrollbar
-        -# .swiper-scrollbar
-        -# %script{:src => "https://unpkg.com/swiper/swiper-bundle.js"}
-        -# %script{:src => "https://unpkg.com/swiper/swiper-bundle.min.js"}
-        -# = javascript_pack_tag "swiper/swiper.js"
   
   .SectionBoxA
     

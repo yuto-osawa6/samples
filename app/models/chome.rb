@@ -1,0 +1,2 @@
+class Chome < ApplicationRecord
+end
