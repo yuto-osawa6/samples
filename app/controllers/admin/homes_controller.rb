@@ -8,6 +8,10 @@ class Admin::HomesController < ApplicationController
     @chomes = Chome.find(1)
     @dhomes = Dhome.find(1)
     @ehomes = Ehome.find(1)
+    @fhomes = Fhome.find(1)
+    @ihomes = Ihome.find(1)
+    @blogs = Blog.new
+    @blogsfs = Blog.all
     # @bhomes = Bhome.find_by(id:1)
     # @bhomes.bbhomes
 

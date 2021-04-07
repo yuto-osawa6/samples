@@ -1,0 +1,3 @@
+class FfhomesController < ApplicationController
+  
+end

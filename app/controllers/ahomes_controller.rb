@@ -1,15 +1,15 @@
 class AhomesController < ApplicationController
   before_action :if_not_admin
-  def new
+  # def new
 
     
 
-  end
+  # end
 
-  def edit
-    @ahomes = Ahome.find(params[:id])
+  # def edit
+  #   @ahomes = Ahome.find(params[:id])
 
-  end
+  # end
 
   def update
     @ahomes = Ahome.find(1)
@@ -32,7 +32,7 @@ class AhomesController < ApplicationController
   def ahomes_params 
 
 
-      params.permit(:title,:title2,:discribe,:button_right,:button_left,:url_right,:url_left)
+      params.require(:ahome).permit(:title,:title2,:discribe,:button_right,:button_left,:url_right,:url_left,:logo,:adress,aahomes_attributes:[:menu,:id])
   
   
   end

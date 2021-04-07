@@ -12,6 +12,10 @@ require("channels")
 require('jquery')
 import "cocoon";
 require('../javascripts/homes.js')
+require('../javascripts/scroll.js')
+
+// require('pagepiling.js')
+// require('pagepiling.js/dist/jquery.pagepiling.css')
 
 // require("cocoon")
 
@@ -32,3 +36,6 @@ import '@fortawesome/fontawesome-free/js/all'
 
 import '../stylesheets/application.scss'
 
+
+require("trix")
+require("@rails/actiontext")

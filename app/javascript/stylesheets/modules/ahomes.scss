@@ -9,8 +9,258 @@
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   position: fixed;
-  background-color: #333;
+  // background-color: #333;
   width: 80%;
   height: 80%;
   overflow: scroll;
 }
+
+
+//blog.show
+
+.News__contents__list__no{
+  display: none;
+  
+    // display: flex;
+    position: fixed;
+    z-index: 150;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    position: fixed;
+    // background-color: #333;
+    width: 80%;
+    height: 80%;
+    overflow: scroll;
+
+  .aaa{
+    position: relative;
+    height: 100%;
+
+    .armin__image__blog{
+        height: 100%;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .bbb{
+      position: absolute;
+      top: 0%;
+      right: 0;
+      // background: rgba(0,0,0,0.3);
+      // background: rgba(0.0.0.0.1);
+      /* opacity: 0.2; */
+      color: white;
+      /* left: 50%; */
+      /* padding: 20px; */
+      width: 100%;
+      /* background-color: #000; */
+      height: 100%;
+      overflow-y: scroll;
+
+      .armin__title__blog{
+        padding: 20px;
+        font-size: 1.4rem;
+      }
+
+      .armin__days__blog{
+        text-align: right;
+        padding: 10px;
+      }
+      .armin__richcontents{
+        padding:10px;
+      }
+
+    }
+  }
+
+}
+.News__contents__lists__1{
+  position: relative;
+}
+.News__contents__lists__cover{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+//共通
+.aformd__title{
+  margin: 20px;
+  color: white;
+  border-bottom: solid 1px white;
+}
+.formtitles{
+  margin-bottom: 10px;
+}
+.aformd{
+  color: white;
+  /* border-bottom: solid 1px white; */
+  /* background-color: black; */
+  /* background-color: transparent; */
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  padding-left: 5px;
+}
+.ahomes__submit{
+  text-align: right;
+    margin: 20px;
+}
+.aformd__submit{
+    border: none;
+    background: none;
+    color: white;
+    font-size: 1.1rem;
+
+}
+.aformd__edit__button{
+  position: absolute;
+  top: 0;
+  right: 20px;
+
+  .aaaaa{
+    color: white;
+    text-align: right;
+  }
+
+}
+
+.SectionBoxA{
+  position: relative;
+}
+
+
+
+//ahomes
+
+.TopContents__ahomes{
+  .ahomes_secondary{
+    color:white;
+    padding:20px;
+  }
+  
+}
+
+.TopContents__ahomes__edit__button{
+  color: deepskyblue;
+}
+
+//bhomes
+
+.TopContents__bhomes__edit{
+  position: absolute;
+  bottom: 5%;
+  margin: 0px 20px;
+  right: 0;
+  z-index: 140;
+  color: deepskyblue;
+}
+
+//chomes
+.sectionBoxAA{
+  position: relative;
+}
+.TopContents__chomes__edit{
+  position: absolute;
+  bottom: 5%;
+  margin: 0px 20px;
+  right: 0;
+  z-index: 140;
+  color: deepskyblue;
+}
+
+//dhomes
+.sectionBoxAB{
+  position: relative;
+}
+.TopContents__dhomes__edit{
+  position: absolute;
+  bottom: 5%;
+  margin: 0px 20px;
+  right: 0;
+  z-index: 140;
+  color: deepskyblue;
+}
+
+//ehomes
+.nested-fields__button2{
+  text-align: right;
+  margin: 20px;
+
+.desvv2{
+  text-decoration: none;
+  color: deepskyblue;
+
+}
+
+
+}
+.add_fields{
+  text-decoration: none;
+  color: deepskyblue;
+}
+
+.TopContents__ehomes__edit{
+  position: absolute;
+  bottom: 1%;
+  margin: 0px 20px;
+  right: 0;
+  z-index: 140;
+  color: deepskyblue;
+}
+
+//fhomes
+.TopContents__fhomes__edit{
+  position: absolute;
+  bottom: 1%;
+  margin: 0px 20px;
+  right: 0;
+  z-index: 140;
+  color: deepskyblue;
+}
+
+//ihomes
+.TopContents__ihomes__edit{
+  position: absolute;
+  bottom: 1%;
+  margin: 0px 20px;
+  right: 0;
+  z-index: 140;
+  color: deepskyblue;
+}
+
+//blogs
+.TopContents__b1homes__edit{
+  position: absolute;
+  bottom: 1%;
+  margin: 0px 20px;
+  right: 0;
+  z-index: 140;
+  color: deepskyblue;
+}
+.sectionboxN {
+  position: relative;
+  height: 100vh;
+}
+
+.TopContents__b2homes__edit{
+text-align: right;
+    color: white;
+    margin: 10px;
+}
+.deleteblogs{
+  text-align: right;
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+}
+
+

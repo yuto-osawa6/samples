@@ -2,6 +2,8 @@
   font-family: 'Noto Sans JP', sans-serif;
   position: relative;
   height: 100%;
+
+  
   .ShareContainer{
     // height: 100vh;
     flex-flow: column;
@@ -304,7 +306,7 @@
     display: flex;
 
 
-    .price__patarnA{
+    .price__patarnA0{
       margin:0px 10px 0px 20px;
       padding: 20px;
       background-color: #333333;
@@ -316,7 +318,7 @@
     overflow-y: scroll;
 
     }
-    .price__patarnB{
+    .price__patarnA1{
       margin:0px 10px 0px 10px;
       padding: 20px;
       background-color: #fff;
@@ -327,8 +329,9 @@
     overflow-y: scroll;
 
     }
+    
 
-    .price__patarnC{
+    .price__patarnA2{
       margin: 0px 20px 0px 10px;
       background-color: #333333;
       color: #fff;
@@ -357,7 +360,7 @@
     }
 
     .patarnAL__features{
-      .patarnAL__features__1{
+      .patarnAL__features__0{
         background-color: #444;
         display: flex;
         justify-content: center;
@@ -367,6 +370,15 @@
         line-height: 1.5;
       }
       .patarnAL__features__2{
+        background-color: #444;
+        display: flex;
+        justify-content: center;
+        margin: 30px 0px;
+        font-size: 0.9rem;
+        padding: 20px;
+        line-height: 1.5;
+      }
+      .patarnAL__features__1{
         background-color: #f8f8f8;
         display: flex;
         justify-content: center;

@@ -15,21 +15,18 @@
     %header 
       .TopContents__navi
         .TopContents__navi__left
-          = image_pack_tag 'samplelogo.png'
+          = image_tag(@ahomes.logo.url)
         .TopContents__navi__right
           %ul
-            %li
-              SERVICE
-            %li
-              ABOUT
-            %li
-              PERFORMANCE
-            %li
-              MERIT
-            %li
-              PLAN
-            %li
-              FAQ
-            %li
-              お問い合わせ
+            - @ahomes.aahomes.each do |aa|
+              %li
+                = link_to "#{aa.link}" do
+                  =aa.menu
+
+            
     = yield
+
+    -# .Scrollebutton
+    -#   aaaa
+
+

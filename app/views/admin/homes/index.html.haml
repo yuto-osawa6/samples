@@ -4,19 +4,20 @@
       .TopContents__container__message
         = @ahomes.title
         %br
-        クリエイターを最短で
+        = @ahomes.title2
       .TopContents__container__message2
-        全く新しい "月額制" の受託スタイル
+        = @ahomes.discribe
       .TopContents__container__button
         .TopContents__container__button__left
-          = link_to destroy_user_session_path, method: :delete , class:"homes__button__left" do
-            月額プランを見る
+          -# = link_to destroy_user_session_path, method: :delete , class:"homes__button__left" do
+          =link_to "#{@ahomes.url_left}", class:"homes__button__left" do
+            = @ahomes.button_left
         
 
 
         .TopContents__container__button__right
-          = link_to "" , class:"homes__button__right" do
-            お問い合わせ
+          = link_to "#{@ahomes.url_right}" , class:"homes__button__right" do
+            = @ahomes.button_right
       
        
           
@@ -24,36 +25,73 @@
     .TopContents__ahomes{id: "ahomes_area--box3-#{@ahomes.id}"}
       .ahomes_secondary
         FirstPageの編集
-      =form_with url: ahomes_path(@ahomes.id),method: :patch,remote:true do |f|
+      =form_with model:@ahomes, url: ahomes_path,method: :patch,remote:true do |f|
         .ahomes__form
-          .ahomes__title
-            上段のタイトル
-            = f.text_field :title, class: "ahomes__title__field",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
-          .ahomes__title2
-            下段のタイトル
-            = f.text_field :title2, class: "ahomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
-          .ahomes__title2
-            詳細
-            = f.text_field :discribe, class: "ahomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
+          .ahomes__title.aformd__title
+            .formtitles
+              上段のタイトル
+            = f.text_field :title, class: "ahomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
+          .ahomes__title2.aformd__title
+            .formtitles
+              下段のタイトル
+            = f.text_field :title2, class: "ahomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
+          .ahomes__title2.aformd__title
+            .formtitles
+              詳細
+            = f.text_field :discribe, class: "ahomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
 
-          .ahomes__title2
-            左側のボタン名
-            = f.text_field :button_left, class: "ahomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
+          .ahomes__title2.aformd__title
+            .formtitles
+              左側のボタン名
+            = f.text_field :button_left, class: "ahomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
           
-          .ahomes__title2
-            右側のボタン名
-            = f.text_field :button_right, class: "ahomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
+          .ahomes__title2.aformd__title
+            .formtitles
+              右側のボタン名
+            = f.text_field :button_right, class: "ahomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
           
-          .ahomes__title2
-            左側のボタンに関連するリンク
-            = f.text_field :url__left, class: "ahomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
+          .ahomes__title2.aformd__title
+            .formtitles
+              ボタンに関連するリンク
+            左側
+            = f.collection_select(:url_left, @ahomes.aahomes, :link, :menu)
+
+            右側
+            = f.collection_select(:url_right, @ahomes.aahomes, :link, :menu)
           
+          .ahomes__header__logo.aformd__title
+            .formtitles
+              ロゴ
+            = f.file_field :logo
+          
+          .ahomes__footer__adress.aformd__title
+            .formtitles
+              住所
+            = f.text_field :adress, class: "ahomes__title2__field aformd"
+          
+        .ahomes__header__menu
+          = f.fields_for :aahomes do |c|
+            -# = render "bbhomes_fields", f: c
+            -# - @bhomes.bbhomes.each do |d|
+            .form-group
+              .aformd__title
+                .formtitles
+                  = c.label :menu
+                  
+              
+                = c.text_field :menu, class: "ahomes__title2__field aformd"
+
+
+
           .ahomes__submit
-            = f.submit "更新"
+            = f.submit "更新",class:"aformd__submit"
 
-      .cr-edit-button{id: "cr-edit-button#{@ahomes.id}", :style => "display: none;"}
+      
+
+      .cr-edit-button.aformd__edit__button{id: "cr-edit-button#{@ahomes.id}", :style => "display: none;"}
         .aaaaa.cr-cancel-button{"data-cancel-id" => "#{@ahomes.id}"}
-          閉じる
+          =icon("far","times-circle")
+          
 
 
     .TopContents__ahomes__edit
@@ -65,61 +103,32 @@
 
   -# %h1 Swiperを使ってカルーセル
   / Slider main container
-  .SectionBoxA
+  .SectionBoxA#aa
     
     .services.ShareContainer{id: "bhomes_area--box2b"}
       .SectionBoxB
         .services__container.ShareRows
-          CINEMATO（シネマト）は、動画で企業の経営課題を解決する
+          =@bhomes.title
           %br
-          動画マーケティング総合支援サービス。
+          =@bhomes.title2
         .services__container2.ShareRows2
-          動画制作・映像制作、広告運用支援、広告パフォーマンス改善、コンサルティングをワンストップで対応できます。
+          =@bhomes.discribe
     .SectionBoxC{id: "bhomes_area--box2bb"}
       .swiper-container
         / Additional required wrapper
         .swiper-wrapper
           / Slides
-          .swiper-slide 
-            .sectionboxD
-              .S__logo
-                1
-              .S__title
-                動画広告配信
-              .S__discribe
-                Youtube、GSN、YDN、SNS、TikTok、タクシー広告など、目的に合わせて適切な媒体の選定・配信を行います。
-          .swiper-slide
-            .sectionboxD
-              .S__logo
-                ２
-              .S__title
-                動画コンサルティング
-              .S__discribe
-                経営戦略、コストダウン、売上UP、組織戦略まで。コンサル仕込の動画マーケティング戦略で、事業成長をサポートします。
-          .swiper-slide
-            .sectionboxD
-              .S__logo
-                ３
-              .S__title
-                Youtube運用
-              .S__discribe
-                チャンネル運用代行、戦略立案、テーマ設定、動画SEOなど、Youtubeマーケティングに関する圧倒的なノウハウを提供します。
-          .swiper-slide
-            .sectionboxD
-              .S__logo
-                ４
-              .S__title
-                動画広告配信
-              .S__discribe
-                Youtube、GSN、YDN、SNS、TikTok、タクシー広告など、目的に合わせて適切な媒体の選定・配信を行います。
-          .swiper-slide
-            .sectionboxD
-              .S__logo
-                ５
-              .S__title
-                動画広告配信
-              .S__discribe
-                Youtube、GSN、YDN、SNS、TikTok、タクシー広告など、目的に合わせて適切な媒体の選定・配信を行います。
+          - @bhomes.bbhomes.each_with_index do |b,i|
+            - i = i + 1
+            .swiper-slide 
+              .sectionboxD
+                .S__logo
+                  = i
+                .S__title
+                  =b.title
+                .S__discribe
+                  =b.discribe
+          
               
         / If we need pagination
         .swiper-pagination
@@ -142,40 +151,45 @@
     .TopContents__ahomes{id: "bhomes_area--box3-#{@bhomes.id}"}
       .ahomes_secondary
         SecondPageの編集
-        =@bhomes.title
+        
         -# =form_with url: bhomes_path(@bhomes.id),method: :patch,remote:true do |f|
         -# =form_with model:Bhome.find(1),remote:true do |f|
       =form_with model: @bhomes,url:bhomes_path,method: :patch, remote:true do |f|
         .ahomes__form
-          .ahomes__title
-            上段のタイトル
-            = f.text_field :title, class: "bhomes__title__field",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-ahome-edit-#{@bhomes.id}"
-          .ahomes__title2
-            下段のタイトル
-            = f.text_field :title2, class: "bhomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@bhomes.id}"
-          .ahomes__title2
-            詳細
+          .ahomes__title.aformd__title
+            .formtitles
+              上段のタイトル
+            = f.text_field :title, class: "bhomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-ahome-edit-#{@bhomes.id}"
+          .ahomes__title2.aformd__title
+            .formtitles
+              下段のタイトル
+            = f.text_field :title2, class: "bhomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@bhomes.id}"
+          .ahomes__title2.aformd__title
+            .formtitles
+              詳細
             
-            = f.text_field :discribe, class: "bhomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@bhomes.id}"
+            = f.text_field :discribe, class: "bhomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@bhomes.id}"
 
           -# - @bhomes.bbhomes.each do |d|
           = f.fields_for :bbhomes do |c|
             -# = render "bbhomes_fields", f: c
             -# - @bhomes.bbhomes.each do |d|
             .form-group
-              = c.label :title
-              = c.text_field :title
+              .aformd__title
+                .formtitles
+                  = c.label :title
+                = c.text_field :title,class:"aformd"
           -#     = c.label :discribe
           -#     = c.text_field :discribe
           
           
           
         .ahomes__submit
-          = f.submit "更新"
+          = f.submit "更新",class:"aformd__submit"
 
-      .bcr-edit-button{id: "bcr-edit-button#{@bhomes.id}", :style => "display: none;"}
+      .bcr-edit-button.aformd__edit__button{id: "bcr-edit-button#{@bhomes.id}", :style => "display: none;"}
         .aaaaa.bcr-cancel-button{"data-cancel-idb" => "#{@bhomes.id}"}
-          閉じる
+          =icon("far","times-circle")
 
 
     .TopContents__bhomes__edit
@@ -183,16 +197,16 @@
         = icon("fas","edit")
         編集する
     
-  .sectionBoxAA
+  .sectionBoxAA#ab
     .About
       -# .About__BoxAA
       .About__left
         .About__left__title
-          特長
+          = @chomes.title
         .About__left__first__title
-          独自のビジネスモデルで納得価格
+          = @chomes.title2
         .About__left__first__discribe
-          コンサルタント出身のプロデューサーが、ビジネスプロデューサーとクリエイティブディレクターを兼任できるから、中間マージン不要。 代理店を挟まない独自のビジネスモデルで、高品質動画制作と納得の価格を実現。
+          = @chomes.discribe
 
 
       .About__right
@@ -203,25 +217,27 @@
  
       =form_with model: @chomes,url:chomes_path,method: :patch, remote:true do |f|
         .ahomes__form
-          .ahomes__title
-            上段のタイトル
-            = f.text_field :title, class: "chomes__title__field",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-chome-edit-#{@chomes.id}"
-          .ahomes__title2
-            下段のタイトル
-            = f.text_field :title2, class: "chomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-chome-edit-#{@chomes.id}"
-          .ahomes__title2
-            詳細
-            
-            = f.text_field :discribe, class: "chomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-chome-edit-#{@chomes.id}"
+          .ahomes__title.aformd__title
+            .formtitles
+              上段のタイトル
+            = f.text_field :title, class: "chomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-chome-edit-#{@chomes.id}"
+          .ahomes__title2.aformd__title
+            .formtitles
+              下段のタイトル
+            = f.text_field :title2, class: "chomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-chome-edit-#{@chomes.id}"
+          .ahomes__title2.aformd__title
+            .formtitles
+              詳細        
+            = f.text_field :discribe, class: "chomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-chome-edit-#{@chomes.id}"
           
           
           
         .ahomes__submit
-          = f.submit "更新"
+          = f.submit "更新",class:"aformd__submit"
 
-      .ccr-edit-button{id: "ccr-edit-button#{@chomes.id}", :style => "display: none;"}
+      .ccr-edit-button.aformd__edit__button{id: "ccr-edit-button#{@chomes.id}", :style => "display: none;"}
         .aaaaa.ccr-cancel-button{"data-cancel-idc" => "#{@chomes.id}"}
-          閉じる
+          =icon("far","times-circle")
 
 
     .TopContents__chomes__edit
@@ -250,9 +266,9 @@
           
           .About2__left__box
             .About2__left__box__first__title2
-              独自のビジネスモデルで納得価格
+              = @dhomes.title
             .About2__left__box__first__discribe2
-              コンサルタント出身のプロデューサーが、ビジネスプロデューサーとクリエイティブディレクターを兼任できるから、中間マージン不要。 代理店を挟まない独自のビジネスモデルで、高品質動画制作と納得の価格を実現。
+              = @dhomes.discribe
         
       .About2
         -# .About__BoxAA
@@ -260,9 +276,9 @@
           .About2__left__box
           
             .About2__left__box__first__title2
-              独自のビジネスモデルで納得価格
+              = @dhomes.title2
             .About2__left__box__first__discribe2
-              コンサルタント出身のプロデューサーが、ビジネスプロデューサーとクリエイティブディレクターを兼任できるから、中間マージン不要。 代理店を挟まない独自のビジネスモデルで、高品質動画制作と納得の価格を実現。
+              =@dhomes.discribe2
 
 
         .About2__right
@@ -274,28 +290,33 @@
  
       =form_with model: @dhomes,url:dhomes_path,method: :patch, remote:true do |f|
         .ahomes__form
-          .ahomes__title
-            １つ目のタイトル
-            = f.text_field :title, class: "dhomes__title__field",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-dhome-edit-#{@dhomes.id}"
-          .ahomes__title2
-            詳細
+          .ahomes__title.aformd__title
+            .formtitles
+              １つ目のタイトル
+            = f.text_field :title, class: "dhomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-dhome-edit-#{@dhomes.id}"
+          .ahomes__title2.aformd__title
+            .formtitles
+              詳細
             
-            = f.text_field :discribe, class: "dhomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-dhome-edit-#{@dhomes.id}"
-          .ahomes__title
-            2つ目のタイトル
-            = f.text_field :title2, class: "dhomes__title__field",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-dhome-edit-#{@dhomes.id}"
-          .ahomes__title2
-            詳細
+            = f.text_field :discribe, class: "dhomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-dhome-edit-#{@dhomes.id}"
+          .ahomes__title.aformd__title
+            .formtitles
+              2つ目のタイトル
+            = f.text_field :title2, class: "dhomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-dhome-edit-#{@dhomes.id}"
+          .ahomes__title2.aformd__title
+            .formtitles
+              詳細
             
-            = f.text_field :discribe, class: "dhomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-dhome-edit-#{@dhomes.id}"
+            = f.text_field :discribe, class: "dhomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-dhome-edit-#{@dhomes.id}"
           
           
         .ahomes__submit
-          = f.submit "更新"
+          = f.submit "更新",class:"aformd__submit"
 
-      .dcr-edit-button{id: "dcr-edit-button#{@dhomes.id}", :style => "display: none;"}
+      .dcr-edit-button.aformd__edit__button{id: "dcr-edit-button#{@dhomes.id}", :style => "display: none;"}
         .aaaaa.dcr-cancel-button{"data-cancel-idd" => "#{@dhomes.id}"}
-          閉じる
+          =icon("far","times-circle")
+
 
 
     .TopContents__dhomes__edit
@@ -303,78 +324,32 @@
         = icon("fas","edit")
         編集する
 
-  .SectionBoxA
+  .SectionBoxA#ac
     
     .services.ShareContainer
       .SectionBoxB
         .services__container2.ShareRows
-          動画制作実績・事例
+          = @ehomes.title
         .services__container2.ShareRows2
-          CINEMATOの動画制作実績です。映像表現や用途から条件を絞り込みしていただけます。動画制作をご検討中なら、参考にしていただけますと幸いです。
+          = @ehomes.discribe
     .SectionBoxC
       .swiper-container2
         / Additional required wrapper
         .swiper-wrapper
           / Slides
-          .swiper-slide
-            .sectionboxE
-              .S2__image
-                = image_pack_tag "roma-kaiuk-dQAwQLHGseM-unsplash.jpg"
-              .sectionboxEA
-                .S2__company
-                  動画広告配信
-                .S2__discribe
-                  Youtube、GSN、YDN、SNS、TikTok、タクシー広告など、目的に合わせて適切な媒体の選定・配信を行います。
+          -@ehomes.eehomes.each do |e|
+            .swiper-slide
+              .sectionboxE
+                .S2__image
+                  - if e.image?
+                    = image_tag(e.image.url)
+                .sectionboxEA
+                  .S2__company
+                    = e.title
+                  .S2__discribe
+                    = e.discribe
           
-          .swiper-slide 
-            .sectionboxE
-              .S2__image
-                = image_pack_tag "andrew-thornebrooke-I2h9MRMnJwc-unsplash.jpg"
-              .sectionboxEA
-                .S2__company
-                  株式会社〇〇様
-                .S2__discribe
-                  クラウド会計ソフト 企業向けプラン
           
-          .swiper-slide 
-            .sectionboxE
-              .S2__image
-                = image_pack_tag "eddi-aguirre-o9iUbtfve1Q-unsplash.jpg"
-              .sectionboxEA
-                .S2__company
-                  株式会社〇〇様
-                .S2__discribe
-                  サービス紹介動画
-          
-          .swiper-slide 
-            .sectionboxE
-              .S2__image
-                = image_pack_tag "joshua-coleman-0bZNGLbTKvo-unsplash.jpg"
-              .sectionboxEA
-                .S2__company
-                  株式会社
-                .S2__discribe
-                  サービス紹介動画
-          
-          .swiper-slide 
-            .sectionboxE
-              .S2__image
-                = image_pack_tag "joshua-earle-X_roZ7toBJY-unsplash.jpg"
-              .sectionboxEA
-                .S2__company
-                  株式会社
-                .S2__discribe
-                  サービス紹介動画
-          
-          .swiper-slide 
-            .sectionboxE
-              .S2__image
-                = image_pack_tag "ylann-meyer-_uB9B5GXhbY-unsplash.jpg"
-              .sectionboxEA
-                .S2__company
-                  株式会社
-                .S2__discribe
-                  サービス紹介動画
   
     .TopContents__ahomes{id: "ehomes_area--box3-#{@ehomes.id}"}
       .ahomes_secondary
@@ -382,27 +357,29 @@
  
       =form_with model: @ehomes,url:ehomes_path,method: :patch, remote:true do |f|
         .ahomes__form
-          .ahomes__title
-            １つ目のタイトル
-            = f.text_field :title, class: "ehomes__title__field",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-ehome-edit-#{@ehomes.id}"
-          .ahomes__title2
-            詳細
+          .ahomes__title.aformd__title
+            .formtitles
+              １つ目のタイトル
+            = f.text_field :title, class: "ehomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-ehome-edit-#{@ehomes.id}"
+          .ahomes__title2.aformd__title
+            .formtitles
+              詳細
             
-            = f.text_field :discribe, class: "ehomes__title2__field",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ehome-edit-#{@ehomes.id}"
+            = f.text_field :discribe, class: "ehomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ehome-edit-#{@ehomes.id}"
           
         = f.fields_for :eehomes do |c|       
           .form-group
             = render 'eehome_fields', f: c
-        .links
-          = link_to_add_association 'add eehome', f, :eehomes
+        .links.nested-fields__button2
+          = link_to_add_association '追加する' ,f, :eehomes
             
           
         .ahomes__submit
-          = f.submit "更新"
+          = f.submit "更新",class:"aformd__submit"
 
-      .ecr-edit-button{id: "ecr-edit-button#{@ehomes.id}", :style => "display: none;"}
+      .ecr-edit-button.aformd__edit__button{id: "ecr-edit-button#{@ehomes.id}", :style => "display: none;"}
         .aaaaa.ecr-cancel-button{"data-cancel-ide" => "#{@ehomes.id}"}
-          閉じる
+          = icon("far","times-circle")
 
 
     .TopContents__ehomes__edit
@@ -414,65 +391,35 @@
 
           
   
-  .SectionBoxA
+  .SectionBoxA#ad
     
     .services.ShareContainer
       .SectionBoxB
         .services__container.ShareRows
-          メリット
+          = @fhomes.title
           %br
-          価値を映す
+          = @fhomes.title2
         .services__container2.ShareRows2
-          クレーンやレール、サーモグラフィや高速度撮影用カメラなどを使用し、通常の人間の視点では、見ることのできない映像を表現します。
+          = @fhomes.discribe
           
     .SectionBoxC
       .swiper-container
         / Additional required wrapper
         .swiper-wrapper
           / Slides
-          .swiper-slide 
-            .sectionboxD
-              .S__logo
-                1
-              .S__title
-                撮影特別機材
-              .S__discribe
-                クレーンやレール、サーモグラフィや高速度撮影用カメラなどを使用し、通常の人間の視点では、見ることのできない映像を表現します。
-          .swiper-slide
-            .sectionboxD
-              .S__logo
-                ２
-              .S__title
-                スタジオ設備
-              .S__discribe
-                カメラ・照明・マイクといった基本的な機材や、家具や観葉植物など、被写体や目的に応じてセットを組みます。
-                カメラワークを考えて組むので、効果的な撮影が可能です。
-                人物と背景画像やパソコン画面など、その場で合成します。実際に現地で撮影しなくても、現物を持込まなくても、合成し効率よく撮影します。
-          .swiper-slide
-            .sectionboxD
-              .S__logo
-                ３
-              .S__title
-                2Ｄ･3Ｄアニメ・
-                3DCG制作
-              .S__discribe
-                サービスや製品のプロモーションに最適なアニメーション動画や、機械・イメージなどを紹介するのに最適な３ＤＣＧの技術。サムシングファンは、フィリピンの拠点を中心にアニメーション制作、ＣＧ制作のサービスを提供しています。
-          .swiper-slide
-            .sectionboxD
-              .S__logo
-                ４
-              .S__title
-                動画広告配信
-              .S__discribe
-                Youtube、GSN、YDN、SNS、TikTok、タクシー広告など、目的に合わせて適切な媒体の選定・配信を行います。
-          .swiper-slide
-            .sectionboxD
-              .S__logo
-                ５
-              .S__title
-                動画広告配信
-              .S__discribe
-                Youtube、GSN、YDN、SNS、TikTok、タクシー広告など、目的に合わせて適切な媒体の選定・配信を行います。
+          -@fhomes.ffhomes.each_with_index do |f,i|
+            - i = i + 1
+            
+            
+            .swiper-slide 
+              .sectionboxD
+                .S__logo
+                  = i
+                .S__title
+                  = f.title
+                .S__discribe
+                  = f.discribe
+          
               
         / If we need pagination
         .swiper-pagination
@@ -487,237 +434,295 @@
           = icon("fas","chevron-circle-right",class: "mikan")
         / If we need scrollbar
         -# .swiper-scrollbar
+    .TopContents__ahomes{id: "fhomes_area--box3-#{@fhomes.id}"}
+      .ahomes_secondary
+        fourthPageの編集
+ 
+      =form_with model: @fhomes,url:fhomes_path,method: :patch, remote:true do |f|
+        .ahomes__form
+          .ahomes__title.aformd__title
+            .formtitles
+              上段のタイトル
+            = f.text_field :title, class: "fhomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-fhome-edit-#{@fhomes.id}"
+          
+          .ahomes__title.aformd__title
+            .formtitles
+              下段のタイトル
+            = f.text_field :title2, class: "fhomes__title__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-fhome-edit-#{@fhomes.id}"
+          .ahomes__title2.aformd__title
+            .formtitles
+              詳細         
+            = f.text_field :discribe, class: "fhomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-fhome-edit-#{@fhomes.id}"
+          
+        = f.fields_for :ffhomes do |c|       
+          .form-group
+                
+            .aformd__title
+              .formtitles
+                = c.label :title
+
+              = c.text_field :title,class:"aformd"
+            
+            .aformd__title
+              .formtitles
+                = c.label :discribe
+
+              = c.text_field :discribe,class:"aformd"
+
+        -#     = render 'eehome_fields', f: c
+        -# .links
+        -#   = link_to_add_association 'add eehome', f, :eehomes
+            
+          
+        .ahomes__submit
+          = f.submit "更新",class:"aformd__submit"
+
+      .fcr-edit-button.aformd__edit__button{id: "fcr-edit-button#{@fhomes.id}", :style => "display: none;"}
+        .aaaaa.fcr-cancel-button{"data-cancel-idf" => "#{@fhomes.id}"}
+          = icon("far","times-circle")
+
+
+    .TopContents__fhomes__edit
+      .TopContents__fhomes__edit__button{"data-fhomes__id": "#{@fhomes.id}"}
+        = icon("fas","edit")
+        編集する
   
-  .sectionboxG
+  .sectionboxG#ae
     .sectionboxG__grid
       .sectionboxG__grid__up
 
         .price__discribe
-          豊富なプランをご用意。
+          = @ihomes.title
           %br
-          特定領域だけの対応から全領域の一貫対応まで、
+          = @ihomes.title2
           %br
-          あなたのチームに最適なプランをお選びください。
+          = @ihomes.title3
       .sectionboxG__grid__down
 
       
     .price__type
-      .price__patarnA
-        .patarnAL__title
-          Plan.A
-        .patarnAL__discribe
-          デザイナーのみ、エンジニアのみなど
-          チーム体制に合わせた必要領域の
-          補強に特化したプラン
-        .patarnAL__features
-          .patarnAL__features__1
-            チーム状況に応じたスポット対応
-          .patarnAL__features__1
-            お好きな領域の選択が可能
-          .patarnAL__features__1
-            TAGの試験的な導入として人気
-        .patarnAL__price
-          月額 ¥300,000 (3ヶ月更新)
+      - @ihomes.iihomes.each_with_index do |i,t|
+        .ihomes_t{class:"price__patarnA#{t}"}
+          .patarnAL__title
+            = i.title
+          .patarnAL__discribe
+            = i.discribe
+          .patarnAL__features
+            .ihomes_t1{class:"patarnAL__features__#{t}"}
+              = i.colum1
+            .ihomes_t1{class:"patarnAL__features__#{t}"}
+              = i.colum2
+            .ihomes_t1{class:"patarnAL__features__#{t}"}
+              = i.colum3
+          .patarnAL__price
+            = i.price
 
-      .price__patarnB
-        .patarnAL__title
-          Plan.B
-        .patarnAL__discribe
-          デザイナーとフロントエンジニアの
-          2名がチームに加わり、ビジュアル側の
-          対応を一手に引き受けます
-        .patarnAL__features
-          .patarnAL__features__2
-            チーム状況に応じたスポット対応
-          .patarnAL__features__2
-            お好きな領域の選択が可能
-          .patarnAL__features__2
-            TAGの試験的な導入として人気
-        .patarnAL__price
-          月額 ¥300,000 (3ヶ月更新)
-      .price__patarnC
+      
+    
+    .TopContents__ahomes{id: "ihomes_area--box3-#{@ihomes.id}"}
+      .ahomes_secondary
+        fourthPageの編集
+ 
+      =form_with model: @ihomes,url:ihomes_path,method: :patch, remote:true do |f|
+        .ahomes__form
+          .ahomes__title.aformd__title
+            .formtitles
+              上段のタイトル
+            
+            = f.text_field :title, class: "ihomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-ihome-edit-#{@ihomes.id}"
 
-        .patarnAL__title
-          Plan.C
-        .patarnAL__discribe
-          デザイナーとフロントエンジニアの
-          2名がチームに加わり、ビジュアル側の
-          対応を一手に引き受けます
-        .patarnAL__features
-          .patarnAL__features__1
-            チーム状況に応じたスポット対応
-          .patarnAL__features__1
-            お好きな領域の選択が可能
-          .patarnAL__features__1
-            TAGの試験的な導入として人気
-        .patarnAL__price
-          月額 ¥300,000 (3ヶ月更新)
+          .ahomes__title.aformd__title
+            .formtitles
+              中段のタイトル
+            = f.text_field :title2, class: "ihomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-ihome-edit-#{@ihomes.id}"
+          
+          .ahomes__title.aformd__title
+            .formtitles
+              下段のタイトル
+            = f.text_field :title3, class: "ihomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-ihome-edit-#{@ihomes.id}"
+          
+          
+          
+        = f.fields_for :iihomes do |c|       
+          .form-group
+            .aformd__title
+              .formtitles
+                = c.label :title
+              = c.text_field :title,class:"aformd"
+            
+            .aformd__title
+              .formtitles
+                = c.label :discribe
+              = c.text_field :discribe,class:"aformd"
+            .aformd__title
+              .formtitles
+                = c.label :colum1
+              = c.text_field :colum1,class:"aformd"
+            
+            .aformd__title
+              .formtitles
+                = c.label :colum2
+              = c.text_field :colum2,class:"aformd"
+            
+            .aformd__title
+              .formtitles
+                = c.label :colum3
+              = c.text_field :colum3,class:"aformd"
+            
+            .aformd__title
+              .formtitles
+                = c.label :praice
+              = c.text_field :price,class:"aformd"
+            
+            
 
-  .sectionboxN
+        
+            
+          
+        .ahomes__submit
+          = f.submit "更新",class:"aformd__submit"
+
+      .icr-edit-button.aformd__edit__button{id: "icr-edit-button#{@ihomes.id}", :style => "display: none;"}
+        .aaaaa.icr-cancel-button{"data-cancel-idi" => "#{@ihomes.id}"}
+          = icon("far","times-circle")
+
+
+    .TopContents__ihomes__edit
+      .TopContents__ihomes__edit__button{"data-ihomes__id": "#{@ihomes.id}"}
+        = icon("fas","edit")
+        編集する
+
+  .sectionboxN#af
     .News
       .News__grid
         .News__title
           Our Blog
         .News__discribe
           日々の活動を記録しています。
+      
+
       .News__grid2
         .News__contents
-          .News__contents__lists__1
-            .armin__image
-              = image_pack_tag "ylann-meyer-_uB9B5GXhbY-unsplash.jpg"
+          -# .News__contents__lists__1
+          - @blogsfs.each do |b|
+            .News__contents__lists__1
+              .armin__image
+                - if b.image?
+                  = image_tag(b.image.url)               
+              .armin__title
+                = b.title
+              .armin__discribe
+                = b.discribe
+              .armin__days
+                = b.updated_at.strftime('%Y/%m/%d %H:%M:%S')
+        
+              .News__contents__list__no{id:"blogs_area--box3-#{b.id}"}
+                .aaa
+                  .armin__image__blog
+                    -# - if b.image?
+                    -#   = image_tag(b.image.url)
+                  .bbb
+                    .armin__title__blog
+                      = b.title
+                    .armin__days__blog
+                      = b.updated_at.strftime('%Y/%m/%d %H:%M:%S')
+                    .armin__richcontents
+                      = b.content
+                  .blogscr-edit-button.aformd__edit__button{id: "blogscr-edit-button#{b.id}", :style => "display: none;"}
+                    .aaaaa.blogscr-cancel-button{"data-cancel-idblogs" => "#{b.id}"}
+                      = icon("far","times-circle")
 
+                .TopContents__b2homes__edit
+                  .TopContents__b2homes__edit__button{"data-b2homes__id": "#{b.id}"}
+                    = icon("fas","edit")
+                    編集する
               
-            .armin__title
-              海でバーベーキュー
-
-            .armin__discribe
-              社員旅行
-
-            .armin__days
-              4/20
-          .News__contents__lists__1
-            .armin__image
-              = image_pack_tag "jakob-owens-CiUR8zISX60-unsplash.jpg"
-              
-            .armin__title
-              我々が考える未来予想図
-
-            .armin__discribe
-              今後20年という期間の展望で我々が何をしていくか
-
-            .armin__days
-              4/12
-          .News__contents__lists__1
-            .armin__image
-              = image_pack_tag "ylann-meyer-_uB9B5GXhbY-unsplash.jpg"
-              
-            .armin__title
-              社員の夢
-
-
-            .armin__discribe
-              とある我が社員の考えていること
-
-            .armin__days
-              4/1
+                .TopContents__b2homes__edit
+                  .TopContents__b3homes__edit__button{"data-b3homes__id": "#{b.id}"}
+                    -# = icon("fas","edit")
+                    = link_to blogs_path(blog_id:b.id),method: :delete,class:"deleteblogs" do
+                      削除する
+              .TopContents__ahomes{id: "b2homes_area--box3-#{b.id}"}
+                .ahomes_secondary
+                  blogの編集
           
-          .News__contents__lists__1
-            .armin__image
-              = image_pack_tag "ylann-meyer-_uB9B5GXhbY-unsplash.jpg"
+                =form_with model: Blog.find(b.id),url:blogs_path(blog_id:b.id),method: :patch do |f|
+                  .ahomes__form
+                    .ahomes__title.aformd__title
+                      .formtitles
+                        タイトル
+                      = f.text_field :title, class: "b1homes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-b1home-edit-1"
+                    .ahomes__title2.aformd__title
+                      .formtitles
+                        詳細
+                      
+                      = f.text_field :discribe, class: "b1homes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-b1home-edit-1"
+
+                    .blogs__image.aformd__title
+                      .formtitles
+                        画像
+                      = f.file_field :image, class:"aformd"
+
+                    .blogs__contents
+                      =f.rich_text_area :content,class:"aformd"
+                    
+                  .ahomes__submit
+                    = f.submit "投稿",class:"aformd__submit"
+
+                .b2cr-edit-button.aformd__edit__button{id: "b2cr-edit-button#{b.id}", :style => "display: none;"}
+                  .aaaaa.b2cr-cancel-button{"data-cancel-idb2" => "#{b.id}"}
+                    = icon("far", "times-circle")
+              
+                
+
+
+
 
               
-            .armin__title
-              海でバーベーキュー
-
-            .armin__discribe
-              社員旅行
-
-            .armin__days
-              4/20
-          .News__contents__lists__1
-            .armin__image
-              = image_pack_tag "jakob-owens-CiUR8zISX60-unsplash.jpg"
-              
-            .armin__title
-              我々が考える未来予想図
-
-            .armin__discribe
-              今後20年という期間の展望で我々が何をしていくか
-
-            .armin__days
-              4/12
-          .News__contents__lists__1
-            .armin__image
-              = image_pack_tag "ylann-meyer-_uB9B5GXhbY-unsplash.jpg"
-              
-            .armin__title
-              社員の夢
+              .News__contents__lists__cover{"data-b2blogs__id": "#{b.id}"}
 
 
-            .armin__discribe
-              とある我が社員の考えていること
 
-            .armin__days
-              4/1
+
+    .TopContents__ahomes{id: "b1homes_area--box3-1"}
+      .ahomes_secondary
+        blogの投稿
+ 
+      =form_with model: @blogs do |f|
+        .ahomes__form
+          .ahomes__title.aformd__title
+            .formtitles
+              タイトル
+            = f.text_field :title, class: "b1homes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-b1home-edit-1"
+          .ahomes__title2.aformd__title
+            .formtitles
+            詳細
+            
+            = f.text_field :discribe, class: "b1homes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-b1home-edit-1"
+
+          .blogs__image.aformd__title
+            .formtitles
+              画像
+            = f.file_field :image
+
+          .blogs__contents.aformd__title
+            .formtitles
+            =f.rich_text_area :content
           
-          .News__contents__lists__1
-            .armin__image
-              = image_pack_tag "ylann-meyer-_uB9B5GXhbY-unsplash.jpg"
+        .ahomes__submit
+          = f.submit "投稿",class:"aformd__submit"
 
-              
-            .armin__title
-              海でバーベーキュー
-
-            .armin__discribe
-              社員旅行
-
-            .armin__days
-              4/20
-          .News__contents__lists__1
-            .armin__image
-              = image_pack_tag "jakob-owens-CiUR8zISX60-unsplash.jpg"
-              
-            .armin__title
-              我々が考える未来予想図
-
-            .armin__discribe
-              今後20年という期間の展望で我々が何をしていくか
-
-            .armin__days
-              4/12
-          .News__contents__lists__1
-            .armin__image
-              = image_pack_tag "ylann-meyer-_uB9B5GXhbY-unsplash.jpg"
-              
-            .armin__title
-              社員の夢
+      .b1cr-edit-button.aformd__edit__button{id: "b1cr-edit-button1", :style => "display: none;"}
+        .aaaaa.b1cr-cancel-button{"data-cancel-idb1" => "1"}
+          = icon("far","times-circle")
 
 
-            .armin__discribe
-              とある我が社員の考えていること
-
-            .armin__days
-              4/1
-          
-          .News__contents__lists__1
-            .armin__image
-              = image_pack_tag "ylann-meyer-_uB9B5GXhbY-unsplash.jpg"
-
-              
-            .armin__title
-              海でバーベーキュー
-
-            .armin__discribe
-              社員旅行
-
-            .armin__days
-              4/20
-          .News__contents__lists__1
-            .armin__image
-              = image_pack_tag "jakob-owens-CiUR8zISX60-unsplash.jpg"
-              
-            .armin__title
-              我々が考える未来予想図
-
-            .armin__discribe
-              今後20年という期間の展望で我々が何をしていくか
-
-            .armin__days
-              4/12
-          .News__contents__lists__1
-            .armin__image
-              = image_pack_tag "ylann-meyer-_uB9B5GXhbY-unsplash.jpg"
-              
-            .armin__title
-              社員の夢
-
-
-            .armin__discribe
-              とある我が社員の考えていること
-
-            .armin__days
-              4/1
-  .sectionboxCO
+    .TopContents__b1homes__edit
+      .TopContents__b1homes__edit__button{"data-b1homes__id": "1"}
+        = icon("fas","edit")
+        新規作成
+            
+  .sectionboxCO#ag
     .ContactUs
       .ContactUs__grid
         .ContactUs__title

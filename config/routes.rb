@@ -29,6 +29,11 @@ resource :ehomes, only:[:update]
 
 resource :ehomes, only:[:new,:create,:update]
 
+resource :fhomes, only:[:update]
+
+resource :ihomes, only:[:update]
+
+resource :blogs, only:[:new,:create,:destroy,:update]
 
 # devise_scope :user do
 #   get "user/:id", :to => "users/registrations#detail"

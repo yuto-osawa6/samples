@@ -1,5 +1,21 @@
 .nested-fields
   .field
-    = f.label :title
-    = f.text_field :title
-= link_to_remove_association "削除", f,class: "desvv2"
+    .aformd__title
+      .formtitles
+        = f.label :title
+      = f.text_field :title, class:"aformd"
+    .aformd__title
+      .formtitles
+        = f.label :discribe
+      = f.text_field :discribe, class:"aformd"
+    .aformd__title
+      .formtitles
+        = f.label :image
+      = f.file_field :image, class:"aformd"
+.nested-fields__button2
+  -# = link_to_remove_association "削除", f,class: "desvv2"
+  = f.label '削除',class:"desvv2" do
+  
+    削除
+    = f.check_box :_destroy,class:"desvv2"
+    

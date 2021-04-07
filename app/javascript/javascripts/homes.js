@@ -7,7 +7,7 @@ $(document).on('turbolinks:load', function(){
             
   const commentId = $(this).data('ahomes__id'); 
   // console.log(commentId)                  
-  const commentLabelArea = $('#ahomes_area--box2-' + commentId);   
+  // const commentLabelArea = $('#ahomes_area--box2-' + commentId);   
   const commentTextArea = $('#ahomes_area--box3-' + commentId); 
   const commentButton = $('#cr-edit-button' + commentId);   
   
@@ -15,7 +15,7 @@ $(document).on('turbolinks:load', function(){
 
 
 
-  commentLabelArea.hide();
+  // commentLabelArea.hide();
   commentTextArea.show();  
   commentButton.show(); 
 
@@ -27,12 +27,12 @@ $(document).on('turbolinks:load', function(){
 // cancel
 $(document).on("click", ".cr-cancel-button", function () {
   const commentId = $(this).data('cancel-id');
-  const commentLabelArea = $('#ahomes_area--box2-' + commentId);
+  // const commentLabelArea = $('#ahomes_area--box2-' + commentId);
   const commentTextArea = $('#ahomes_area--box3-' + commentId);
   const commentButton = $('#cr-edit-button' + commentId);
   // const commentError = $('#js-comment-post-error-' + commentId);
 
-  commentLabelArea.show();
+  // commentLabelArea.show();
   commentTextArea.hide();
   commentButton.hide();
   $(".allcover__sheet").css("display","none")
@@ -173,6 +173,170 @@ $(document).on("click", ".ecr-cancel-button", function () {
   $(".allcover__sheet").css("display","none")
 });
 
+
+//fhomes
+
+$(document).on("click",".TopContents__fhomes__edit__button", function () {
+
+            
+  const commentIdf = $(this).data('fhomes__id');     
+  const commentTextAreaf = $('#fhomes_area--box3-' + commentIdf); 
+  const commentButtonf = $('#fcr-edit-button' + commentIdf);   
+
+  commentTextAreaf.show();  
+  commentButtonf.show(); 
+
+  $(".allcover__sheet").css("display","block")
+
+
+});
+
+// cancel
+$(document).on("click", ".fcr-cancel-button", function () {
+  const commentIdf = $(this).data('cancel-idf');
+  const commentTextAreaf = $('#fhomes_area--box3-' + commentIdf);
+  const commentButtonf= $('#fcr-edit-button' + commentIdf);
+  // const commentError = $('#js-comment-post-error-' + commentId);
+
+
+  commentTextAreaf.hide();
+  commentButtonf.hide();
+  $(".allcover__sheet").css("display","none")
+});
+
+//ihomes
+
+$(document).on("click",".TopContents__ihomes__edit__button", function () {
+
+            
+  const commentIdi = $(this).data('ihomes__id');     
+  const commentTextAreai = $('#ihomes_area--box3-' + commentIdi); 
+  const commentButtoni = $('#icr-edit-button' + commentIdi);   
+
+  commentTextAreai.show();  
+  commentButtoni.show(); 
+
+  $(".allcover__sheet").css("display","block")
+
+
+});
+
+// cancel
+$(document).on("click", ".icr-cancel-button", function () {
+  const commentIdi = $(this).data('cancel-idi');
+  const commentTextAreai = $('#ihomes_area--box3-' + commentIdi);
+  const commentButtoni= $('#icr-edit-button' + commentIdi);
+  // const commentError = $('#js-comment-post-error-' + commentId);
+
+
+  commentTextAreai.hide();
+  commentButtoni.hide();
+  $(".allcover__sheet").css("display","none")
+});
+
+
+//b1homes(blog.new)
+
+$(document).on("click",".TopContents__b1homes__edit__button", function () {
+
+            
+  const commentIdi = $(this).data('b1homes__id');     
+  const commentTextAreai = $('#b1homes_area--box3-' + commentIdi); 
+  const commentButtoni = $('#b1cr-edit-button' + commentIdi);   
+
+  commentTextAreai.show();  
+  commentButtoni.show(); 
+
+  $(".allcover__sheet").css("display","block")
+
+
+});
+
+// cancel
+$(document).on("click", ".b1cr-cancel-button", function () {
+  const commentIdi = $(this).data('cancel-idb1');
+  const commentTextAreai = $('#b1homes_area--box3-' + commentIdi);
+  const commentButtoni= $('#b1cr-edit-button' + commentIdi);
+  // const commentError = $('#js-comment-post-error-' + commentId);
+
+
+  commentTextAreai.hide();
+  commentButtoni.hide();
+  $(".allcover__sheet").css("display","none")
+});
+
+
+
+
+//b2blogshow
+
+$(document).on("click",".News__contents__lists__cover", function () {
+
+            
+  const commentIdi = $(this).data('b2blogs__id');     
+  const commentTextAreai = $('#blogs_area--box3-' + commentIdi); 
+  const commentButtoni = $('#blogscr-edit-button' + commentIdi);   
+
+  commentTextAreai.show();  
+  commentButtoni.show(); 
+
+  console.log(commentTextAreai)
+
+  $(".allcover__sheet").css("display","block")
+
+
+});
+
+// cancel
+$(document).on("click", ".blogscr-cancel-button", function () {
+  
+  const commentIdi = $(this).data('cancel-idblogs');     
+  const commentTextAreai = $('#blogs_area--box3-' + commentIdi); 
+  const commentButtoni = $('#blogscr-edit-button' + commentIdi);   
+
+  commentTextAreai.hide();  
+  commentButtoni.hide(); 
+
+  
+  $(".allcover__sheet").css("display","none")
+});
+
+
+//b2homes(blog.edit)
+
+$(document).on("click",".TopContents__b2homes__edit__button", function () {
+  const commentIdi = $(this).data('b2homes__id'); 
+  const commentTextAreai2 = $('#blogs_area--box3-' + commentIdi); 
+  const commentButtoni2 = $('#blogscr-edit-button' + commentIdi); 
+
+            
+      
+  const commentTextAreai = $('#b2homes_area--box3-' + commentIdi); 
+  const commentButtoni = $('#b2cr-edit-button' + commentIdi);   
+
+ 
+  commentTextAreai.show();  
+  commentButtoni.show(); 
+   commentTextAreai2.hide();  
+  commentButtoni2.hide(); 
+
+  $(".allcover__sheet").css("display","block")
+
+
+});
+
+// cancel
+$(document).on("click", ".b2cr-cancel-button", function () {
+  const commentIdi = $(this).data('cancel-idb2');
+  const commentTextAreai = $('#b2homes_area--box3-' + commentIdi);
+  const commentButtoni= $('#b2cr-edit-button' + commentIdi);
+  // const commentError = $('#js-comment-post-error-' + commentId);
+
+
+  commentTextAreai.hide();
+  commentButtoni.hide();
+  $(".allcover__sheet").css("display","none")
+});
 
 
 
