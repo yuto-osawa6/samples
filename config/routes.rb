@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   :sessions => 'users/sessions'   
 } 
 
-resources :users, :only => [:show]
+# resources :users, :only => [:show]
 
 resource :ahomes, only:[:edit,:update]
 
