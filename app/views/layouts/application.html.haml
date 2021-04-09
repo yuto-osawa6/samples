@@ -15,7 +15,8 @@
     %header 
       .TopContents__navi
         .TopContents__navi__left
-          = image_tag(@ahomes.logo.url)
+          - if @ahomes.image?
+            = image_tag(@ahomes.logo.url)
         .TopContents__navi__right
           %ul
             - @ahomes.aahomes.each do |aa|
