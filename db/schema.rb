@@ -2,17 +2,17 @@
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
-# This file is the source Rails uses to define your schema when running `rails
-# db:schema:load`. When creating a new database, `rails db:schema:load` tends to
+# This file is the source Rails uses to define your schema when running `bin/rails
+# db:schema:load`. When creating a new database, `bin/rails db:schema:load` tends to
 # be faster and is potentially less error prone than running all of your
 # migrations from scratch. Old migrations may fail to apply correctly if those
 # migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_07_133908) do
+ActiveRecord::Schema.define(version: 2021_04_09_143431) do
 
-  create_table "aahomes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "aahomes", charset: "utf8mb4", force: :cascade do |t|
     t.string "menu"
     t.bigint "ahome_id"
     t.datetime "created_at", precision: 6, null: false
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2021_04_07_133908) do
     t.index ["ahome_id"], name: "index_aahomes_on_ahome_id"
   end
 
-  create_table "action_text_rich_texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "action_text_rich_texts", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
     t.text "body", size: :long
     t.string "record_type", null: false
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2021_04_07_133908) do
     t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
   end
 
-  create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
     t.bigint "record_id", null: false
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2021_04_07_133908) do
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
 
-  create_table "active_storage_blobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "active_storage_blobs", charset: "utf8mb4", force: :cascade do |t|
     t.string "key", null: false
     t.string "filename", null: false
     t.string "content_type"
@@ -49,10 +49,17 @@ ActiveRecord::Schema.define(version: 2021_04_07_133908) do
     t.bigint "byte_size", null: false
     t.string "checksum", null: false
     t.datetime "created_at", null: false
+    t.string "service_name", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "ahomes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "active_storage_variant_records", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "blob_id", null: false
+    t.string "variation_digest", null: false
+    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "ahomes", charset: "utf8mb4", force: :cascade do |t|
     t.string "title"
     t.string "discribe"
     t.string "button_right"
@@ -66,7 +73,7 @@ ActiveRecord::Schema.define(version: 2021_04_07_133908) do
     t.string "adress"
   end
 
-  create_table "bbhomes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "bbhomes", charset: "utf8mb4", force: :cascade do |t|
     t.string "title"
     t.string "discribe"
     t.bigint "bhome_id"
@@ -75,7 +82,7 @@ ActiveRecord::Schema.define(version: 2021_04_07_133908) do
     t.index ["bhome_id"], name: "index_bbhomes_on_bhome_id"
   end
 
-  create_table "bhomes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "bhomes", charset: "utf8mb4", force: :cascade do |t|
     t.string "title"
     t.string "title2"
     t.string "discribe"
@@ -83,7 +90,7 @@ ActiveRecord::Schema.define(version: 2021_04_07_133908) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "blogs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "blogs", charset: "utf8mb4", force: :cascade do |t|
     t.string "title"
     t.string "discribe"
     t.text "image"
@@ -91,7 +98,7 @@ ActiveRecord::Schema.define(version: 2021_04_07_133908) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "chomes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "chomes", charset: "utf8mb4", force: :cascade do |t|
     t.string "title"
     t.string "title2"
     t.text "discribe"
@@ -99,7 +106,7 @@ ActiveRecord::Schema.define(version: 2021_04_07_133908) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "dhomes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "dhomes", charset: "utf8mb4", force: :cascade do |t|
     t.string "title"
     t.text "discribe"
     t.string "title2"
@@ -108,7 +115,7 @@ ActiveRecord::Schema.define(version: 2021_04_07_133908) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "eehomes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "eehomes", charset: "utf8mb4", force: :cascade do |t|
     t.string "title"
     t.text "discribe"
     t.text "image"
@@ -118,14 +125,14 @@ ActiveRecord::Schema.define(version: 2021_04_07_133908) do
     t.index ["ehome_id"], name: "index_eehomes_on_ehome_id"
   end
 
-  create_table "ehomes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "ehomes", charset: "utf8mb4", force: :cascade do |t|
     t.string "title"
     t.text "discribe"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "ffhomes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "ffhomes", charset: "utf8mb4", force: :cascade do |t|
     t.string "title"
     t.string "discribe"
     t.bigint "bhome_id"
@@ -136,7 +143,7 @@ ActiveRecord::Schema.define(version: 2021_04_07_133908) do
     t.index ["fhome_id"], name: "index_ffhomes_on_fhome_id"
   end
 
-  create_table "fhomes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "fhomes", charset: "utf8mb4", force: :cascade do |t|
     t.string "title"
     t.string "title2"
     t.string "discribe"
@@ -144,12 +151,12 @@ ActiveRecord::Schema.define(version: 2021_04_07_133908) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "homes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "homes", charset: "utf8mb4", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "ihomes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "ihomes", charset: "utf8mb4", force: :cascade do |t|
     t.string "title"
     t.string "title2"
     t.string "title3"
@@ -157,7 +164,7 @@ ActiveRecord::Schema.define(version: 2021_04_07_133908) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "iihomes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "iihomes", charset: "utf8mb4", force: :cascade do |t|
     t.string "title"
     t.string "discribe"
     t.string "colum1"
@@ -170,7 +177,7 @@ ActiveRecord::Schema.define(version: 2021_04_07_133908) do
     t.index ["ihome_id"], name: "index_iihomes_on_ihome_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -186,6 +193,7 @@ ActiveRecord::Schema.define(version: 2021_04_07_133908) do
 
   add_foreign_key "aahomes", "ahomes"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "eehomes", "ehomes"
   add_foreign_key "ffhomes", "fhomes"
   add_foreign_key "iihomes", "ihomes"
