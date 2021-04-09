@@ -10,6 +10,17 @@ require("@rails/activestorage").start()
 require("channels")
 
 require('jquery')
+
+// require ('swiper/swiper-bundle.js')
+// // require ('swiper/swiper-bundle.min.js')
+
+// import Swiper from 'swiper'
+// window.Swiper = Swiper
+// // require ('swiper.js')
+// // require('../packs/swiper/swiper.js')
+
+//  require ('../javascripts/spr.js')
+
 import "cocoon";
 require('../javascripts/homes.js')
 require('../javascripts/scroll.js')
@@ -39,3 +50,7 @@ import '../stylesheets/application.scss'
 
 require("trix")
 require("@rails/actiontext")
+
+
+// require ('swiper/swiper-bundle.js')
+// require ('swiper/swiper-bundle.min.js')

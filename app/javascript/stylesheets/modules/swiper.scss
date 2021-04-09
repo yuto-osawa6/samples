@@ -20,14 +20,14 @@
 
 }
 
-.swiper-button-next{
-  top:88% !important;
-  right: 35% !important;
-}
-.swiper-button-prev{
-  top:88% !important;
-  left: 35% !important;
-}
+// .swiper-button-next{
+//   top:88% !important;
+//   right: 35% !important;
+// }
+// .swiper-button-prev{
+//   top:88% !important;
+//   left: 35% !important;
+// }
 
 //
 .swiper-button-next::after{
@@ -52,6 +52,8 @@
 
 //スライド
 .sectionboxD{
+  height: 40vh;
+    overflow: scroll;
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
   margin: 30px;
   padding: 20px;
@@ -112,6 +114,15 @@
   list-style: none;
   padding: 0;
   z-index: 1;
+}
+.swiper-container3{
+margin-left: auto;
+margin-right: auto;
+position: relative;
+overflow: hidden;
+list-style: none;
+padding: 0;
+z-index: 1;
 }
 
 .sectionboxE{

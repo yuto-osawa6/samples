@@ -1,0 +1,13 @@
+$('#bbc').html("<%= j(render partial: 'bhomes/bhomes', locals: {bhomes: @bhomes}) %>");
+
+$('#bhomes_area--box3-<%= @bhomes.id %>').hide();
+$('#bcr-edit-button<%= @bhomes.id %>').hide;
+  $(".allcover__sheet").css("display","none");
+$('#alert-message').html('<div class="alert alert-success"><%= @msg %></div>')
+
+$("#alert-message").fadeIn().queue(function() {
+            setTimeout(function(){$("#alert-message").dequeue();
+            }, 5000);
+        });
+
+        $("#alert-message").fadeOut();

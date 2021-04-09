@@ -1,4 +1,13 @@
-// $(document).on('turbolinks:load', function(){
+$(document).on('turbolinks:load', function(){
+//   $('#alert-message').delay(5000).queue(function(){
+//     $(this).addClass("notification2")
+// });
+
+// $('.alert').delay(5000).queue(function(){
+//   $(this).addClass("notification2")
+// });
+
+
 //    $('#pagepiling').pagepiling({
 //     menu: '#nav',
 //     sectionSelector: '.section',
@@ -12,4 +21,4 @@
 //     },
 // });
 
-// });
+});

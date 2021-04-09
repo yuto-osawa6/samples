@@ -1,0 +1,13 @@
+$('#bloghomes__rendering').html("<%= j(render partial: 'blogs/blogs', locals: {blogsfs: @blogsfs}) %>");
+
+$('#b2homes_area--box3-<%= @blogs.id %>').hide();
+$('#b2cr-edit-button<%= @blogs.id %>').hide;
+  $(".allcover__sheet").css("display","none");
+$('#alert-message').html('<div class="alert alert-success"><%= @msg %></div>')
+
+$("#alert-message").fadeIn().queue(function() {
+            setTimeout(function(){$("#alert-message").dequeue();
+            }, 5000);
+        });
+
+        $("#alert-message").fadeOut();

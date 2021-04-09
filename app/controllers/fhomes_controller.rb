@@ -2,12 +2,13 @@ class FhomesController < ApplicationController
   def update
     @fhomes = Fhome.find(1)
     # @bbhomes = @bhomes.bbhomes
+    @msg = "アップデートが完了しました。"
     @fhomes.update(fhomes_params)
-    if @fhomes.save
-      redirect_to request.referer
-    else
-      render :new
-    end
+    # if @fhomes.save
+    #   redirect_to request.referer
+    # else
+    #   render :new
+    # end
   end
 
   private 

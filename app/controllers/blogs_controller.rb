@@ -1,29 +1,35 @@
 class BlogsController < ApplicationController
   before_action :if_not_admin
   def create
+    @msg = "アップデートが完了しました。"
     @blog = Blog.new(blogs_params)
-    if @blog.save
-      redirect_to request.referer, notice: '作成されました'
-    else
-      render :new
-    end
+    @blogsfs = Blog.all
+    @blog.save
+    #   redirect_to request.referer, notice: '作成されました'
+    # else
+    #   render :new
+    # end
   end
 
   def update
     @blogs = Blog.find(params[:blog_id])
     # @bbhomes = @bhomes.bbhomes
+    @msg = "アップデートが完了しました。"
     @blogs.update(blogs_params)
-    if @blogs.save
-      redirect_to request.referer
-    else
-      render :new
-    end
+    @blogsfs = Blog.all
+    # if @blogs.save
+    #   redirect_to request.referer
+    # else
+    #   render :new
+    # end
   end
 
   def destroy
-    @blog = Blog.find(params[:blog_id])
-    @blog.destroy
-    redirect_to request.referer
+    @blogsfs = Blog.all
+    @blogs = Blog.find(params[:blog_id])
+    @msg = "アップデートが完了しました。"
+    @blogs.destroy
+    # redirect_to request.referer
   end
 
   private 

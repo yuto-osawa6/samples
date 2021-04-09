@@ -1,0 +1,44 @@
+.services.ShareContainer
+  .SectionBoxB
+    .services__container.ShareRows
+      = fhomes.title
+      %br
+      = fhomes.title2
+    .services__container2.ShareRows2
+      = fhomes.discribe
+      
+.SectionBoxC
+  .swiper-container3
+    / Additional required wrapper
+    .swiper-wrapper
+      / Slides
+      -fhomes.ffhomes.each_with_index do |f,i|
+        - i = i + 1
+        
+        
+        .swiper-slide 
+          .sectionboxD
+            .S__logo
+              = i
+            .S__title
+              = f.title
+            .S__discribe
+              = f.discribe
+      
+          
+    -# / If we need pagination
+    -# .swiper-pagination
+      
+    / If we need navigation buttons
+    .swiper-button-prev
+      =icon("fas","chevron-circle-left",class:"mikan")
+
+      
+      -# = icon("fas","search",class: "mikan")
+    .swiper-button-next
+      = icon("fas","chevron-circle-right",class: "mikan")
+    / If we need scrollbar
+    -# .swiper-scrollbar
+%script{:src => "https://unpkg.com/swiper/swiper-bundle.js"}
+%script{:src => "https://unpkg.com/swiper/swiper-bundle.min.js"}
+= javascript_pack_tag "swiper/swiper3.js"

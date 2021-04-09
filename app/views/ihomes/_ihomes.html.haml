@@ -1,0 +1,28 @@
+.sectionboxG__grid
+  .sectionboxG__grid__up
+
+    .price__discribe
+      = ihomes.title
+      %br
+      = ihomes.title2
+      %br
+      = ihomes.title3
+  .sectionboxG__grid__down
+
+  
+.price__type
+  - ihomes.iihomes.each_with_index do |i,t|
+    .ihomes_t{class:"price__patarnA#{t}"}
+      .patarnAL__title
+        = i.title
+      .patarnAL__discribe
+        = i.discribe
+      .patarnAL__features
+        .ihomes_t1{class:"patarnAL__features__#{t}"}
+          = i.colum1
+        .ihomes_t1{class:"patarnAL__features__#{t}"}
+          = i.colum2
+        .ihomes_t1{class:"patarnAL__features__#{t}"}
+          = i.colum3
+      .patarnAL__price
+        = i.price

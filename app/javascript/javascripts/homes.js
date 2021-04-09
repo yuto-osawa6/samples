@@ -25,6 +25,20 @@ $(document).on('turbolinks:load', function(){
 });
 
 // cancel
+$(document).on("click", "a1submits", function () {
+  const commentId = $(this).data('submit-id');
+  // const commentLabelArea = $('#ahomes_area--box2-' + commentId);
+  const commentTextArea = $('#ahomes_area--box3-' + commentId);
+  const commentButton = $('#cr-edit-button' + commentId);
+  // const commentError = $('#js-comment-post-error-' + commentId);
+
+  // commentLabelArea.show();
+  commentTextArea.hide();
+  commentButton.hide();
+  $(".allcover__sheet").css("display","none")
+  // commentError.hide();
+});
+
 $(document).on("click", ".cr-cancel-button", function () {
   const commentId = $(this).data('cancel-id');
   // const commentLabelArea = $('#ahomes_area--box2-' + commentId);
@@ -38,6 +52,7 @@ $(document).on("click", ".cr-cancel-button", function () {
   $(".allcover__sheet").css("display","none")
   // commentError.hide();
 });
+
 
 //bhomes
 

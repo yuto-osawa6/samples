@@ -1,0 +1,13 @@
+$('#chomes__rendering').html("<%= j(render partial: 'chomes/chomes', locals: {chomes: @chomes}) %>");
+
+$('#chomes_area--box3-<%= @chomes.id %>').hide();
+$('#ccr-edit-button<%= @chomes.id %>').hide;
+  $(".allcover__sheet").css("display","none");
+$('#alert-message').html('<div class="alert alert-success"><%= @msg %></div>')
+
+$("#alert-message").fadeIn().queue(function() {
+            setTimeout(function(){$("#alert-message").dequeue();
+            }, 5000);
+        });
+
+        $("#alert-message").fadeOut();

@@ -12,12 +12,13 @@ class AhomesController < ApplicationController
   # end
 
   def update
-    @ahomes = Ahome.find(1)
-    if @ahomes.update(ahomes_params)
-      redirect_to request.referer
-    else
-      render :new
-    end
+    @ahomes = Ahome.find(params[:id])
+    @msg = "アップデートが完了しました。"
+    @ahomes.update(ahomes_params)
+    #   redirect_to request.referer
+    # else
+    #   render :new
+    # end
   end
 
   private 

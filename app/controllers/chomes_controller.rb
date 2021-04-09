@@ -4,13 +4,14 @@ class ChomesController < ApplicationController
   
   def update
     @chomes = Chome.find(1)
+    @msg = "アップデートが完了しました。"
     # @bbhomes = @bhomes.bbhomes
     @chomes.update(chomes_params)
-    if @chomes.save
-      redirect_to request.referer
-    else
-      render :new
-    end
+    # if @chomes.save
+    #   redirect_to request.referer
+    # else
+    #   render :new
+    # end
   end
 
   private 

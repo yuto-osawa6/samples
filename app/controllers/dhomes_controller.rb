@@ -4,13 +4,14 @@ class DhomesController < ApplicationController
   
   def update
     @dhomes = Dhome.find(1)
+    @msg = "アップデートが完了しました。"
     # @bbhomes = @bhomes.bbhomes
     @dhomes.update(dhomes_params)
-    if @dhomes.save
-      redirect_to request.referer
-    else
-      render :new
-    end
+    # if @dhomes.save
+    #   redirect_to request.referer
+    # else
+    #   render :new
+    # end
   end
 
   private 

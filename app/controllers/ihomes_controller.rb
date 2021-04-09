@@ -2,12 +2,14 @@ class IhomesController < ApplicationController
   def update
     @ihomes = Ihome.find(1)
     # @bbhomes = @bhomes.bbhomes
+    @msg = "アップデートが完了しました。"
     @ihomes.update(ihomes_params)
-    if @ihomes.save
-      redirect_to request.referer
-    else
-      render :new
-    end
+    
+    # if @ihomes.save
+    #   redirect_to request.referer
+    # else
+    #   render :new
+    # end
   end
 
   private 

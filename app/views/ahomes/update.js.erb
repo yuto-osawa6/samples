@@ -1,0 +1,15 @@
+$('#ahomes_area--box2-<%= @ahomes.id %>').html("<%= j(render partial: 'ahomes/ahomes', locals: {ahomes: @ahomes}) %>");
+
+$('#ahomes_area--box3-<%= @ahomes.id%>').hide();
+$('#cr-edit-button<%= @ahomes.id%>').hide;
+  $(".allcover__sheet").css("display","none");
+$('#alert-message').html('<div class="alert alert-success"><%= @msg %></div>')
+
+$("#alert-message").fadeIn().queue(function() {
+            setTimeout(function(){$("#alert-message").dequeue();
+            }, 5000);
+        });
+
+        $("#alert-message").fadeOut();
+
+

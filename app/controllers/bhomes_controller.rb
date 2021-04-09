@@ -6,14 +6,16 @@ class BhomesController < ApplicationController
   end
 
   def update
-    @bhomes = Bhome.find(1)
+    @msg = "アップデートが完了しました。"
+    @bhomes = Bhome.find(params[:id])
     # @bbhomes = @bhomes.bbhomes
     @bhomes.update(bhomes_params)
-    if @bhomes.save
-      redirect_to request.referer
-    else
-      render :new
-    end
+
+    # if @bhomes.save
+    #   redirect_to request.referer
+    # else
+    #   render :new
+    # end
   end
 
   private 

@@ -4,12 +4,13 @@ class EhomesController < ApplicationController
   def update
     @ehomes = Ehome.find(1)
     # @bbhomes = @bhomes.bbhomes
+    @msg = "アップデートが完了しました。"
     @ehomes.update(ehomes_params)
-    if @ehomes.save
-      redirect_to request.referer
-    else
-      render :new
-    end
+    # if @ehomes.save
+    #   redirect_to request.referer
+    # else
+    #   render :new
+    # end
   end
 
   private 

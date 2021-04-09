@@ -1,0 +1,18 @@
+
+.TopContents__container__message
+  = ahomes.title
+  %br
+  = ahomes.title2
+.TopContents__container__message2
+  = ahomes.discribe
+.TopContents__container__button
+  .TopContents__container__button__left
+    -# = link_to destroy_user_session_path, method: :delete , class:"homes__button__left" do
+    =link_to "#{ahomes.url_left}", class:"homes__button__left" do
+      = ahomes.button_left
+  
+
+
+  .TopContents__container__button__right
+    = link_to "#{ahomes.url_right}" , class:"homes__button__right" do
+      = ahomes.button_right

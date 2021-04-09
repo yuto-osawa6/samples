@@ -1,0 +1,26 @@
+.services.ShareContainer
+  .SectionBoxB
+    .services__container2.ShareRows
+      = ehomes.title
+    .services__container2.ShareRows2
+      = ehomes.discribe
+.SectionBoxC
+  .swiper-container2
+    / Additional required wrapper
+    .swiper-wrapper
+      / Slides
+      -ehomes.eehomes.each do |e|
+        .swiper-slide
+          .sectionboxE
+            .S2__image
+              - if e.image?
+                = image_tag(e.image.url)
+            .sectionboxEA
+              .S2__company
+                = e.title
+              .S2__discribe
+                = e.discribe
+      
+%script{:src => "https://unpkg.com/swiper/swiper-bundle.js"}
+%script{:src => "https://unpkg.com/swiper/swiper-bundle.min.js"}
+= javascript_pack_tag "swiper/swiper2.js"
