@@ -13,12 +13,12 @@
 #              password_confirmation: "6708atgmw",
 #              admin: true)
 
-             User.create!(
-              username: "atgmw78",
-              email: "atgmw628@gmail.com",
-              password:  "6708atgmw",
-              password_confirmation: "6708atgmw",
-              admin: true)
+            #  User.create!(
+            #   username: "atgmw78",
+            #   email: "atgmw628@gmail.com",
+            #   password:  "6708atgmw",
+            #   password_confirmation: "6708atgmw",
+            #   admin: true)
 
 
               Ahome.create!(
