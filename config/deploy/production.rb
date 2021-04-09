@@ -60,10 +60,10 @@
 #     # password: "please use keys"
 #   }
 
-server "54.150.26.15", user: "ec2-user", roles: %w{app db web}
+server "13.113.114.209", user: "ec2-user", roles: %w{app db web}
 
 set :ssh_options, {
-  keys: %w(~/.ssh/samplelp.pem),
+  keys: %w(~/.ssh/samples.pem),
   forward_agent: true,
   auth_methods: %w(publickey),
 }
