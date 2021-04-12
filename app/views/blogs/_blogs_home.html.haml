@@ -1,0 +1,39 @@
+.News__grid
+  .News__title
+    Our Blog
+  .News__discribe
+    日々の活動を記録しています。
+
+
+.News__grid2
+  .News__contents
+    -# .News__contents__lists__1
+    - blogsfs.each do |b|
+      .News__contents__lists__1
+        .armin__image
+          - if b.image?
+            = image_tag(b.image.url)               
+        .armin__title
+          = b.title
+        .armin__discribe
+          = b.discribe
+        .armin__days
+          = b.updated_at.strftime('%Y/%m/%d %H:%M:%S')
+  
+        .News__contents__list__no{id:"blogs_area--box3-#{b.id}"}
+          .aaa
+            .armin__image__blog
+              -# - if b.image?
+              -#   = image_tag(b.image.url)
+            .bbb
+              .armin__title__blog
+                = b.title
+              .armin__days__blog
+                = b.updated_at.strftime('%Y/%m/%d %H:%M:%S')
+              .armin__richcontents
+                = b.content
+            .blogscr-edit-button.aformd__edit__button{id: "blogscr-edit-button#{b.id}", :style => "display: none;"}
+              .aaaaa.blogscr-cancel-button{"data-cancel-idblogs" => "#{b.id}"}
+                = icon("far","times-circle")
+        
+        .News__contents__lists__cover{"data-b2blogs__id": "#{b.id}"}
