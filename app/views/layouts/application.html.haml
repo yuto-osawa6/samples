@@ -16,7 +16,8 @@
       .TopContents__navi
         .TopContents__navi__left
           - if @ahomes.logo?
-            = image_tag(@ahomes.logo.url)
+            = image_pack_tag "samplelogo.png"
+            -# = image_tag(@ahomes.logo.url)
         .TopContents__navi__right
           %ul
             - @ahomes.aahomes.each do |aa|
