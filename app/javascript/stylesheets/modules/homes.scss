@@ -24,7 +24,7 @@
   .ShareRows{
     line-height: 1.7;
     text-align: center;
-    margin: 10vh 10px 50px 10px;
+    margin: 15vh 10px 50px 10px;
     font-weight: bold;
     font-size: 2.0rem;
   }
@@ -32,7 +32,7 @@
   .ShareRows2{
     line-height: 1.7;
     text-align: center;
-    margin:50px 10px 50px 10px;
+    // margin:50px 10px 50px 10px;
   }
 
 
@@ -124,11 +124,13 @@
     // margin: 10vh;
   }
   .services{
+    height: 50vh;
     display: flex;
     justify-content: center;
   }
 
   .SectionBoxC{
+    height: 50vh;
     .swiper-container{
     height: 100%;
     }
@@ -156,6 +158,7 @@
       &__left{
         background-color: #000;
         margin: 80px;
+        overflow: scroll;
         &__title{
           margin: 10vh 10px 10px 10px;
           font-size: 2.0rem;
@@ -229,6 +232,7 @@
         background-color: #000;
         color: #fff;
           .About2__left__box{
+            overflow: scroll;
             margin:0px 80px;
 
             &__first__title2{
@@ -272,7 +276,7 @@
       grid-template-rows: 3fr 2fr;
 
       .sectionboxG__grid__up{
-        margin: 10vh 0px 0px;
+        margin: 15vh 0px 0px;
         flex-flow: column;
         display: flex;
         align-items: center;
@@ -302,8 +306,9 @@
 
   .price__type{
     position: absolute;
-    top: 45%;
+    top: 50%;
     display: flex;
+    height: 50vh;
 
 
     .price__patarnA0{
@@ -418,7 +423,7 @@
 
       box-sizing: border-box;
    
-      padding-top: 10vh;
+      padding-top: 20vh;
     
       
 
@@ -441,6 +446,7 @@
 
       }
       .News__grid2{
+            overflow: scroll;
 
         .News__contents{
         display: grid;
@@ -494,7 +500,7 @@
 
       box-sizing: border-box;
    
-      padding-top: 10vh;
+      padding-top: 20vh;
       color:#fff;
 
       .ContactUs__grid{
@@ -620,5 +626,18 @@
 
 
 
+//あとで消す
+  .footer__adress{
+    a{
+      text-decoration:none;
+      color:black;
+    }
+  }
+  .footer__copyright{
+    a{
+      color:#777;
+      text-decoration:none;
+    }
+  }
 
 }

@@ -114,6 +114,17 @@
   list-style: none;
   padding: 0;
   z-index: 1;
+  height:100%;
+  .swiper-wrapper{
+    height:100%;
+    .swiper-slide{
+      height:100%;
+      .sectionboxE{
+        height:100%;
+      }
+    }
+
+  }
 }
 .swiper-container3{
 margin-left: auto;
@@ -123,11 +134,12 @@ overflow: hidden;
 list-style: none;
 padding: 0;
 z-index: 1;
+height:100%;
 }
 
 .sectionboxE{
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
-  margin: 2vw;
+  margin: 2.5vh 2vw;
   // padding: 20px;
   display: flex;
   justify-content: center;
@@ -137,18 +149,20 @@ z-index: 1;
 
 
   .S2__image{
+    height: 25vh;
     // height: 100px;
     // width: 100px;
     img{
       width: 100%;
-      height: 15vw;
+      vertical-align: bottom;
+      height: 25vh;
       object-fit: cover;
     }
   }
 
   .sectionboxEA{
     overflow-y: scroll;
-    height: 13vw;
+        height: 20vh;
 
     .S2__company{
       margin: 10px;
@@ -165,4 +179,7 @@ z-index: 1;
     }
 
   }
+
+
 }
+

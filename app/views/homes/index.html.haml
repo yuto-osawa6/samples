@@ -52,11 +52,12 @@
     
     .footer__adress
       = link_to  new_user_session_path, method: :get do
-        住所が入ります。
+        Adress：
+        = @ahomes.adress
 
     .footer__copyright
       = link_to destroy_user_session_path, method: :delete do
-        copy 2020 MILKCANDY__ARGMW7
+        Copyright © 2021 MC.atgmw628
 
 
 
