@@ -10,5 +10,7 @@ class HomesController < ApplicationController
     # @blogs = Blog.new
     @blogsfs = Blog.all
 
+    @inquiry = Inquiry.new
+
   end
 end

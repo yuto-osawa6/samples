@@ -1,0 +1,32 @@
+= form_with model: @inquiry,url:inquiries_confirm_path do |f|
+  - if @inquiry.errors.present?
+    -# #error_explanation{style:"background-color: white;"}
+    -#   %h2{style:"color: red;"}
+    -#     -# = "Could not be saved"
+    -#     あああああああ
+    えらーーーーーーーーーーーーーーーーーーーーー
+    %ul#error_explanation
+      - @inquiry.errors.full_messages.each do |message|
+        %li 
+          = message
+      
+  .ahomes__form
+    .ahomes__title.aformd__title
+      .formtitles
+        企業名
+      = f.text_field :conpany, class: "b1homes__title__field aformd",autocomplete: "off",placeholder:"〇〇株式会社",id:"js-b1home-edit-1"
+    .ahomes__title.aformd__title
+      .formtitles
+        ご担当者様名（※必須）
+      = f.text_field :name, class: "b1homes__title__field aformd",autocomplete: "off",placeholder:"山田 太郎",id:"js-b1home-edit-1"
+    .ahomes__title2.aformd__title
+      .formtitles
+        E-mail(※必須)   
+      = f.email_field :email, class: "b1homes__title2__field aformd",autocomplete: "off",placeholder:"welcom@gmail.com",id:"js-b1home-edit-1"
+    .ahomes__title2.aformd__title
+      .formtitles
+        お問い合わせ内容
+      =f.text_area :message,class:"aformd"
+    
+  .ahomes__submit
+    = f.submit "確認画面へ",class:"aformd__submit"

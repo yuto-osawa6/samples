@@ -1,0 +1,99 @@
+.ContactUs__grid
+  .ContactUs__title
+    お気軽にご連絡下さい。
+  .ContactUs__discribe
+    御社のプロジェクト内容に適したクリエイターより、
+    通常3営業日以内にはご連絡させて頂きます。
+.ContactUs__grid2
+  -# =form_with model: @inquiry,url:inquiries_confirm_path do |f|
+  = form_with model: inquiry,url:inquiries_confirm_path do |f|
+    - if inquiry.errors.present?
+      -# #error_explanation{style:"background-color: white;"}
+      -#   %h2{style:"color: red;"}
+      -#     -# = "Could not be saved"
+      -#     あああああああ
+      
+      %ul#error_explanation
+        - if inquiry.errors.include?(:name)
+          %li.laramins
+            
+            = inquiry.errors[:name].first
+            
+        - if inquiry.errors.include?(:email)
+          %li.laramins
+            
+            = inquiry.errors[:email].first
+        
+        - if inquiry.errors.include?(:message)
+          %li.laramins
+            
+            = inquiry.errors[:message].first
+          
+
+    - if @thanks.present?
+    - else
+      
+      .ahomes__form
+        .ahomes__title.aformd__title
+          .formtitles
+            企業名
+          = f.text_field :conpany, class: "b1homes__title__field aformd",autocomplete: "off",placeholder:"〇〇株式会社",id:"js-b1home-edit-1"
+        .ahomes__title.aformd__title
+          .formtitles
+            ご担当者様名（※必須）
+          = f.text_field :name, class: "b1homes__title__field aformd",autocomplete: "off",placeholder:"山田 太郎",id:"js-b1home-edit-1"
+        .ahomes__title2.aformd__title
+          .formtitles
+            E-mail(※必須)   
+          = f.email_field :email, class: "b1homes__title2__field aformd",autocomplete: "off",placeholder:"welcom@gmail.com",id:"js-b1home-edit-1"
+        .ahomes__title2.aformd__title
+          .formtitles
+            お問い合わせ内容(※必須) 
+          =f.text_area :message,class:"aformd"
+        
+      .ahomes__submit
+        = f.submit "確認画面へ",class:"aformd__submit"
+  
+  - if @thanks.present?
+    .thanks__message
+      = form_with model: inquiry,url:inquiries_thanks_path do |f|
+        .ahomes__form
+          - if inquiry.conpany.present?
+            .ahomes__title.aformd__title
+              .formtitles
+                企業名：
+                = inquiry.conpany
+              = f.hidden_field :conpany, class: "b1homes__title__field aformd",autocomplete: "off",placeholder:"〇〇株式会社",id:"js-b1home-edit-1"
+          
+          .ahomes__title.aformd__title
+            .formtitles
+              ご担当者様名：
+              = inquiry.name
+            = f.hidden_field :name, class: "b1homes__title__field aformd",autocomplete: "off",placeholder:"山田 太郎",id:"js-b1home-edit-1"
+          .ahomes__title2.aformd__title
+            .formtitles
+              E-mail：
+              = inquiry.email  
+            = f.hidden_field :email, class: "b1homes__title2__field aformd",autocomplete: "off",placeholder:"welcom@gmail.com",id:"js-b1home-edit-1"
+          .ahomes__title2.aformd__title
+            .formtitles
+              お問い合わせ内容：
+              = inquiry.message
+            =f.hidden_field :message,class:"aformd"
+          
+          .confirm__agk
+            内容にお間違えはありませんか？
+            %br
+            確認できましたら、送信ボタンを押してください。
+          
+        .ahomes__submit
+          = f.submit "送信",class:"aformd__submit"
+      
+      = link_to inquiries_back_path(:inquiry=>{name:inquiry.name,conpany:inquiry.conpany,email:inquiry.email,message:inquiry.message}),remote: true,method: :post,class:"afghj" do
+        戻る
+      
+        
+      
+      
+
+    

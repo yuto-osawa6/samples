@@ -37,14 +37,14 @@
       = render partial: 'blogs/blogs_home', locals: {blogsfs: @blogsfs}
 
   .sectionboxCO#ag
-    .ContactUs
-      .ContactUs__grid
-        .ContactUs__title
-          お気軽にご連絡下さい。
-        .ContactUs__discribe
-          御社のプロジェクト内容に適したクリエイターより、
-          通常3営業日以内にはご連絡させて頂きます。
-      .ContactUs__grid2
+    .ContactUs#confirmhomes{style:"background-color: black;"}
+      = render partial: 'inquiries/confirm', locals: {inquiry: @inquiry}
+
+  
+    
+    
+
+
   
   %footer 
     .footer__logo
@@ -63,6 +63,9 @@
 
 
   .allcover__sheet
+
+  -# - if @thanks.present?
+  -#   .allcover__sheet2
 
 
 -# %script{:src => "https://unpkg.com/swiper/swiper-bundle.js"}

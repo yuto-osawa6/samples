@@ -15,6 +15,12 @@ Rails.application.routes.draw do
   :sessions => 'users/sessions'   
 } 
 
+# root  'inquiry#index'
+  # get   'inquiry'         => 'inquiry#index'     # 入力画面
+  post  'inquiries/confirm' => 'inquiries#confirm'   # 確認画面
+  post  'inquiries/back' => 'inquiries#back'   # 確認画面
+  post  'inquiries/thanks'  => 'inquiries#thanks'    # 送信完了画面
+
 # resources :users, :only => [:show]
 
 resource :ahomes, only:[:edit,:update]

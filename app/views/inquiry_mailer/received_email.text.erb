@@ -1,0 +1,12 @@
+Webサイトからお問い合わせがありました。
+
+--------------------------
+Name: <%= @inquiry.name %>
+Email: <%= @inquiry.email %>
+Message:
+<% if @inquiry.conpany.present?%>
+
+<%= @inquiry.conpany %>
+<% end%>
+<%= @inquiry.message %>
+--------------------------

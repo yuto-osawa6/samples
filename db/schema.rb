@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_09_143431) do
+ActiveRecord::Schema.define(version: 2021_04_12_093742) do
 
   create_table "aahomes", charset: "utf8mb4", force: :cascade do |t|
     t.string "menu"
@@ -175,6 +175,15 @@ ActiveRecord::Schema.define(version: 2021_04_09_143431) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "ihome_id"
     t.index ["ihome_id"], name: "index_iihomes_on_ihome_id"
+  end
+
+  create_table "inquiries", charset: "utf8mb4", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "conpany"
+    t.text "message"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
