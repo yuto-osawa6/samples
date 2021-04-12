@@ -24,7 +24,8 @@
                 = link_to "#{aa.link}" do
                   =aa.menu
       #header__down
-        = @ahomes.adress
+        = render partial: 'ahomes/header__down', locals: {ahomes: @ahomes}
+        
       #alert-message 
 
          

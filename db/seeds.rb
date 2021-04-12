@@ -7,18 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-# User.create!(
-#              email: "atgmw628@gmail.com",
-#              password:  "6708atgmw",
-#              password_confirmation: "6708atgmw",
-#              admin: true)
 
-            #  User.create!(
-            #   username: "atgmw78",
-            #   email: "atgmw628@gmail.com",
-            #   password:  "6708atgmw",
-            #   password_confirmation: "6708atgmw",
-            #   admin: true)
 
 
               Ahome.create!(
@@ -112,27 +101,34 @@
             [{
               menu:"SERVICE",
               ahome_id:1
+              link:"#aa"
             },{
               menu:"ABOUT",
               ahome_id:1
+              link:"#ab"
             },{
               menu:"PERFORMANCE",
               ahome_id:1
+              link:"#ac"
             },{
               menu:"MERIT",
               ahome_id:1
+              link:"#ad"
 
             },{
               menu:"PLAN",
               ahome_id:1
+              link:"#ae"
             },
             {
               menu:"BLOG",
               ahome_id:1
+              link:"#af"
             },
             {
               menu:"お問い合わせ",
               ahome_id:1
+              link:"#ag"
             }   
           
           ]
