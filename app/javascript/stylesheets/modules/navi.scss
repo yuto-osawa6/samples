@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     width: 100vw;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,1);
     position: fixed;
 
   &__left{
@@ -59,6 +59,7 @@
   //
 
   #header__down{
+    display: none;
     position: fixed;
     top: 10vh;
     color: black;
@@ -78,7 +79,7 @@
     display: none;
 
     position: fixed;
-    top: 14vh;
+    top: 10vh;
     color: black;
     z-index: 140;
     height: 4vh;
@@ -94,7 +95,7 @@
   .alert-success{
 
     position: fixed;
-    top: 14vh;
+    top: 10vh;
     color: black;
     z-index: 140;
     height: 4vh;
