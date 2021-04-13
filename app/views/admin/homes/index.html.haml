@@ -456,26 +456,53 @@
         新規作成
             
   .sectionboxCO#ag
-    .ContactUs
+    .ContactUs.admin__ContactUs
       .ContactUs__grid
-        .ContactUs__title
-          お気軽にご連絡下さい。
-        .ContactUs__discribe
-          御社のプロジェクト内容に適したクリエイターより、
-          通常3営業日以内にはご連絡させて頂きます。
-      .ContactUs__grid2
+        .ContactUs__title.admin__ContactUs__title
+          お問い合わせ履歴
+        .ContactUs__discribe.admin__log__discribation 
+          最新10件まで表示されます。
+      .ContactUs__grid2.admin__ContactUs__grid2
+        %table
+          %thead
+            %tr
+              %th.admin__confirm__lists__conpany.admin__confirm__lists
+                企業名
+            
+              %th.admin__confirm__lists__name.admin__confirm__lists
+                担当者様名
+            
+              %th.admin__confirm__lists__email.admin__confirm__lists
+                E-mail
+            
+              %th.admin__confirm__lists__message.admin__confirm__lists
+                お問い合わせ内容
+          
+          %tbody
+            - @inquiries.each do |i|
+              %tr
+                %th.admin__confirm__lists__conpany
+                  =i.conpany
+                %th.admin__confirm__lists__name
+                  =i.name
+                %th.admin__confirm__lists__email
+                  =i.email
+                %th.admin__confirm__lists__message
+                  =i.message
+          
   
   %footer 
     .footer__logo
       = image_pack_tag 'samplelogo.png'
     
     .footer__adress
-      -#  = link_to  new_user_registration_path, method: :get
-      -#     住所が入ります。
+      = link_to  new_user_session_path, method: :get do
+        Adress：
+        = @ahomes.adress
 
     .footer__copyright
-      -# = link_to destroy_user_session_path, method: :delete do
-      -#   copy 2020 MILKCANDY__ARGMW7
+      = link_to destroy_user_session_path, method: :delete do
+        Copyright © 2021 MC.atgmw628
 
 
 

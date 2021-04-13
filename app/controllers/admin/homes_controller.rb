@@ -14,6 +14,8 @@ class Admin::HomesController < ApplicationController
     @blogsfs = Blog.all
     # @bhomes = Bhome.find_by(id:1)
     # @bhomes.bbhomes
+    # @ahomes = 
+    @inquiries = Inquiry.all
 
 
   end
