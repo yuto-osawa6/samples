@@ -104,7 +104,7 @@
 // }
 
 .swiper-container2{
-  background-color: #222222;
+  // background-color: #222222;
   // height: 15vh;
   touch-action: pan-y;
   margin-left: auto;
@@ -139,6 +139,7 @@ height:100%;
 
 .sectionboxE{
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+  // box-shadow: 4.66px 6.428px 19.6px 0.4px;
   margin: 2.5vh 2vw;
   // padding: 20px;
   display: flex;
@@ -163,11 +164,15 @@ height:100%;
   .sectionboxEA{
     overflow-y: scroll;
         height: 20vh;
-
+        width: 80%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
     .S2__company{
+      text-align: left;
       margin: 10px;
-      font-size: 1.3rem;
-      font-weight: bold;
+      // font-size: 1.3rem;
+      // font-weight: bold;
 
     }
     .S2__discribe{

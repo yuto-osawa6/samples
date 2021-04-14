@@ -1,5 +1,5 @@
 // $(document).on('turbolinks:load', function(){
-// function(){
+// $(function(){
 
 const swiper = new Swiper('.swiper-container', {
   // Optional parameters
@@ -9,15 +9,15 @@ const swiper = new Swiper('.swiper-container', {
   centeredSlides : true,
 
   // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-		type: 'bullets',
-		clickable: true,
-		renderBullet: function (index, className) {
-			//中に数字を表示
-			return '<span class="' + className + '">' + (index + 1) + '</span>';
-		}
-  },
+  // pagination: {
+  //   el: '.swiper-pagination',
+	// 	type: 'bullets',
+	// 	clickable: true,
+	// 	renderBullet: function (index, className) {
+	// 		//中に数字を表示
+	// 		return '<span class="' + className + '">' + (index + 1) + '</span>';
+	// 	}
+  // },
 
   // Navigation arrows
   navigation: {
