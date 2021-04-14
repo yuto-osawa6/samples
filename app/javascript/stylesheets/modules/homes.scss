@@ -436,9 +436,9 @@
       
     .News{
       height: 100%;
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 4fr;
+      // display: grid;
+      // grid-template-columns: 1fr;
+      // grid-template-rows: 1fr 4fr;
 
       box-sizing: border-box;
    
@@ -469,7 +469,7 @@
 
         .News__contents{
           grid-gap: 10px;
-          margin: 10px;
+          margin:10px 10px 10vh 10px;
           display: grid;
           grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
           grid-auto-rows: 1fr;
