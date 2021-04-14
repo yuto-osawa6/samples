@@ -355,6 +355,36 @@ $(document).on("click", ".b2cr-cancel-button", function () {
 
 
 
+//cuhomes
+
+$(document).on("click",".TopContents__cuhomes__edit__button", function () {
+
+            
+  const commentIdb = $(this).data('cuhomes__id');     
+  const commentTextAreac = $('#cuhomes_area--box3-1'); 
+  const commentButtonc = $('#cucr-edit-button' + commentIdb);   
+
+  commentTextAreac.show();  
+  commentButtonc.show(); 
+
+  $(".allcover__sheet").css("display","block")
+
+
+});
+
+// cancel
+$(document).on("click", ".cucr-cancel-button", function () {
+  const commentIdb = $(this).data('cancel-idcu');
+  const commentTextAreac = $('#cuhomes_area--box3-1');
+  const commentButtonc = $('#cucr-edit-button' + commentIdb);
+  // const commentError = $('#js-comment-post-error-' + commentId);
+
+
+  commentTextAreac.hide();
+  commentButtonc.hide();
+  $(".allcover__sheet").css("display","none")
+});
+
 
 
 

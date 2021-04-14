@@ -1,4 +1,7 @@
-$('#bloghomes__rendering').html("<%= j(render partial: 'blogs/blogs', locals: {blogsfs: @blogsfs}) %>");
+$('#bloghomes__rendering').html("<%= j(render partial: 'blogs/blogs', locals: {blogsfs: @blogsfs,contacts: @contacts}) %>");
+$('#b1homes_area--box3-1').html("<%= j(render partial: 'blogs/admins_blogs', locals: {blogs: @blogs}) %>");
+
+
 
 $('#b1homes_area--box3-1').hide();
   $(".allcover__sheet").css("display","none");

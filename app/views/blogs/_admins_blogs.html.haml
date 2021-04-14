@@ -1,0 +1,30 @@
+.ahomes_secondary
+  blogの投稿
+
+=form_with model: blogs do |f|
+  .ahomes__form
+    .ahomes__title.aformd__title
+      .formtitles
+        タイトル
+      = f.text_field :title, class: "b1homes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-b1home-edit-1"
+    .ahomes__title2.aformd__title
+      .formtitles
+      詳細
+      
+      = f.text_field :discribe, class: "b1homes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-b1home-edit-1"
+
+    .blogs__image.aformd__title
+      .formtitles
+        画像
+      = f.file_field :image
+
+    .blogs__contents.aformd__title
+      .formtitles
+      =f.rich_text_area :content
+    
+  .ahomes__submit
+    = f.submit "投稿",class:"aformd__submit"
+
+.b1cr-edit-button.aformd__edit__button{id: "b1cr-edit-button1", :style => "display: none;"}
+  .aaaaa.b1cr-cancel-button{"data-cancel-idb1" => "1"}
+    = icon("far","times-circle")

@@ -1,4 +1,7 @@
 $('#bbc').html("<%= j(render partial: 'bhomes/bhomes', locals: {bhomes: @bhomes}) %>");
+$('#bhomes_area--box3-<%= @bhomes.id %>').html("<%= j(render partial: 'bhomes/admins_bhomes', locals: {bhomes: @bhomes}) %>");
+
+
 
 $('#bhomes_area--box3-<%= @bhomes.id %>').hide();
 $('#bcr-edit-button<%= @bhomes.id %>').hide;

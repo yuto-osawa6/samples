@@ -1,83 +1,10 @@
 .MainContents
   .TopContents
     .TopContents__container{id: "ahomes_area--box2-#{@ahomes.id}"}
-      = render partial: "ahomes/ahomes", locals: { ahomes: @ahomes }
-      
-       
-          
+      = render partial: "ahomes/ahomes", locals: { ahomes: @ahomes }          
 
     .TopContents__ahomes{id: "ahomes_area--box3-#{@ahomes.id}"}
-      .ahomes_secondary
-        FirstPageの編集
-      =form_with model:@ahomes, url: ahomes_path(id:@ahomes.id),method: :patch,remote:true do |f|
-        .ahomes__form
-          .ahomes__title.aformd__title
-            .formtitles
-              上段のタイトル
-            = f.text_field :title, class: "ahomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
-          .ahomes__title2.aformd__title
-            .formtitles
-              下段のタイトル
-            = f.text_field :title2, class: "ahomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
-          .ahomes__title2.aformd__title
-            .formtitles
-              詳細
-            = f.text_field :discribe, class: "ahomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
-
-          .ahomes__title2.aformd__title
-            .formtitles
-              左側のボタン名
-            = f.text_field :button_left, class: "ahomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
-          
-          .ahomes__title2.aformd__title
-            .formtitles
-              右側のボタン名
-            = f.text_field :button_right, class: "ahomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
-          
-          .ahomes__title2.aformd__title
-            .formtitles
-              ボタンに関連するリンク
-            左側
-            = f.collection_select(:url_left, @ahomes.aahomes, :link, :menu)
-
-            右側
-            = f.collection_select(:url_right, @ahomes.aahomes, :link, :menu)
-          
-          .ahomes__header__logo.aformd__title
-            .formtitles
-              ロゴ
-            = f.file_field :logo
-          
-          .ahomes__footer__adress.aformd__title
-            .formtitles
-              住所
-            = f.text_field :adress, class: "ahomes__title2__field aformd"
-          
-        .ahomes__header__menu
-          = f.fields_for :aahomes do |c|
-            -# = render "bbhomes_fields", f: c
-            -# - @bhomes.bbhomes.each do |d|
-            .form-group
-              .aformd__title
-                .formtitles
-                  = c.label :menu
-                  
-              
-                = c.text_field :menu, class: "ahomes__title2__field aformd"
-
-
-
-          .ahomes__submit
-            = f.submit "更新",class:"aformd__submit a1submits","data-submit-id" => "#{@ahomes.id}"
-
-      
-
-      .cr-edit-button.aformd__edit__button{id: "cr-edit-button#{@ahomes.id}", :style => "display: none;"}
-        .aaaaa.cr-cancel-button{"data-cancel-id" => "#{@ahomes.id}"}
-          =icon("far","times-circle")
-          
-
-
+      = render partial: "ahomes/admins_ahomes", locals: { ahomes: @ahomes }
     .TopContents__ahomes__edit
       .TopContents__ahomes__edit__button{"data-ahomes__id": "#{@ahomes.id}"}
         = icon("fas","edit")
@@ -90,52 +17,9 @@
   .SectionBoxA#aa
     #bbc
       = render partial: "bhomes/bhomes", locals: { bhomes: @bhomes }
-    
-
 
     .TopContents__ahomes{id: "bhomes_area--box3-#{@bhomes.id}"}
-      .ahomes_secondary
-        SecondPageの編集
-        
-        -# =form_with url: bhomes_path(@bhomes.id),method: :patch,remote:true do |f|
-        -# =form_with model:Bhome.find(1),remote:true do |f|
-      =form_with model: @bhomes,url:bhomes_path(id:@bhomes.id),method: :patch, remote:true do |f|
-        .ahomes__form
-          .ahomes__title.aformd__title
-            .formtitles
-              上段のタイトル
-            = f.text_field :title, class: "bhomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-ahome-edit-#{@bhomes.id}"
-          .ahomes__title2.aformd__title
-            .formtitles
-              下段のタイトル
-            = f.text_field :title2, class: "bhomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@bhomes.id}"
-          .ahomes__title2.aformd__title
-            .formtitles
-              詳細
-            
-            = f.text_field :discribe, class: "bhomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@bhomes.id}"
-
-          -# - @bhomes.bbhomes.each do |d|
-          = f.fields_for :bbhomes do |c|
-            -# = render "bbhomes_fields", f: c
-            -# - @bhomes.bbhomes.each do |d|
-            .form-group
-              .aformd__title
-                .formtitles
-                  = c.label :title
-                = c.text_field :title,class:"aformd"
-          -#     = c.label :discribe
-          -#     = c.text_field :discribe
-          
-          
-          
-        .ahomes__submit
-          = f.submit "更新",class:"aformd__submit"
-
-      .bcr-edit-button.aformd__edit__button{id: "bcr-edit-button#{@bhomes.id}", :style => "display: none;"}
-        .aaaaa.bcr-cancel-button{"data-cancel-idb" => "#{@bhomes.id}"}
-          =icon("far","times-circle")
-
+      = render partial: "bhomes/admins_bhomes", locals: { bhomes: @bhomes }
 
     .TopContents__bhomes__edit
       .TopContents__bhomes__edit__button{"data-bhomes__id": "#{@bhomes.id}"}
@@ -145,37 +29,9 @@
   .sectionBoxAA#ab
     .About#chomes__rendering
       = render partial: "chomes/chomes", locals: { chomes: @chomes }
-
-
       
     .TopContents__ahomes{id: "chomes_area--box3-#{@chomes.id}"}
-      .ahomes_secondary
-        thirdPageの編集
- 
-      =form_with model: @chomes,url:chomes_path,method: :patch, remote:true do |f|
-        .ahomes__form
-          .ahomes__title.aformd__title
-            .formtitles
-              上段のタイトル
-            = f.text_field :title, class: "chomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-chome-edit-#{@chomes.id}"
-          .ahomes__title2.aformd__title
-            .formtitles
-              下段のタイトル
-            = f.text_field :title2, class: "chomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-chome-edit-#{@chomes.id}"
-          .ahomes__title2.aformd__title
-            .formtitles
-              詳細        
-            = f.text_field :discribe, class: "chomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-chome-edit-#{@chomes.id}"
-          
-          
-          
-        .ahomes__submit
-          = f.submit "更新",class:"aformd__submit"
-
-      .ccr-edit-button.aformd__edit__button{id: "ccr-edit-button#{@chomes.id}", :style => "display: none;"}
-        .aaaaa.ccr-cancel-button{"data-cancel-idc" => "#{@chomes.id}"}
-          =icon("far","times-circle")
-
+      = render partial: "chomes/admins_chomes", locals: { chomes: @chomes }
 
     .TopContents__chomes__edit
       .TopContents__chomes__edit__button{"data-chomes__id": "#{@chomes.id}"}
@@ -188,38 +44,7 @@
       = render partial: "dhomes/dhomes", locals: { dhomes: @dhomes }
 
     .TopContents__ahomes{id: "dhomes_area--box3-#{@dhomes.id}"}
-      .ahomes_secondary
-        fourthPageの編集
- 
-      =form_with model: @dhomes,url:dhomes_path,method: :patch, remote:true do |f|
-        .ahomes__form
-          .ahomes__title.aformd__title
-            .formtitles
-              １つ目のタイトル
-            = f.text_field :title, class: "dhomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-dhome-edit-#{@dhomes.id}"
-          .ahomes__title2.aformd__title
-            .formtitles
-              詳細
-            
-            = f.text_field :discribe, class: "dhomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-dhome-edit-#{@dhomes.id}"
-          .ahomes__title.aformd__title
-            .formtitles
-              2つ目のタイトル
-            = f.text_field :title2, class: "dhomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-dhome-edit-#{@dhomes.id}"
-          .ahomes__title2.aformd__title
-            .formtitles
-              詳細
-            
-            = f.text_field :discribe, class: "dhomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-dhome-edit-#{@dhomes.id}"
-          
-          
-        .ahomes__submit
-          = f.submit "更新",class:"aformd__submit"
-
-      .dcr-edit-button.aformd__edit__button{id: "dcr-edit-button#{@dhomes.id}", :style => "display: none;"}
-        .aaaaa.dcr-cancel-button{"data-cancel-idd" => "#{@dhomes.id}"}
-          =icon("far","times-circle")
-
+      = render partial: "dhomes/admins_dhomes", locals: { dhomes: @dhomes }
 
 
     .TopContents__dhomes__edit
@@ -229,42 +54,10 @@
 
   .SectionBoxA#ac
     #ehomes__rendering
-      = render partial: "ehomes/ehomes", locals: { ehomes: @ehomes }
-    
-          
-          
+      = render partial: "ehomes/ehomes", locals: { ehomes: @ehomes } 
   
     .TopContents__ahomes{id: "ehomes_area--box3-#{@ehomes.id}"}
-      .ahomes_secondary
-        fourthPageの編集
- 
-      =form_with model: @ehomes,url:ehomes_path,method: :patch, remote:true do |f|
-        .ahomes__form
-          .ahomes__title.aformd__title
-            .formtitles
-              １つ目のタイトル
-            = f.text_field :title, class: "ehomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-ehome-edit-#{@ehomes.id}"
-          .ahomes__title2.aformd__title
-            .formtitles
-              詳細
-            
-            = f.text_field :discribe, class: "ehomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ehome-edit-#{@ehomes.id}"
-          
-        = f.fields_for :eehomes do |c|       
-          .form-group
-            = render 'eehome_fields', f: c
-        .links.nested-fields__button2
-          = link_to_add_association '追加する' ,f, :eehomes
-            
-          
-        .ahomes__submit
-          = f.submit "更新",class:"aformd__submit"
-
-      .ecr-edit-button.aformd__edit__button{id: "ecr-edit-button#{@ehomes.id}", :style => "display: none;"}
-        .aaaaa.ecr-cancel-button{"data-cancel-ide" => "#{@ehomes.id}"}
-          = icon("far","times-circle")
-
-
+      = render partial: "ehomes/admins_ehomes", locals: { ehomes: @ehomes } 
     .TopContents__ehomes__edit
       .TopContents__ehomes__edit__button{"data-ehomes__id": "#{@ehomes.id}"}
         = icon("fas","edit")
@@ -276,56 +69,10 @@
   
   .SectionBoxA#ad
     #fhomes__rendering
-      = render partial: 'fhomes/fhomes', locals: {fhomes: @fhomes}
-    
+      = render partial: 'fhomes/fhomes', locals: {fhomes: @fhomes} 
     
     .TopContents__ahomes{id: "fhomes_area--box3-#{@fhomes.id}"}
-      .ahomes_secondary
-        fourthPageの編集
- 
-      =form_with model: @fhomes,url:fhomes_path,method: :patch, remote:true do |f|
-        .ahomes__form
-          .ahomes__title.aformd__title
-            .formtitles
-              上段のタイトル
-            = f.text_field :title, class: "fhomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-fhome-edit-#{@fhomes.id}"
-          
-          .ahomes__title.aformd__title
-            .formtitles
-              下段のタイトル
-            = f.text_field :title2, class: "fhomes__title__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-fhome-edit-#{@fhomes.id}"
-          .ahomes__title2.aformd__title
-            .formtitles
-              詳細         
-            = f.text_field :discribe, class: "fhomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-fhome-edit-#{@fhomes.id}"
-          
-        = f.fields_for :ffhomes do |c|       
-          .form-group
-                
-            .aformd__title
-              .formtitles
-                = c.label :title
-
-              = c.text_field :title,class:"aformd"
-            
-            .aformd__title
-              .formtitles
-                = c.label :discribe
-
-              = c.text_field :discribe,class:"aformd"
-
-        -#     = render 'eehome_fields', f: c
-        -# .links
-        -#   = link_to_add_association 'add eehome', f, :eehomes
-            
-          
-        .ahomes__submit
-          = f.submit "更新",class:"aformd__submit"
-
-      .fcr-edit-button.aformd__edit__button{id: "fcr-edit-button#{@fhomes.id}", :style => "display: none;"}
-        .aaaaa.fcr-cancel-button{"data-cancel-idf" => "#{@fhomes.id}"}
-          = icon("far","times-circle")
-
+      = render partial: 'fhomes/admins_fhomes', locals: {fhomes: @fhomes}
 
     .TopContents__fhomes__edit
       .TopContents__fhomes__edit__button{"data-fhomes__id": "#{@fhomes.id}"}
@@ -334,76 +81,10 @@
   
   .sectionboxG#ae
     #ihomes__rendering
-      = render partial: 'ihomes/ihomes', locals: {ihomes: @ihomes}
-      
+      = render partial: 'ihomes/ihomes', locals: {ihomes: @ihomes}    
     
     .TopContents__ahomes{id: "ihomes_area--box3-#{@ihomes.id}"}
-      .ahomes_secondary
-        fourthPageの編集
- 
-      =form_with model: @ihomes,url:ihomes_path,method: :patch, remote:true do |f|
-        .ahomes__form
-          .ahomes__title.aformd__title
-            .formtitles
-              上段のタイトル
-            
-            = f.text_field :title, class: "ihomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-ihome-edit-#{@ihomes.id}"
-
-          .ahomes__title.aformd__title
-            .formtitles
-              中段のタイトル
-            = f.text_field :title2, class: "ihomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-ihome-edit-#{@ihomes.id}"
-          
-          .ahomes__title.aformd__title
-            .formtitles
-              下段のタイトル
-            = f.text_field :title3, class: "ihomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-ihome-edit-#{@ihomes.id}"
-          
-          
-          
-        = f.fields_for :iihomes do |c|       
-          .form-group
-            .aformd__title
-              .formtitles
-                = c.label :title
-              = c.text_field :title,class:"aformd"
-            
-            .aformd__title
-              .formtitles
-                = c.label :discribe
-              = c.text_field :discribe,class:"aformd"
-            .aformd__title
-              .formtitles
-                = c.label :colum1
-              = c.text_field :colum1,class:"aformd"
-            
-            .aformd__title
-              .formtitles
-                = c.label :colum2
-              = c.text_field :colum2,class:"aformd"
-            
-            .aformd__title
-              .formtitles
-                = c.label :colum3
-              = c.text_field :colum3,class:"aformd"
-            
-            .aformd__title
-              .formtitles
-                = c.label :praice
-              = c.text_field :price,class:"aformd"
-            
-            
-
-        
-            
-          
-        .ahomes__submit
-          = f.submit "更新",class:"aformd__submit"
-
-      .icr-edit-button.aformd__edit__button{id: "icr-edit-button#{@ihomes.id}", :style => "display: none;"}
-        .aaaaa.icr-cancel-button{"data-cancel-idi" => "#{@ihomes.id}"}
-          = icon("far","times-circle")
-
+      = render partial: 'ihomes/admins_ihomes', locals: {ihomes: @ihomes}
 
     .TopContents__ihomes__edit
       .TopContents__ihomes__edit__button{"data-ihomes__id": "#{@ihomes.id}"}
@@ -411,43 +92,17 @@
         編集する
 
   .sectionboxN#af
+    -# .News__grid#contact__rendering
+      -# = render partial: 'contacts/contact_homes', locals: {contacts: @contacts}
     .News#bloghomes__rendering
-      = render partial: 'blogs/blogs', locals: {blogsfs: @blogsfs}
+      = render partial: 'blogs/blogs', locals: {blogsfs: @blogsfs,contacts: @contacts}
+    
 
 
 
 
     .TopContents__ahomes{id: "b1homes_area--box3-1"}
-      .ahomes_secondary
-        blogの投稿
- 
-      =form_with model: @blogs do |f|
-        .ahomes__form
-          .ahomes__title.aformd__title
-            .formtitles
-              タイトル
-            = f.text_field :title, class: "b1homes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-b1home-edit-1"
-          .ahomes__title2.aformd__title
-            .formtitles
-            詳細
-            
-            = f.text_field :discribe, class: "b1homes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-b1home-edit-1"
-
-          .blogs__image.aformd__title
-            .formtitles
-              画像
-            = f.file_field :image
-
-          .blogs__contents.aformd__title
-            .formtitles
-            =f.rich_text_area :content
-          
-        .ahomes__submit
-          = f.submit "投稿",class:"aformd__submit"
-
-      .b1cr-edit-button.aformd__edit__button{id: "b1cr-edit-button1", :style => "display: none;"}
-        .aaaaa.b1cr-cancel-button{"data-cancel-idb1" => "1"}
-          = icon("far","times-circle")
+      = render partial: 'blogs/admins_blogs', locals: {blogs: @blogs}
 
 
     .TopContents__b1homes__edit
@@ -456,7 +111,7 @@
         新規作成
             
   .sectionboxCO#ag
-    .ContactUs.admin__ContactUs
+    .ContactUs.admin__ContactUs#renderfieldContactUs
       .ContactUs__grid
         .ContactUs__title.admin__ContactUs__title
           お問い合わせ履歴
@@ -489,6 +144,12 @@
                   =i.email
                 %th.admin__confirm__lists__message
                   =i.message
+    .TopContents__ahomes{id: "cuhomes_area--box3-1"}
+      = render partial: 'contacts/admins_contactus', locals: {cuhomes: @contacts}
+    .TopContents__cuhomes__edit
+      .TopContents__cuhomes__edit__button{"data-cuhomes__id": "#{@contacts.id}"}
+        = icon("fas","edit")
+        編集する
           
   
   %footer 

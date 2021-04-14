@@ -1,4 +1,6 @@
 $('#ehomes__rendering').html("<%= j(render partial: 'ehomes/ehomes', locals: {ehomes: @ehomes}) %>");
+$('#ehomes_area--box3-<%= @ehomes.id %>').html("<%= j(render partial: 'ehomes/admins_ehomes', locals: {ehomes: @ehomes}) %>");
+
 
 $('#ehomes_area--box3-<%= @ehomes.id %>').hide();
 $('#ecr-edit-button<%= @ehomes.id %>').hide;

@@ -1,0 +1,28 @@
+.ahomes_secondary
+  fourthPageの編集
+
+=form_with model: ehomes,url:ehomes_path,method: :patch, remote:true do |f|
+  .ahomes__form
+    .ahomes__title.aformd__title
+      .formtitles
+        １つ目のタイトル
+      = f.text_field :title, class: "ehomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-ehome-edit-#{ehomes.id}"
+    .ahomes__title2.aformd__title
+      .formtitles
+        詳細
+      
+      = f.text_field :discribe, class: "ehomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ehome-edit-#{ehomes.id}"
+    
+  = f.fields_for :eehomes do |c|       
+    .form-group
+      = render 'eehome_fields', f: c
+  .links.nested-fields__button2
+    = link_to_add_association '追加する' ,f, :eehomes
+      
+    
+  .ahomes__submit
+    = f.submit "更新",class:"aformd__submit"
+
+.ecr-edit-button.aformd__edit__button{id: "ecr-edit-button#{ehomes.id}", :style => "display: none;"}
+  .aaaaa.ecr-cancel-button{"data-cancel-ide" => "#{ehomes.id}"}
+    = icon("far","times-circle")

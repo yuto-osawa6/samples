@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_12_093742) do
+ActiveRecord::Schema.define(version: 2021_04_14_091715) do
 
   create_table "aahomes", charset: "utf8mb4", force: :cascade do |t|
     t.string "menu"
@@ -102,6 +102,15 @@ ActiveRecord::Schema.define(version: 2021_04_12_093742) do
     t.string "title"
     t.string "title2"
     t.text "discribe"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "contacts", charset: "utf8mb4", force: :cascade do |t|
+    t.string "btitle"
+    t.string "bdiscribe"
+    t.string "cutile"
+    t.string "cuiscribe"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

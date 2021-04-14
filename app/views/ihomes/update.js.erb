@@ -1,4 +1,6 @@
 $('#ihomes__rendering').html("<%= j(render partial: 'ihomes/ihomes', locals: {ihomes: @ihomes}) %>");
+$('#ihomes_area--box3-<%= @ihomes.id %>').html("<%= j(render partial: 'ihomes/admins_ihomes', locals: {ihomes: @ihomes}) %>");
+
 
 $('#ihomes_area--box3-<%= @ihomes.id %>').hide();
 $('#icr-edit-button<%= @ihomes.id %>').hide;

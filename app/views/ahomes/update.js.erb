@@ -1,4 +1,6 @@
 $('#ahomes_area--box2-<%= @ahomes.id %>').html("<%= j(render partial: 'ahomes/ahomes', locals: {ahomes: @ahomes}) %>");
+$('#ahomes_area--box3-<%= @ahomes.id %>').html("<%= j(render partial: 'ahomes/admins_ahomes', locals: {ahomes: @ahomes}) %>");
+
 $('#header__down').html("<%= j(render partial: 'ahomes/header__down', locals: {ahomes: @ahomes}) %>");
 
 $('#ahomes_area--box3-<%= @ahomes.id%>').hide();

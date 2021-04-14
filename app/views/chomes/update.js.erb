@@ -1,4 +1,6 @@
 $('#chomes__rendering').html("<%= j(render partial: 'chomes/chomes', locals: {chomes: @chomes}) %>");
+$('#chomes_area--box3-<%= @chomes.id %>').html("<%= j(render partial: 'chomes/admins_chomes', locals: {chomes: @chomes}) %>");
+
 
 $('#chomes_area--box3-<%= @chomes.id %>').hide();
 $('#ccr-edit-button<%= @chomes.id %>').hide;

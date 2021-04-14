@@ -1,0 +1,26 @@
+.ahomes_secondary
+  thirdPageの編集
+
+=form_with model: chomes,url:chomes_path,method: :patch, remote:true do |f|
+  .ahomes__form
+    .ahomes__title.aformd__title
+      .formtitles
+        上段のタイトル
+      = f.text_field :title, class: "chomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-chome-edit-#{chomes.id}"
+    .ahomes__title2.aformd__title
+      .formtitles
+        下段のタイトル
+      = f.text_field :title2, class: "chomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-chome-edit-#{chomes.id}"
+    .ahomes__title2.aformd__title
+      .formtitles
+        詳細        
+      = f.text_field :discribe, class: "chomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-chome-edit-#{chomes.id}"
+    
+    
+    
+  .ahomes__submit
+    = f.submit "更新",class:"aformd__submit"
+
+.ccr-edit-button.aformd__edit__button{id: "ccr-edit-button#{chomes.id}", :style => "display: none;"}
+  .aaaaa.ccr-cancel-button{"data-cancel-idc" => "#{chomes.id}"}
+    =icon("far","times-circle")

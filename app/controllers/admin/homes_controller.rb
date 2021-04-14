@@ -12,6 +12,7 @@ class Admin::HomesController < ApplicationController
     @ihomes = Ihome.find(1)
     @blogs = Blog.new
     @blogsfs = Blog.all
+    @contacts = Contact.find(1)
     # @bhomes = Bhome.find_by(id:1)
     # @bhomes.bbhomes
     # @ahomes = 

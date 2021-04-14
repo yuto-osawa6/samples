@@ -1,0 +1,30 @@
+.ahomes_secondary
+  thirdPageの編集
+
+=form_with model: cuhomes,url:contacts_path,method: :patch, remote:true do |f|
+  .ahomes__form
+    .ahomes__title.aformd__title
+      .formtitles
+        ブログのタイトル
+      = f.text_field :btitle, class: "cuhomes__title__field aformd",autocomplete: "off",placeholder:"",id:"js-chome-edit-#{cuhomes.id}"
+    .ahomes__title2.aformd__title
+      .formtitles
+        詳細
+      = f.text_field :bdiscribe, class: "cuhomes__title2__field aformd",autocomplete: "off",placeholder:"",id:"js-chome-edit-#{cuhomes.id}"
+    .ahomes__title.aformd__title
+      .formtitles
+        お問い合わせのタイトル
+      = f.text_field :cutile, class: "cuhomes__title__field aformd",autocomplete: "off",placeholder:"",id:"js-chome-edit-#{cuhomes.id}"
+    .ahomes__title2.aformd__title
+      .formtitles
+        詳細
+      = f.text_field :cuiscribe, class: "cuhomes__title2__field aformd",autocomplete: "off",placeholder:"",id:"js-chome-edit-#{cuhomes.id}"
+    
+    
+    
+  .ahomes__submit
+    = f.submit "更新",class:"aformd__submit"
+
+.cucr-edit-button.aformd__edit__button{id: "cucr-edit-button#{cuhomes.id}", :style => "display: none;"}
+  .aaaaa.cucr-cancel-button{"data-cancel-idcu" => "#{cuhomes.id}"}
+    =icon("far","times-circle")

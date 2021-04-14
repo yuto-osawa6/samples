@@ -1,9 +1,11 @@
 class BlogsController < ApplicationController
   before_action :if_not_admin
   def create
+    @blogs = Blog.new
     @msg = "アップデートが完了しました。"
     @blog = Blog.new(blogs_params)
     @blogsfs = Blog.all
+    @contacts = Contact.find(1)
     @blog.save
     #   redirect_to request.referer, notice: '作成されました'
     # else
@@ -17,6 +19,7 @@ class BlogsController < ApplicationController
     @msg = "アップデートが完了しました。"
     @blogs.update(blogs_params)
     @blogsfs = Blog.all
+    @contacts = Contact.find(1)
     # if @blogs.save
     #   redirect_to request.referer
     # else
@@ -26,6 +29,7 @@ class BlogsController < ApplicationController
 
   def destroy
     @blogsfs = Blog.all
+    @contacts = Contact.find(1)
     @blogs = Blog.find(params[:blog_id])
     @msg = "アップデートが完了しました。"
     @blogs.destroy

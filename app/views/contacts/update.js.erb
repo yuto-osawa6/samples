@@ -1,0 +1,15 @@
+$('#contact__rendering').html("<%= j(render partial: 'contacts/contact_homes', locals: {contacts: @contacts}) %>");
+$('#cuhomes_area--box3-1').html("<%= j(render partial: 'contacts/admins_contactus', locals: {cuhomes: @contacts}) %>");
+
+
+$('#cuhomes_area--box3-1').hide();
+$('#cucr-edit-button<%= @contacts.id %>').hide;
+  $(".allcover__sheet").css("display","none");
+$('#alert-message').html('<div class="alert alert-success"><%= @msg %></div>')
+
+$("#alert-message").fadeIn().queue(function() {
+            setTimeout(function(){$("#alert-message").dequeue();
+            }, 5000);
+        });
+
+        $("#alert-message").fadeOut();

@@ -39,6 +39,9 @@ resource :fhomes, only:[:update]
 
 resource :ihomes, only:[:update]
 
+resource :contacts, only:[:update]
+
+
 resource :blogs, only:[:new,:create,:destroy,:update]
 
 # devise_scope :user do

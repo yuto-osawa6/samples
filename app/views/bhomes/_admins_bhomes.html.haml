@@ -1,0 +1,41 @@
+.ahomes_secondary
+  SecondPageの編集
+  
+  -# =form_with url: bhomes_path(@bhomes.id),method: :patch,remote:true do |f|
+  -# =form_with model:Bhome.find(1),remote:true do |f|
+=form_with model: bhomes,url:bhomes_path(id:bhomes.id),method: :patch, remote:true do |f|
+  .ahomes__form
+    .ahomes__title.aformd__title
+      .formtitles
+        上段のタイトル
+      = f.text_field :title, class: "bhomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-ahome-edit-#{bhomes.id}"
+    .ahomes__title2.aformd__title
+      .formtitles
+        下段のタイトル
+      = f.text_field :title2, class: "bhomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{bhomes.id}"
+    .ahomes__title2.aformd__title
+      .formtitles
+        詳細
+      
+      = f.text_field :discribe, class: "bhomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{bhomes.id}"
+
+    -# - @bhomes.bbhomes.each do |d|
+    = f.fields_for :bbhomes do |c|
+      -# = render "bbhomes_fields", f: c
+      -# - @bhomes.bbhomes.each do |d|
+      .form-group
+        .aformd__title
+          .formtitles
+            = c.label :title
+          = c.text_field :title,class:"aformd"
+    -#     = c.label :discribe
+    -#     = c.text_field :discribe
+    
+    
+    
+  .ahomes__submit
+    = f.submit "更新",class:"aformd__submit"
+
+.bcr-edit-button.aformd__edit__button{id: "bcr-edit-button#{bhomes.id}", :style => "display: none;"}
+  .aaaaa.bcr-cancel-button{"data-cancel-idb" => "#{bhomes.id}"}
+    =icon("far","times-circle")

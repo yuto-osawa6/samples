@@ -1,0 +1,65 @@
+.ahomes_secondary
+  fourthPageの編集
+
+=form_with model: ihomes,url:ihomes_path,method: :patch, remote:true do |f|
+  .ahomes__form
+    .ahomes__title.aformd__title
+      .formtitles
+        上段のタイトル
+      
+      = f.text_field :title, class: "ihomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-ihome-edit-#{ihomes.id}"
+
+    .ahomes__title.aformd__title
+      .formtitles
+        中段のタイトル
+      = f.text_field :title2, class: "ihomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-ihome-edit-#{ihomes.id}"
+    
+    .ahomes__title.aformd__title
+      .formtitles
+        下段のタイトル
+      = f.text_field :title3, class: "ihomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-ihome-edit-#{ihomes.id}"
+    
+    
+    
+  = f.fields_for :iihomes do |c|       
+    .form-group
+      .aformd__title
+        .formtitles
+          = c.label :title
+        = c.text_field :title,class:"aformd"
+      
+      .aformd__title
+        .formtitles
+          = c.label :discribe
+        = c.text_field :discribe,class:"aformd"
+      .aformd__title
+        .formtitles
+          = c.label :colum1
+        = c.text_field :colum1,class:"aformd"
+      
+      .aformd__title
+        .formtitles
+          = c.label :colum2
+        = c.text_field :colum2,class:"aformd"
+      
+      .aformd__title
+        .formtitles
+          = c.label :colum3
+        = c.text_field :colum3,class:"aformd"
+      
+      .aformd__title
+        .formtitles
+          = c.label :praice
+        = c.text_field :price,class:"aformd"
+      
+      
+
+  
+      
+    
+  .ahomes__submit
+    = f.submit "更新",class:"aformd__submit"
+
+.icr-edit-button.aformd__edit__button{id: "icr-edit-button#{ihomes.id}", :style => "display: none;"}
+  .aaaaa.icr-cancel-button{"data-cancel-idi" => "#{ihomes.id}"}
+    = icon("far","times-circle")

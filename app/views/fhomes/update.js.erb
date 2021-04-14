@@ -1,4 +1,6 @@
 $('#fhomes__rendering').html("<%= j(render partial: 'fhomes/fhomes', locals: {fhomes: @fhomes}) %>");
+$('#fhomes_area--box3-<%= @fhomes.id %>').html("<%= j(render partial: 'fhomes/fhomes', locals: {fhomes: @fhomes}) %>");
+
 
 $('#fhomes_area--box3-<%= @fhomes.id %>').hide();
 $('#fcr-edit-button<%= @fhomes.id %>').hide;

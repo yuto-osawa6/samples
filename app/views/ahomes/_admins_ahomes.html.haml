@@ -1,0 +1,75 @@
+.ahomes_secondary
+  FirstPageの編集
+=form_with model:ahomes, url: ahomes_path(id:ahomes.id),method: :patch,remote:true do |f|
+  .ahomes__form
+    .ahomes__title.aformd__title
+      .formtitles
+        上段のタイトル
+      = f.text_field :title, class: "ahomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
+    .ahomes__title2.aformd__title
+      .formtitles
+        下段のタイトル
+      = f.text_field :title2, class: "ahomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
+    .ahomes__title2.aformd__title
+      .formtitles
+        詳細
+      = f.text_field :discribe, class: "ahomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
+
+    .ahomes__title2.aformd__title
+      .formtitles
+        左側のボタン名
+      = f.text_field :button_left, class: "ahomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
+    
+    .ahomes__title2.aformd__title
+      .formtitles
+        右側のボタン名
+      = f.text_field :button_right, class: "ahomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-ahome-edit-#{@ahomes.id}"
+    
+    .ahomes__title2.aformd__title
+      .formtitles
+        ボタンに関連するリンク
+      左側
+      = f.collection_select(:url_left, ahomes.aahomes, :link, :menu)
+
+      右側
+      = f.collection_select(:url_right, ahomes.aahomes, :link, :menu)
+    
+    .ahomes__header__logo.aformd__title
+      .formtitles
+        ロゴ
+      = f.file_field :logo
+    
+    .ahomes__footer__adress.aformd__title
+      .formtitles
+        住所
+      = f.text_field :adress, class: "ahomes__title2__field aformd"
+    
+  .ahomes__header__menu
+    = f.fields_for :aahomes do |c|
+      -# = render "bbhomes_fields", f: c
+      -# - @bhomes.bbhomes.each do |d|
+      .form-group
+        .aformd__title
+          .formtitles
+            = c.label :menu
+            
+        
+          = c.text_field :menu, class: "ahomes__title2__field aformd"
+
+
+
+    .ahomes__submit
+      = f.submit "更新",class:"aformd__submit a1submits","data-submit-id" => "#{ahomes.id}"
+
+
+
+.cr-edit-button.aformd__edit__button{id: "cr-edit-button#{ahomes.id}", :style => "display: none;"}
+  .aaaaa.cr-cancel-button{"data-cancel-id" => "#{ahomes.id}"}
+    =icon("far","times-circle")
+    
+
+
+-# .TopContents__ahomes__edit
+-# .TopContents__ahomes__edit__button{"data-ahomes__id": "#{ahomes.id}"}
+-#   = icon("fas","edit")
+-#   編集する

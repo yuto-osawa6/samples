@@ -1,0 +1,31 @@
+.ahomes_secondary
+  fourthPageの編集
+
+=form_with model: dhomes,url:dhomes_path,method: :patch, remote:true do |f|
+  .ahomes__form
+    .ahomes__title.aformd__title
+      .formtitles
+        １つ目のタイトル
+      = f.text_field :title, class: "dhomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-dhome-edit-#{dhomes.id}"
+    .ahomes__title2.aformd__title
+      .formtitles
+        詳細
+      
+      = f.text_field :discribe, class: "dhomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-dhome-edit-#{dhomes.id}"
+    .ahomes__title.aformd__title
+      .formtitles
+        2つ目のタイトル
+      = f.text_field :title2, class: "dhomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-dhome-edit-#{dhomes.id}"
+    .ahomes__title2.aformd__title
+      .formtitles
+        詳細
+      
+      = f.text_field :discribe, class: "dhomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-dhome-edit-#{dhomes.id}"
+    
+    
+  .ahomes__submit
+    = f.submit "更新",class:"aformd__submit"
+
+.dcr-edit-button.aformd__edit__button{id: "dcr-edit-button#{dhomes.id}", :style => "display: none;"}
+  .aaaaa.dcr-cancel-button{"data-cancel-idd" => "#{dhomes.id}"}
+    =icon("far","times-circle")
