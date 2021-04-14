@@ -1,18 +1,18 @@
 //ページナビゲーション
-.swiper-pagination-bullet {
-  width: 30px !important;
-  height: 30px !important;
-  opacity: 0.5 ;
-  color: #000000;
-  font-size: 1.3rem;
-  line-height: 30px;
-  background: #ffffff !important;
-}
-/* 現在のスライドのスタイル */
-.swiper-pagination-bullet-active {
-	background-color: #000000;
-	color: "#111111";
-}
+// .swiper-pagination-bullet {
+//   width: 30px !important;
+//   height: 30px !important;
+//   opacity: 0.5 ;
+//   color: #000000;
+//   font-size: 1.3rem;
+//   line-height: 30px;
+//   background: #ffffff !important;
+// }
+// /* 現在のスライドのスタイル */
+// .swiper-pagination-bullet-active {
+// 	background-color: #000000;
+// 	color: "#111111";
+// }
 
 //
 .swiper-slide{
@@ -188,3 +188,108 @@ height:100%;
 
 }
 
+.swiper-container-free-mode > .swiper-wrapper{-webkit-transition-timing-function:linear!important; -o-transition-timing-function:linear!important; transition-timing-function:linear!important; }
+
+
+
+// .swiper-button-prev,
+// .swiper-button-next {
+// 	// background-image: none; /* デフォルトのボタン画像を消す */
+// 	width: 28px; /* ボタンの幅 */
+// 	height: 86px; /* ボタンの高さ */
+// 	margin-top: -43px; /* 縦中央配置用：ボタンの高さの半分のネガティブマージン（top:50%がすでに設定されている） */
+// }
+
+// .swiper-button-prev:before {
+// 	font-family: "fontAwesome";
+// 	content: "\f100"; /* angle-double-leftのUnicode */
+// 	font-size: 48px;
+// 	color: #ffefd5;
+// }
+// /* 次ページボタンのスタイル */
+// .swiper-button-next:before {
+// 	font-family: "fontAwesome";
+// 	content: "\f101"; /* angle-double-rightのUnicode */
+// 	font-size: 48px;
+// 	color: #ffefd5;
+// }
+
+// .swiper-button-next::after, 
+// .swiper-button-prev::after{
+//     font-family: "Font Awesome 5 Free"!important;
+//     font-weight: 900;
+//     font-size: 5.6em;
+// }
+// .swiper-button-next::after{
+//     content: "\f0a9"!important;
+// }
+
+// .swiper-button-prev::after{
+//     content: "\f0a8"!important;
+// }
+
+// .swiper-button-prev,
+// .swiper-button-next {
+// 	background-image: none; /* デフォルトのボタン画像を消す */
+// 	width: 28px; /* ボタンの幅 */
+// 	height: 86px; /* ボタンの高さ */
+// 	margin-top: -43px; /* 縦中央配置用：ボタンの高さの半分のネガティブマージン（top:50%がすでに設定されている） */
+// }
+// /* 前ページボタンのスタイル */
+// .swiper-button-prev:before {
+// 	font-family: "Font Awesome 5 Free";
+	
+// 	content: "\f101"; /* angle-double-leftのUnicode */
+// 	font-size: 48px;
+// 	color: #ffefd5;
+// }
+// /* 次ページボタンのスタイル */
+// .swiper-button-next:before {
+// 	font-family: "Font Awesome 5 Free";
+// 	content: "\f101"; /* angle-double-rightのUnicode */
+// 	font-size: 48px;
+// 	color: #ffefd5;
+// }
+
+
+
+
+// .swiper-button-next::after,
+// .swiper-button-prev::after {
+//   font-family: "Font Awesome 5 Free";
+//   font-weight: bold;
+// }
+// .swiper-button-next::after {
+//   content: "\f0a9";
+// }
+.swiper-button-prev,
+.swiper-button-next {
+	background-image: none; /* デフォルトのボタン画像を消す */
+	width: 28px; /* ボタンの幅 */
+	height: 86px; /* ボタンの高さ */
+	margin-top: -43px;
+  
+   /* 縦中央配置用：ボタンの高さの半分のネガティブマージン（top:50%がすでに設定されている） */
+}
+.swiper-button-prev{
+  left: 30px !important;
+}
+.swiper-button-next{
+  right: 30px !important;
+}
+/* 前ページボタンのスタイル */
+.swiper-button-prev:before {
+	font-family: "Font Awesome 5 Free";
+	content: "\f100"; /* angle-double-leftのUnicode */
+  font-weight: 900;
+	font-size: 48px;
+	color: #222222;
+}
+/* 次ページボタンのスタイル */
+.swiper-button-next:before {
+	font-family: "Font Awesome 5 Free";
+	content: "\f101"; /* angle-double-rightのUnicode */
+	font-size: 48px;
+  font-weight: 900;
+	color: #222222;
+}
