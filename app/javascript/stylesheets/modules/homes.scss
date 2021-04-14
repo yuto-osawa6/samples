@@ -6,7 +6,7 @@
   
   .ShareContainer{
     // height: 100vh;
-    margin-top: 10vh;
+    // margin-top: 10vh;
     flex-flow: column;
     display: flex;
     align-items: center;
@@ -120,7 +120,7 @@
     display: grid;
     grid-template-columns: 100vw;
     grid-auto-rows: 1fr 1fr;
-    height:100vh ;
+    min-height:100vh ;
   .SectionBoxB{
     // margin: 10vh;
   }
@@ -134,6 +134,7 @@
     justify-content: center;
     align-items: center;
     flex-flow: column;
+    margin-top: 10vh;
   }
   #ehomes__rendering{
     display: flex;
@@ -715,4 +716,8 @@ table tr:nth-child(odd){
   width: 50%;
   text-align: left;
   overflow: scroll;
+}
+
+.emghj{
+  margin-top: 10vh;
 }
