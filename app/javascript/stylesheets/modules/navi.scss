@@ -1,4 +1,5 @@
 .TopContents__navi{
+    height: 10vh;
     z-index: 115;
     display: flex;
     justify-content: space-between;
@@ -20,8 +21,9 @@
   }
 
   &__right{
+    
 
-    ul{
+    .right_1000__up{
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -30,6 +32,10 @@
       height: 10vh;
       color: #fff;
 
+      @include mq-down(lg) {
+        display: none;
+      }
+
       li{
         a{
           text-decoration: none;
@@ -37,7 +43,101 @@
         }
       }
     }
+    .TopContents__navi__smafo{
+      @include mq-up(lg) {
+        display: none;
+      }
+      .TopContents__navi__smafo__icon{
+        display: none;
+        height: 10vh;
+        width: 10vh;
+        // display: flex;
+        justify-content: center;
+        color: wheat;
+        align-items: center;
+        .fa-align-justify{
+          width: 5vh;
+          height: 5vh;
+          color: slategray;
+        }
+
+      }
+
+      .TopContents__navi__smafo__icon2{
+        display: none;
+        height: 10vh;
+        width: 10vh;
+        // display: flex;
+        justify-content: center;
+        color: wheat;
+        align-items: center;
+        #align-justigy-icon2{
+          width: 5vh;
+          height: 5vh;
+          color: slategray;
+        }
+
+      }
+
+      .mytoggle{
+        display: flex!important;
+      }
+
+      // ul{
+      //   width: 100vw;
+      //   position: fixed;
+      //   // display:none;
+      //   @include mq-up(lg) {
+      //     display: none;
+      //   }
+        
+
+      // }
+    }
   }
+  .right_1000__down{
+    display: none;
+    height: 90vh;
+    margin-top: 10vh;
+    width: 100vw;
+    position: fixed;
+    // display:none;
+    @include mq-up(lg) {
+      display: none;
+    }
+
+    #right__lists__navi__0,#right__lists__navi__2,#right__lists__navi__4,#right__lists__navi__6{
+      text-align: left;
+      padding: 20px;
+      font-size: 1.3rem;
+      background: rgba(51,51,51,0.7);
+      // background-color: #333;
+
+      a{
+        display: block;
+        text-decoration: none;
+        color:#fff;
+      }
+    }
+    #right__lists__navi__1,#right__lists__navi__3,#right__lists__navi__5{
+      text-align: left;
+      padding: 20px;
+      font-size: 1.3rem;
+      background: rgba(34,34,34,0.7);
+      // background-color: #222;
+
+      a{
+        display: block;
+        color:#fff;
+        text-decoration: none;
+      }
+
+    }
+
+  }
+
+
+
 }
 
 .Scrollebutton

@@ -2,7 +2,7 @@ const swiper = new Swiper('.swiper-container3', {
   // Optional parameters
   direction: 'horizontal',
   loop: true,
-  slidesPerView: 1.5,
+  slidesPerView: 1,
   centeredSlides : true,
   simulateTouch:false,
 
@@ -22,6 +22,10 @@ const swiper = new Swiper('.swiper-container3', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
+  767: {
+    slidesPerView: 1.5,
+    spaceBetween: 0
+  }
 
   // And if we need scrollbar
   // scrollbar: {

@@ -2,6 +2,7 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0", name: "viewport"}
     %title Samples
     = csrf_meta_tags
     = csp_meta_tag
@@ -19,11 +20,24 @@
             = image_pack_tag "samplelogo.png"
             -# = image_tag(@ahomes.logo.url)
         .TopContents__navi__right
-          %ul
+          %ul.right_1000__up
             - @ahomes.aahomes.each do |aa|
               %li
                 = link_to "#{aa.link}" do
                   =aa.menu
+          .TopContents__navi__smafo
+            .TopContents__navi__smafo__icon.mytoggle
+              = icon("fas","align-justify",id:"align-justigy-icon")
+            .TopContents__navi__smafo__icon2
+              = icon("fas","times",id:"align-justigy-icon2")
+        %ul.right_1000__down
+          - @ahomes.aahomes.each_with_index do |aa,i|
+            %li{id:"right__lists__navi__#{i}"}
+              = link_to "#{aa.link}" do
+                =aa.menu
+              
+
+
       #header__down
         = render partial: 'ahomes/header__down', locals: {ahomes: @ahomes}
         

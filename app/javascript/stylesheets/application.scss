@@ -13,7 +13,7 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 
 @import '~trix/dist/trix';
 
-
+@import "modules/media.scss";
 @import "modules/homes.scss";
 @import "modules/reset.scss";
 @import "modules/navi.scss";
