@@ -6,7 +6,8 @@
   .TopContents
     .TopContents__container{id: "ahomes_area--box2-#{@ahomes.id}"}
       = render partial: "ahomes/ahomes", locals: { ahomes: @ahomes }
-
+    .viemp4 
+      = video_tag "/assets/videos/Camera - 26531.mp4", playsinline: true,poster:"/assets/videos/alex-kotliarskyi-QBpZGqEMsKg-unsplash1.jpg", autoplay: true, loop: true, muted: true, width: "320", height: "240", class: "index-video"
   .SectionBoxA#aa  
     #bbc
       = render partial: "bhomes/bhomes", locals: { bhomes: @bhomes }
