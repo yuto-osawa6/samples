@@ -4,7 +4,7 @@ const swiper2 = new Swiper('.swiper-container2', {
   direction: 'horizontal',
   loop: true,
   freeMode: true,
-  slidesPerView: 1,
+  slidesPerView: 6,
   centeredSlides : true,
   allowTouchMove: false, // スワイプ操作をできないようにする
   // effect: 'slide',    //切り替わるときのアニメーション
@@ -14,16 +14,41 @@ const swiper2 = new Swiper('.swiper-container2', {
         disableOnInteraction: false
       },
       breakpoints: {
-        999: {
+        1800:{
+          slidesPerView: 5,
+          spaceBetween: 0
+        },
+        1600: {
+          slidesPerView: 4.5,
+          spaceBetween: 0
+        },
+        1400: {
           slidesPerView: 4,
           spaceBetween: 0
         },
-        767: {
+        1200:{
+          slidesPerView: 3.5,
+          spaceBetween: 0
+        },
+        999: {
           slidesPerView: 3,
           spaceBetween: 0
         },
-        399: {
+        767: {
+          slidesPerView: 2.5,
+          spaceBetween: 0
+        },
+        580: {
           slidesPerView: 2,
+          spaceBetween: 0
+        },
+
+        399: {
+          slidesPerView: 1.5,
+          spaceBetween: 0
+        },
+        200: {
+          slidesPerView: 1,
           spaceBetween: 0
         }
       }
