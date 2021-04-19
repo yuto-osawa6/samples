@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     width: 100vw;
-    background-color: rgba(0,0,0,1);
+    // background-color: rgba(0,0,0,1);
     position: fixed;
 
   &__left{
@@ -60,6 +60,31 @@
           opacity: 0.9;
         }
         a:hover:after {
+          
+          opacity: 1;
+          top: 100%;
+          height: 2px;
+        }
+        .active__navi{
+          text-decoration: none;
+          // color:#fff;
+          position: relative;
+        }
+
+        .active__navi:after{
+          width: 100%;
+          height: 0;
+          background: #000;
+          content: '';
+          position: absolute;
+          top: 75%;
+          left: 0;
+          opacity: 0;
+          transition: all 0.3s ease-out;
+          margin: auto;
+          margin-top: 10px;
+        }
+        .active__navi:hover:after {
           
           opacity: 1;
           top: 100%;
