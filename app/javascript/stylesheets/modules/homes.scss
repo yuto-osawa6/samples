@@ -316,7 +316,7 @@
         }
 
         &__title{
-
+          font-weight: bold;
           @include mq-up(lg){
             margin: 10vh 10px 10px 10px;
           font-size: 2.0rem;
@@ -403,9 +403,9 @@
           background-size: cover;
 
           @include mq-down(lg){
-            width: 50vw;
-            height: 50vw;
-            border-radius: 50%;
+            // width: 50vw;
+            // height: 50vw;
+            // border-radius: 50%;
           }
 
         }
@@ -503,9 +503,9 @@
             background-size: cover;
             
             @include mq-down(lg){
-              width: 50vw;
-              height: 50vw;
-              border-radius: 50%;
+              // width: 50vw;
+              // height: 50vw;
+              // border-radius: 50%;
             }
 
           }
