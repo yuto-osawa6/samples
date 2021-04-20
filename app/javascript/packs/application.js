@@ -10,6 +10,10 @@ require("@rails/activestorage").start()
 require("channels")
 
 require('jquery')
+require("gsap")
+
+require("../javascripts/gasp.js")
+
 
 // require ('swiper/swiper-bundle.js')
 // // require ('swiper/swiper-bundle.min.js')
@@ -53,6 +57,7 @@ import '../stylesheets/application.scss'
 require("trix")
 require("@rails/actiontext")
 
+require('../javascripts/hover.js')
 
 // require ('swiper/swiper-bundle.js')
 // require ('swiper/swiper-bundle.min.js')

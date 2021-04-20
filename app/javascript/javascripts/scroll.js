@@ -57,8 +57,8 @@ $(document).on('turbolinks:load', function(){
 
 
   $(window).scroll(function () {
-    console.log(ahomes)
-    console.log($(this).scrollTop());
+    // console.log(ahomes)
+    // console.log($(this).scrollTop());
     // 画面をトップから100px以上スクロールした時
     if ($(this).scrollTop() >= ahomes && $(this).scrollTop() < bhomes) {
       // ヘッダーのbackground-colorを白に変更し、boxshadowをつける

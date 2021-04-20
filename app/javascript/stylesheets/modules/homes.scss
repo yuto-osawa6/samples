@@ -947,19 +947,27 @@
   }
 
   .sectionboxCO{
-    height: 100vh;
+    // height: 100vh;
     position: relative;
     
     .ContactUs{
       height: 100%;
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 4fr;
+      // display: grid;
+      // grid-template-columns: 1fr;
+      // grid-template-rows: 1fr 4fr;
 
       box-sizing: border-box;
-   
-      padding-top: 20vh;
+      padding-bottom: 10vh;
+      padding-top: 15vh;
       color:#fff;
+      @include mq-down(md){
+        
+        
+      }
+      @include mq-down(sm){
+        
+      }
+
 
       .ContactUs__grid{
         padding: 20px;

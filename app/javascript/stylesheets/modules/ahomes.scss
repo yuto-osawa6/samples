@@ -69,7 +69,8 @@
 
       .armin__days__blog{
         text-align: right;
-        padding: 10px;
+        // padding: 10px;
+        margin-right: 25px;
       }
       .armin__richcontents{
         padding:10px;
@@ -78,6 +79,12 @@
     }
   }
 
+}
+.fa-times-circle{
+  cursor: pointer;
+  width: 30px!important;
+  height: 30px;
+  
 }
 .News__contents__lists__1{
   position: relative;
@@ -89,6 +96,15 @@
     top: 0;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
     // box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 10%);
+    cursor: pointer;
+}
+
+.News__contents__lists__1:hover{
+  // box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+  // // transform: translateY(-10px);
+  // // transition-duration: 0.5s;
+  opacity: 0.6;
+  // transition-duration: 0.3s;
 }
 
 //共通

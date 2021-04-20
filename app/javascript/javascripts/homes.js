@@ -389,44 +389,6 @@ $(document).on("click", ".cucr-cancel-button", function () {
 
 
 
-// allcover__sheet
-
-// $('.TopContents__ahomes__edit__button').click(function() { 
-       
-//   if ($(this).hasClass('selected2')) {
-//     // メニュー非表示
-//     $(this).removeClass('selected2').next('.f3iali').slideUp('fast');
-//   } else {
-//     // 表示しているメニューを閉じる
-//     // $('.f3ia').removeClass('selected2');
-//     // $('.f3iali').hide();
-
-//     // メニュー表示
-//     $(this).addClass('selected2').next('.f3iali').slideDown('fast');
-//     $(".kddy-p").css("display","block")
-
-//   }    
-// });
-
-// $('.f3ia,.f3iali').hover(function(){
-//     over_flg = true;
-//   }, function(){
-//     over_flg = false;
-//   });  
-  
-//   // メニュー領域外をクリックしたらメニューを閉じる
-//   $('.kddy-p').click(function() {
-//     if (over_flg == false) {
-//       $('.f3ia').removeClass('selected2');
-//       $('.f3iali').slideUp('fast');
-//       $(".kddy-p").css("display","none")
-//     }
-
-
-
-
-//   });
-
 
 
 })
