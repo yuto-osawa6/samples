@@ -10,3 +10,24 @@
 // #bhomes_area--box2bb{
 //   opacity: 1;
 // }
+.About__right{
+
+  overflow: hidden;
+}
+
+#elicse2{
+  overflow: hidden;
+}
+
+#elicse4{
+  overflow: hidden;
+}
+
+//video
+
+video{
+  @include mq-down(md){
+    display: none;
+  }
+
+}

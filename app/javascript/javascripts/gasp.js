@@ -114,13 +114,13 @@ $(document).on('turbolinks:load', function() {
   });
 
   //fhomes
-  gsap.from('.SectionBoxB', { // .box => アニメーションさせる要素
+  gsap.from('#serlechs', { // .box => アニメーションさせる要素
     opacity:0,
     // x:400,
     delay: 3.0,
     duration: 2.5, // アニメーションの内容
     scrollTrigger: {
-      trigger: '.SectionBoxB', // トリガーとなる要素（アニメーションの開始、終了の位置決定に使用する）
+      trigger: '#serlechs', // トリガーとなる要素（アニメーションの開始、終了の位置決定に使用する）
       // start: 'center center', // アニメーションの開始位置の指定
     }
     
@@ -183,7 +183,8 @@ $(document).on('turbolinks:load', function() {
 
   gsap.from('.News__contents__lists__1', { // .box => アニメーションさせる要素
     // opacity:0,
-    y:200,
+    // y:200,
+    opacity:0,
     delay: 3.0,
     duration: 2.5, // アニメーションの内容
     scrollTrigger: {
@@ -192,7 +193,30 @@ $(document).on('turbolinks:load', function() {
     },
     stagger: {
       from: "start", //左側から
-      amount: 1.8 // 0.8秒おきに
+      amount: 2 // 0.8秒おきに
+    }
+    
+  });
+
+  gsap.from('#serlechs1', { // .box => アニメーションさせる要素
+    opacity:0,
+    y:10,
+    delay: 3.0,
+    duration: 2.5, // アニメーションの内容
+    scrollTrigger: {
+      trigger: '#serlechs1', // トリガーとなる要素（アニメーションの開始、終了の位置決定に使用する）
+      // start: 'center center', // アニメーションの開始位置の指定
+    }
+    
+  });
+  gsap.from('#serlechs2', { // .box => アニメーションさせる要素
+    opacity:0,
+    y:10,
+    delay: 3.0,
+    duration: 2.5, // アニメーションの内容
+    scrollTrigger: {
+      trigger: '#serlechs2', // トリガーとなる要素（アニメーションの開始、終了の位置決定に使用する）
+      // start: 'center center', // アニメーションの開始位置の指定
     }
     
   });

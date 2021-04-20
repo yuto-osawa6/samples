@@ -64,7 +64,7 @@ $(document).on('turbolinks:load', function(){
       // ヘッダーのbackground-colorを白に変更し、boxshadowをつける
       $('.right_1000__up li').find('a').css('color','black');
       $('.right_1000__up li').find('a').addClass('active__navi')
-      $('#align-justigy-icon').css('color','black');
+      // $('#align-justigy-icon').css('color','black');
      
       // CONTACTとお問い合わせの文字色のみ、白のまま固定
       // navContact.find('a, span').css('color', '#fff');
@@ -77,7 +77,7 @@ $(document).on('turbolinks:load', function(){
     } else if($(this).scrollTop() >= bhomes && $(this).scrollTop() < chomes ) {
       $('.right_1000__up li').find('a').css('color','#fff');
       $('.right_1000__up li').find('a').removeClass('active__navi')
-      $('#align-justigy-icon').css('color','#fff');
+      // $('#align-justigy-icon').css('color','#fff');
       
       // 画面がトップから100px以下の時は、上記と逆の処理を行う
       // header.css({'background':'rgba(250, 250, 250, 0)', 'box-shadow':'none'});
@@ -93,20 +93,20 @@ $(document).on('turbolinks:load', function(){
         }else if($(this).scrollTop() < ahomes) {
           $('.right_1000__up li').find('a').css('color','#fff');
           $('.right_1000__up li').find('a').removeClass('active__navi')
-          $('#align-justigy-icon').css('color','#fff');
+          // $('#align-justigy-icon').css('color','#fff');
 
 
 
         }else if($(this).scrollTop() >= chomes && $(this).scrollTop() < ghomes) {
           $('.right_1000__up li').find('a').css('color','black');
           $('.right_1000__up li').find('a').addClass('active__navi')
-          $('#align-justigy-icon').css('color','black');
+          // $('#align-justigy-icon').css('color','black');
 
 
         }else if($(this).scrollTop() >= ghomes) {
           $('.right_1000__up li').find('a').css('color','#fff');
           $('.right_1000__up li').find('a').removeClass('active__navi')
-          $('#align-justigy-icon').css('color','#fff');
+          // $('#align-justigy-icon').css('color','#fff');
 
 
         }
