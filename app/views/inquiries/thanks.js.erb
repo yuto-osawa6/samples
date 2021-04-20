@@ -1,0 +1,10 @@
+$('#confirmhomes').html("<%= j(render partial: 'inquiries/confirm', locals: {inquiry: @inquiry1}) %>");
+
+$('#alert-message').html('<div class="alert alert-success"><%= @msg %></div>')
+
+$("#alert-message").fadeIn().queue(function() {
+            setTimeout(function(){$("#alert-message").dequeue();
+            }, 5000);
+        });
+
+        $("#alert-message").fadeOut();
