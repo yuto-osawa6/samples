@@ -9,7 +9,7 @@
   .News__contents
     -# .News__contents__lists__1
     - blogsfs.each do |b|
-      .News__contents__lists__1
+      .News__contents__lists__1{class:"blogslie#{b.id}"}
         .armin__image
           - if b.image?
             = image_tag(b.image.url)               
@@ -76,6 +76,8 @@
           .b2cr-edit-button.aformd__edit__button{id: "b2cr-edit-button#{b.id}", :style => "display: none;"}
             .aaaaa.b2cr-cancel-button{"data-cancel-idb2" => "#{b.id}"}
               = icon("far", "times-circle")
+    
+
               
         
           
@@ -85,3 +87,5 @@
 
         
         .News__contents__lists__cover{"data-b2blogs__id": "#{b.id}"}
+
+    = paginate blogsfs ,params: {controller: 'admin/homes', action: 'index'}, remote: true

@@ -74,3 +74,5 @@ gem 'mini_magick'
 gem "fog-aws", "~> 3.8"
 
 gem 'aws-sdk-s3', require: false
+
+gem 'kaminari'

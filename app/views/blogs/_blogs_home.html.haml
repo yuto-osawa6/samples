@@ -38,3 +38,5 @@
                 = icon("far","times-circle")
         
         .News__contents__lists__cover{"data-b2blogs__id": "#{b.id}"}
+    
+  = paginate blogsfs,params: {controller: 'homes', action: 'index'}, remote: true

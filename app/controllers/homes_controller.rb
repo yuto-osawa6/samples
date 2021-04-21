@@ -10,7 +10,15 @@ class HomesController < ApplicationController
     # @blogs = Blog.new
     @blogsfs = Blog.all
 
+    @blogsfs = Blog.all.page(params[:page]).per(4)
+
+
     @inquiry = Inquiry.new
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
 
   end
 end

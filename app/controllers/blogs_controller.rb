@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
     @blogs = Blog.new
     @msg = "アップデートが完了しました。"
     @blog = Blog.new(blogs_params)
-    @blogsfs = Blog.all
+    @blogsfs = Blog.all.page(params[:page]).per(4)
     @contacts = Contact.find(1)
     @blog.save
     #   redirect_to request.referer, notice: '作成されました'
@@ -18,7 +18,7 @@ class BlogsController < ApplicationController
     # @bbhomes = @bhomes.bbhomes
     @msg = "アップデートが完了しました。"
     @blogs.update(blogs_params)
-    @blogsfs = Blog.all
+    @blogsfs = Blog.all.page(params[:page]).per(4)
     @contacts = Contact.find(1)
     # if @blogs.save
     #   redirect_to request.referer
@@ -28,7 +28,7 @@ class BlogsController < ApplicationController
   end
 
   def destroy
-    @blogsfs = Blog.all
+    @blogsfs = Blog.all.page(params[:page]).per(4)
     @contacts = Contact.find(1)
     @blogs = Blog.find(params[:blog_id])
     @msg = "アップデートが完了しました。"
