@@ -11,15 +11,16 @@
     - blogsfs.each do |b|
       -# .News__contents__lists__1{class:"blogslie#{b.id}"}
       .News__contents__lists__1{class:"blogslie#{b.id}"}
-        .armin__image
-          - if b.image?
-            = image_tag(b.image.url)               
-        .armin__title
-          = b.title
-        .armin__discribe
-          = b.discribe
-        .armin__days
-          = b.updated_at.strftime('%Y/%m/%d %H:%M:%S')
+        .arminarlert
+          .armin__image
+            - if b.image?
+              = image_tag(b.image.url)               
+          .armin__title
+            = b.title
+          .armin__discribe
+            = b.discribe
+          .armin__days
+            = b.updated_at.strftime('%Y/%m/%d %H:%M:%S')
   
         .News__contents__list__no{id:"blogs_area--box3-#{b.id}"}
           .aaa
