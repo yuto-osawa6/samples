@@ -17,7 +17,7 @@ class Admin::HomesController < ApplicationController
     # @bhomes = Bhome.find_by(id:1)
     # @bhomes.bbhomes
     # @ahomes = 
-    @inquiries = Inquiry.all
+    @inquiries = Inquiry.all.page(params[:confirm_page]).per(10)
 
 
   end

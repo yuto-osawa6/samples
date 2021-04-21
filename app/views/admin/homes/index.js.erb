@@ -1,1 +1,2 @@
 $('#bloghomes__rendering').html("<%= j(render partial: 'blogs/blogs', locals: {blogsfs: @blogsfs,contacts: @contacts}) %>");
+$('#renderfieldContactUs').html("<%= j(render partial: 'admin_content', locals: {inquiries: @inquiries}) %>");
