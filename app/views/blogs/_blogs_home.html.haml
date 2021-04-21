@@ -10,8 +10,8 @@
     -# .News__contents__lists__1
     - blogsfs.each do |b|
       -# .News__contents__lists__1{class:"blogslie#{b.id}"}
-      .News__contents__lists__1{class:"blogslie#{b.id}"}
-        .arminarlert
+      .News__contents__lists__1
+        .arminarlert{class:"blogslie#{b.id}","data-b2blogs__id": "#{b.id}"}
           .armin__image
             - if b.image?
               = image_tag(b.image.url)               
@@ -38,6 +38,6 @@
               .aaaaa.blogscr-cancel-button{"data-cancel-idblogs" => "#{b.id}"}
                 = icon("far","times-circle")
         
-        .News__contents__lists__cover{"data-b2blogs__id": "#{b.id}"}
+        -# .News__contents__lists__cover{"data-b2blogs__id": "#{b.id}"}
     
   = paginate blogsfs,params: {controller: 'homes', action: 'index'}, remote: true
