@@ -285,7 +285,7 @@ $(document).on("click", ".b1cr-cancel-button", function () {
 
 //b2blogshow
 
-$(document).on("click",".News__contents__lists__cover", function () {
+$(document).on("click",".arminarlert", function () {
 
             
   const commentIdi = $(this).data('b2blogs__id');     

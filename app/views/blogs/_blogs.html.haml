@@ -10,7 +10,7 @@
     -# .News__contents__lists__1
     - blogsfs.each do |b|
       .News__contents__lists__1{class:"blogslie#{b.id}"}
-        .arminarlert
+        .arminarlert{class:"blogslie#{b.id}","data-b2blogs__id": "#{b.id}"}
           .armin__image
             - if b.image?
               = image_tag(b.image.url)               

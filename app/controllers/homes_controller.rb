@@ -10,7 +10,7 @@ class HomesController < ApplicationController
     # @blogs = Blog.new
     @blogsfs = Blog.all
 
-    @blogsfs = Blog.all.page(params[:page]).per(4)
+    @blogsfs = Blog.all.page(params[:page]).per(10)
 
 
     @inquiry = Inquiry.new
