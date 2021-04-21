@@ -1,4 +1,6 @@
 $(document).on('turbolinks:load', function(){
+// $(function(){
+
 //hover
 // $('.News__contents__lists__1').hover(
 //   function() {
