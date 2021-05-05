@@ -1,0 +1,15 @@
+$('#interviews__rendering').html("<%= j(render partial: 'interviews/interviews', locals: {interviews: @inters}) %>");
+$('#fhomes_area--box3-<%= @homes.id %>').html("<%= j(render partial: 'interviews/admin_interviews', locals: {homes: @homes}) %>");
+
+
+$('#fhomes_area--box3-<%= @homes.id %>').hide();
+$('#fcr-edit-button<%= @homes.id %>').hide;
+  $(".allcover__sheet").css("display","none");
+$('#alert-message').html('<div class="alert alert-success"><%= @msg %></div>')
+
+$("#alert-message").fadeIn().queue(function() {
+            setTimeout(function(){$("#alert-message").dequeue();
+            }, 5000);
+        });
+
+        $("#alert-message").fadeOut();

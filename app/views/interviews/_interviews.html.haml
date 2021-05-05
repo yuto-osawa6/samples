@@ -1,7 +1,7 @@
 .interviews
   .interviews__question
     %ul
-      - @interviews.each_with_index do |interview,i|
+      - interviews.each_with_index do |interview,i|
        
 
         %li{"data-question-id" => "#{interview.id}"}

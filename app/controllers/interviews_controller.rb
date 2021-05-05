@@ -3,7 +3,7 @@ class InterviewsController < ApplicationController
   
   
   def update
-    @dhomes = Dhome.find(1)
+    @interviews = Interview.all
     @msg = "アップデートが完了しました。"
     # @bbhomes = @bhomes.bbhomes
     @dhomes.update(dhomes_params)
@@ -27,7 +27,7 @@ class InterviewsController < ApplicationController
 
 
       # params.require(:bhome).permit(:title,:title2,:discribe,bbhomes_attributes:[:title,:discribe,:id])
-      params.require(:dhome).permit(:title,:title2,:discribe,:discribe2)
+      params.require(:interview).permit(:question,:answer)
 
 
   

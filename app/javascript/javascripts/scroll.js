@@ -147,7 +147,7 @@ $(document).on('turbolinks:load', function(){
 
     }
     else{
-      console.log(ahomes)
+      // console.log(ahomes)
 
     
 
@@ -207,9 +207,10 @@ $(document).on('turbolinks:load', function(){
 
 
 
-  $(function(){
-
-    $(".interviews__question ul li").on("click", function() {
+  // $(function(){
+    $(document).on('click', '.interviews__question ul li', function(){
+    // $(".interviews__question ul li").on("click", function() {
+      console.log(1)
       const commentId = $(this).data('question-id'); 
       if (!$("#slidetoggle_menu"+commentId).hasClass("minny")){
         $(".minny").slideToggle(); 
@@ -230,7 +231,7 @@ $(document).on('turbolinks:load', function(){
         // $("#slidetoggle_menu").toggleClass("active"); 
     });
 
-});
+// });
 
 
 

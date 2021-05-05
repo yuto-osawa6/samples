@@ -1,0 +1,43 @@
+.ahomes_secondary
+  fourthPageの編集
+
+=form_with model: homes,url:admin_home_path(homes.id),method: :patch, remote:true do |f|
+  = f.fields_for :interviews do |c| 
+    .ahomes__form
+      .ahomes__title.aformd__title
+        .formtitles
+          質問
+        = c.text_field :question, class: "fhomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-fhome-edit-#{homes.id}"
+      
+      .ahomes__title.aformd__title
+        .formtitles
+          答え
+        = c.text_field :answer, class: "fhomes__title__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-fhome-edit-#{homes.id}"
+    .kuuhu{style:"margin-bottom:60px;"}
+  -#   .ahomes__title2.aformd__title
+  -#     .formtitles
+  -#       詳細         
+  -#     = f.text_field :discribe, class: "fhomes__title2__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-fhome-edit-#{fhomes.id}"
+    
+  -# = f.fields_for :ffhomes do |c|       
+  -#   .form-group
+          
+  -#     .aformd__title
+  -#       .formtitles
+  -#         = c.label :title
+
+  -#       = c.text_field :title,class:"aformd"
+      
+  -#     .aformd__title
+  -#       .formtitles
+  -#         = c.label :discribe
+
+  -#       = c.text_field :discribe,class:"aformd"
+      
+    
+  .ahomes__submit
+    = f.submit "更新",class:"aformd__submit"
+
+.fcr-edit-button.aformd__edit__button{id: "fcr-edit-button#{homes.id}", :style => "display: none;"}
+  .aaaaa.fcr-cancel-button{"data-cancel-idf" => "#{homes.id}"}
+    = icon("far","times-circle")

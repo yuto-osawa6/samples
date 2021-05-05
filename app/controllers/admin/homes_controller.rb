@@ -17,8 +17,21 @@ class Admin::HomesController < ApplicationController
     # @bhomes = Bhome.find_by(id:1)
     # @bhomes.bbhomes
     # @ahomes = 
+    @interviews = Interview.all
     @inquiries = Inquiry.all.page(params[:confirm_page]).per(10)
 
+    @homes = Home.find(1)
+
+
+  end
+
+  def update
+    @inters = Interview.all
+    @homes = Home.find(1)
+    # @bbhomes = @bhomes.bbhomes
+    @msg = "アップデートが完了しました。"
+    @homes.update(fhomes_params)
+    
 
   end
 
@@ -31,7 +44,9 @@ class Admin::HomesController < ApplicationController
     end
   end
 
-  def set_homes
-    # @homes = Homes.find(params[:id])
+  def fhomes_params 
+    # params.require(:bhome).permit(:title,:title2,:discribe,bbhomes_attributes:[:title,:discribe,:id])
+    params.require(:home).permit(interviews_attributes:[:question,:answer,:id])
+
   end
 end

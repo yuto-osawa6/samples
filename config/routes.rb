@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root to: 'homes#index'
   resources :homes, only:[:index]
     namespace :admin do
-      resources :homes, only: [:index, :new, :create, :show,  :edit, :destroy]
+      resources :homes, only: [:index, :new, :create, :show,  :edit, :update, :destroy]
   end
 
 
@@ -40,6 +40,8 @@ resource :fhomes, only:[:update]
 resource :ihomes, only:[:update]
 
 resource :contacts, only:[:update]
+
+resource :interviews, only:[:update]
 
 
 resource :blogs, only:[:new,:create,:destroy,:update]
