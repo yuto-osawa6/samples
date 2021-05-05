@@ -15,6 +15,8 @@ class HomesController < ApplicationController
 
     @inquiry = Inquiry.new
 
+    @interviews = Interview.all
+
     respond_to do |format|
       format.html
       format.js

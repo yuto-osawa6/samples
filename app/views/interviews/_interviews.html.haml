@@ -1,0 +1,20 @@
+.interviews
+  .interviews__question
+    %ul
+      - @interviews.each_with_index do |interview,i|
+       
+
+        %li{"data-question-id" => "#{interview.id}"}
+         
+          .interviews__question__rows
+            Q
+            =":"
+            = interview.question 
+            =icon("fas","plus")
+          .interviews__question__answers{id:"slidetoggle_menu#{interview.id}"}
+            = interview.answer
+        
+      
+
+      
+

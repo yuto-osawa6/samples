@@ -17,14 +17,30 @@
       .TopContents__navi
         .TopContents__navi__left
           - if @ahomes.logo?
-            = image_pack_tag "samplelogo.png"
-            -# = image_tag(@ahomes.logo.url)
+            .image__logo
+              = image_pack_tag "S__329588743.png"
+              -# = image_tag(@ahomes.logo.url)
+            .image__logo2
+              = image_pack_tag "S__330563589.png"
         .TopContents__navi__right
           %ul.right_1000__up
-            - @ahomes.aahomes.each do |aa|
+            - @ahomes.aahomes.each_with_index do |aa,i|
               %li
                 = link_to "#{aa.link}" do
-                  =aa.menu
+                  =aa.mainmenu
+                  %br
+                  .aahomes__menus{id:"mainmemus__#{i}"}
+                    =aa.menu
+              - break if i== 5
+          .right_1000__up2
+            =link_to @ahomes.aahomes.find(7).link do
+              = @ahomes.aahomes.find(7).mainmenu
+              %br
+              .aahomes__menus__contactus
+                = @ahomes.aahomes.find(7).menu
+                    
+             
+                    
           .TopContents__navi__smafo
             .TopContents__navi__smafo__icon.mytoggle
               = icon("fas","align-justify",id:"align-justigy-icon")

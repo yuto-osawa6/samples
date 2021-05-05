@@ -1,6 +1,13 @@
 $(document).on('turbolinks:load', function(){
+  // $(function(){
   $(document).on('click','a[href^="#a"]', function (){
+
+
     // e.preventdefault()
+
+    
+    // $('.interviews__question__answers').css('display','none')
+
     var adjust = 0;
     var speed = 400;
     var href= $(this).attr("href");
@@ -24,7 +31,7 @@ $(document).on('turbolinks:load', function(){
       )})
     }
 
-  console.log(locate);
+  // console.log(locate);
     var wH = $(window).height(); 
     const position = wH
       const speed = 400;
@@ -49,72 +56,181 @@ $(document).on('turbolinks:load', function(){
 
   var navilis = $('.right_1000__up li').offset().top + 0;
   var ahomes = $('#aa').offset().top - navilis;
-  var bhomes = $('#ab').offset().top - navilis;
-  var chomes = $('#ac').offset().top - navilis;
+  // var bhomes = $('#ab').offset().top - navilis;
+  var ehomes = $('#ae').offset().top - navilis;
   var ghomes = $('#ag').offset().top - navilis;
+
+  var fhomes = $('#af').offset().top - navilis;
+
+
+  var bhomes = $('#ab').offset().top - navilis;
+
 
  
 
 
   $(window).scroll(function () {
-    // console.log(ahomes)
-    // console.log($(this).scrollTop());
-    // 画面をトップから100px以上スクロールした時
-    if ($(this).scrollTop() >= ahomes && $(this).scrollTop() < bhomes) {
-      // ヘッダーのbackground-colorを白に変更し、boxshadowをつける
-      $('.right_1000__up li').find('a').css('color','black');
-      $('.right_1000__up li').find('a').addClass('active__navi')
-      // $('#align-justigy-icon').css('color','black');
-     
-      // CONTACTとお問い合わせの文字色のみ、白のまま固定
-      // navContact.find('a, span').css('color', '#fff');
-      // liタグにホバーした際、文字色を変更
-      // $('.right_1000__up').hover(
-      //   function() {
-      //     $(this).find('a').css('color', '#fff');
-      //   }
+
+    // if ($(this).scrollTop() >= 1) {
+    //   $('.TopContents__navi').css('background-color','black');
+    //   // $('.TopContents__navi').animate({
+    //   //   'background-color' : 'black'
+    //   // }, 'slow');
+    // }
+
+    //   else if($(this).scrollTop() == 0)  {
+       
+    //     $('.TopContents__navi').css('background-color','transparent');
     
-    } else if($(this).scrollTop() >= bhomes && $(this).scrollTop() < chomes ) {
+
+    //   }
+
+
+    if($(".interviews__question__answers").hasClass('minny')){
+        var minny = $(".minny").outerHeight(true);
+        // var ahomes1 = 
+        // console.log(ahomes)
+        // console.log(ahomes+minny)
+
+      if ($(this).scrollTop() >= ahomes && $(this).scrollTop() < bhomes) {
+        $('.image__logo').css('display','none')
+        $('.image__logo2').css('display','block');
+        
+        $('.right_1000__up li').find('a').css('color','black');
+        // $('.TopContents__navi').css('background-color','black');
+  
+        $('.right_1000__up li').find('a').addClass('active__navi')
+       
+       
+        
+      
+      } else if($(this).scrollTop() >= bhomes+minny && $(this).scrollTop() < fhomes+minny ) {
+        // $('.interviews__question__answers').css('display','none')
+        $('.image__logo').css('display','block')
+        $('.image__logo2').css('display','none');
+        $('.right_1000__up li').find('a').css('color','#fff');
+        $('.right_1000__up li').find('a').removeClass('active__navi')
+  
+          }else if($(this).scrollTop() < ahomes) {
+            $('.image__logo').css('display','block')
+        $('.image__logo2').css('display','none');
+            $('.right_1000__up li').find('a').css('color','#fff');
+            $('.right_1000__up li').find('a').removeClass('active__navi')
+          
+  
+  
+  
+          }else if($(this).scrollTop() >= fhomes+minny && $(this).scrollTop() < ghomes+minny) {
+            $('.image__logo').css('display','none')
+        $('.image__logo2').css('display','block');
+            $('.right_1000__up li').find('a').css('color','black');
+            $('.right_1000__up li').find('a').addClass('active__navi')
+  
+  
+  
+          }else if($(this).scrollTop() >= ghomes+minny) {
+            $('.image__logo').css('display','block')
+        $('.image__logo2').css('display','none');
+            $('.right_1000__up li').find('a').css('color','#fff');
+            $('.right_1000__up li').find('a').removeClass('active__navi')
+        
+  
+  
+          }
+
+
+
+
+
+
+
+
+    }
+    else{
+      console.log(ahomes)
+
+    
+
+
+  
+    if ($(this).scrollTop() >= ahomes && $(this).scrollTop() < bhomes) {
+      $('.image__logo').css('display','none')
+      $('.image__logo2').css('display','block');
+      
+      $('.right_1000__up li').find('a').css('color','black');
+      // $('.TopContents__navi').css('background-color','black');
+
+      $('.right_1000__up li').find('a').addClass('active__navi')
+     
+     
+      
+    
+    } else if($(this).scrollTop() >= bhomes && $(this).scrollTop() < fhomes ) {
+      // $('.interviews__question__answers').css('display','none')
+      $('.image__logo').css('display','block')
+      $('.image__logo2').css('display','none');
       $('.right_1000__up li').find('a').css('color','#fff');
       $('.right_1000__up li').find('a').removeClass('active__navi')
-      // $('#align-justigy-icon').css('color','#fff');
-      
-      // 画面がトップから100px以下の時は、上記と逆の処理を行う
-      // header.css({'background':'rgba(250, 250, 250, 0)', 'box-shadow':'none'});
-      // headerLogo.attr('src', 'logo-white.png').css('width', 120);
-      // navLink.find('a').css('color', '#fff');
-      // navSpan.css('color', '#fff');
-      // navLink.hover(
-      //   function() {
-      //     $(this).find('a, span').css('color', '#fff');
-      //   },
-      //   function() {
-      //     $(this).find('a, span').css('color', '#fff');
+
         }else if($(this).scrollTop() < ahomes) {
+          $('.image__logo').css('display','block')
+      $('.image__logo2').css('display','none');
           $('.right_1000__up li').find('a').css('color','#fff');
           $('.right_1000__up li').find('a').removeClass('active__navi')
-          // $('#align-justigy-icon').css('color','#fff');
+        
 
 
 
-        }else if($(this).scrollTop() >= chomes && $(this).scrollTop() < ghomes) {
+        }else if($(this).scrollTop() >= fhomes && $(this).scrollTop() < ghomes) {
+          $('.image__logo').css('display','none')
+      $('.image__logo2').css('display','block');
           $('.right_1000__up li').find('a').css('color','black');
           $('.right_1000__up li').find('a').addClass('active__navi')
-          // $('#align-justigy-icon').css('color','black');
+
 
 
         }else if($(this).scrollTop() >= ghomes) {
+          $('.image__logo').css('display','block')
+      $('.image__logo2').css('display','none');
           $('.right_1000__up li').find('a').css('color','#fff');
           $('.right_1000__up li').find('a').removeClass('active__navi')
-          // $('#align-justigy-icon').css('color','#fff');
+      
 
 
         }
-      // );
-    // );
-
+      
+      };
 
   });
+
+
+
+
+
+  $(function(){
+
+    $(".interviews__question ul li").on("click", function() {
+      const commentId = $(this).data('question-id'); 
+      if (!$("#slidetoggle_menu"+commentId).hasClass("minny")){
+        $(".minny").slideToggle(); 
+        
+        // const commentId = $(this).data('question-id'); 
+        // $("#slidetoggle_menu"+commentId).slideToggle(); 
+        
+        $(".interviews__question__answers").removeClass("minny")
+        $("#slidetoggle_menu"+commentId).addClass("minny")
+
+      }else{
+        // $(".minny").slideToggle(); 
+        
+        $(".interviews__question__answers").removeClass("minny")
+      }
+        
+        $("#slidetoggle_menu"+commentId).slideToggle(); 
+        // $("#slidetoggle_menu").toggleClass("active"); 
+    });
+
+});
 
 
 

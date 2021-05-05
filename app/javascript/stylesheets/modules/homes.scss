@@ -951,6 +951,7 @@
     position: relative;
     
     .ContactUs{
+      min-height: 100vh;
       height: 100%;
       // display: grid;
       // grid-template-columns: 1fr;
@@ -1036,7 +1037,7 @@
 
 
   footer{
-    height: 10vh;
+    height: 140px;
     display: flex;
     justify-content: space-around;
     align-items: center;

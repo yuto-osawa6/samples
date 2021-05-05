@@ -14,6 +14,25 @@
     #bbc
       = render partial: "bhomes/bhomes", locals: { bhomes: @bhomes }
 
+  
+
+  
+
+  .SectionBoxA#ac
+    #ehomes__rendering
+      = render partial: "ehomes/ehomes", locals: { ehomes: @ehomes }
+  
+  .SectionBoxA#ad
+    -# #fhomes__rendering
+    -#   = render partial: 'fhomes/fhomes', locals: {fhomes: @fhomes}
+    #interviews__rendering
+      = render partial: 'interviews/interviews'
+    
+  
+  .sectionboxG#ae
+    #ihomes__rendering
+      = render partial: 'ihomes/ihomes', locals: {ihomes: @ihomes}
+  
   .sectionBoxAA#ab
     .About#chomes__rendering
       = render partial: "chomes/chomes", locals: { chomes: @chomes }
@@ -21,19 +40,6 @@
   .sectionBoxAB
     .sectionBocABC#dhomes__rendering
       = render partial: "dhomes/dhomes", locals: { dhomes: @dhomes }
-
-  .SectionBoxA#ac
-    #ehomes__rendering
-      = render partial: "ehomes/ehomes", locals: { ehomes: @ehomes }
-  
-  .SectionBoxA#ad
-    #fhomes__rendering
-      = render partial: 'fhomes/fhomes', locals: {fhomes: @fhomes}
-    
-  
-  .sectionboxG#ae
-    #ihomes__rendering
-      = render partial: 'ihomes/ihomes', locals: {ihomes: @ihomes}
 
   .sectionboxN#af
     .News#bloghomes__rendering
@@ -51,7 +57,7 @@
   
   %footer 
     .footer__logo
-      = image_pack_tag 'samplelogo.png'
+      = image_pack_tag "S__330563589.png"
     
     .footer__adress
       = link_to  new_user_session_path, method: :get do

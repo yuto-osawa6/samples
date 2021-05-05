@@ -1,0 +1,41 @@
+// body{
+//   color: black;
+//   font-weight: bold;
+// }
+#interviews__rendering{
+
+  margin: 10vh 0;
+
+  .interviews{
+
+    .interviews__question{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px;
+
+      &__rows{
+      display: flex;
+    justify-content: space-between;}
+
+      ul{
+        width: 100%;
+        margin: 20px;
+        list-style: none;
+        border-top: solid 2px #eee;
+        li{
+          font-weight: bold;
+          cursor: pointer;
+          padding: 30px 0px;
+          border-bottom: solid 2px #eee;
+
+          .interviews__question__answers{
+            font-weight: normal;
+            margin-top: 25px;
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
