@@ -15,7 +15,7 @@
             .S2__image
               - if e.image?
                 -# = video_tag(e.image.url, muted: :true,playsinline: :true,loop: :true,autoplay: :true,controls: :true)
-                = video_tag(e.image.url, muted: :true,playsinline: :true,controls: :true,poster:"")
+                = video_tag(e.image.url, muted: :true,playsinline: :true,controls: :true,poster:"#{e.poster}")
 
                   
             .sectionboxEA

@@ -26,7 +26,7 @@ class EhomesController < ApplicationController
 
 
       # params.require(:bhome).permit(:title,:title2,:discribe,bbhomes_attributes:[:title,:discribe,:id])
-      params.require(:ehome).permit(:title,:discribe,eehomes_attributes:[:title,:discribe,:image, :id ,:_destroy])
+      params.require(:ehome).permit(:title,:discribe,eehomes_attributes:[:title,:discribe,:image,:poster, :id ,:_destroy])
 
 
   

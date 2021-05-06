@@ -10,6 +10,10 @@
       = f.text_field :discribe, class:"aformd"
     .aformd__title
       .formtitles
+        thumbnail
+      = f.file_field :poster,accept:"image/jpeg,image/png", class:"aformd"
+    .aformd__title
+      .formtitles
         video
       = f.file_field :image, accept:"video/mp4",class:"aformd"
 .nested-fields__button2
