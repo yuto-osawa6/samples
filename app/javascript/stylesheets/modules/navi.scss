@@ -1,11 +1,13 @@
 .TopContents__navi{
     height: 10vh;
-    z-index: 115;
+    z-index: 155;
     display: flex;
     justify-content: space-between;
     width: 100vw;
     // background-color: rgba(0,0,0,1);
     position: fixed;
+
+    // background-color: black;
 
     @include mq-down(lg){
       background-color: black;
@@ -21,6 +23,7 @@
     margin: 0px 20px;
 
     .image__logo{
+      
       
 
     @include mq-down(lg){
@@ -381,4 +384,162 @@
 
   .image__logo2{
     display: none;
+  }
+
+  //変更
+  .TopContents__navi{
+    // background-color: black;
+
+    .image__logo{
+      display: block!important;
+    }
+    .image__logo2{
+      display: none!important;
+    }
+    .right_1000__up{
+      a{
+        color: white!important;
+      }
+      a::after{
+        margin-top: 5px!important;
+      }
+
+    }
+  }
+  #ihomes__rendering{
+    padding-top: 20px;
+  }
+
+  #aa{
+    min-height: 90vh !important;
+    margin-top: 10vh !important;
+    #bbc{
+      margin-top: 0px!important;
+    }
+  }
+
+  #ac{
+    min-height: 90vh !important;
+  }
+
+  .SectionBoxA{
+    // height: auto!important;
+  }
+
+  #ehomes__rendering{
+    // display: block!important;
+    .services{
+      margin-top: 0px!important;
+    }
+  }
+
+  #ad{
+    display: flex!important;
+    justify-content: center!important;
+    align-items: center!important;
+    min-height: 90vh!important;
+    width: 100vw!important;
+    #interviews__rendering{
+      margin: 0!important;
+      width: 100%;
+      .interviews{
+        width: 100%;
+      }
+    }
+  }
+
+  .sectionboxG__grid__up{
+    padding:0px !important;
+  }
+
+  #ab{
+    height: 90vh;
+
+    @include mq-down(lg) {
+      height: auto;
+      }
+
+
+    .About__left__title{
+      margin: 0px 10px 10px 10px!important;
+    }
+
+    .About__left__title::after{
+      width: 100%!important;
+    }
+
+    .About__left{
+      display: flex;
+      opacity: 1;
+      justify-content: center;
+      align-items: flex-start;
+      flex-flow: column;
+      margin: 20px  !important;
+
+    }
+  }
+
+  .About2__left__box{
+    margin: 0px!important;
+    
+  }
+  .About2__left__box__first__title2{
+    margin: 20px;
+  }
+  .About2__left__box__first__discribe2{
+    margin: 20px!important;
+  }
+
+  #contact__rendering{
+    padding: 20px 0 0 0!important;
+  }
+
+  .sectionboxN{
+    margin-top: 20px!important;
+
+    .News__discribe{
+      margin: 30px 0 0 0!important;
+    }
+
+    .News__contents{
+      margin: 20px 20px 10vh!important;
+    }
+  }
+
+  .News{
+    padding-top: 0px!important;
+
+  }
+
+  .ContactUs__grid{
+    padding:20px!important;
+  }
+
+  .admin__ContactUs{
+    min-height: auto!important;
+  }
+
+  .ContactUs__grid2{
+    nav{
+      background-color: #fff;
+    }
+  }
+  #renderfieldContactUs{
+    background-color: black;
+  }
+  
+
+  .About__left__first__title{
+    margin: 10px!important;
+  }
+  .About__left__first__discribe{
+    margin: 10px 10px 0px 10px!important;
+  }
+
+  .About2__right{
+    margin: 0px!important;
+  }
+
+  .About3{
+    padding:0px!important;
   }

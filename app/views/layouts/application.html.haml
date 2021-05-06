@@ -50,7 +50,9 @@
           - @ahomes.aahomes.each_with_index do |aa,i|
             %li{id:"right__lists__navi__#{i}"}
               = link_to "#{aa.link}" do
-                =aa.menu
+                .sublink__main
+                  =aa.mainmenu
+                  -# =aa.menu
               
 
 

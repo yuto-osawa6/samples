@@ -1,7 +1,10 @@
 $(document).on('turbolinks:load', function(){
   // $(function(){
   $(document).on('click','a[href^="#a"]', function (){
-
+    var navilis1 = $('.right_1000__up').css('height');
+    navilis1 = parseInt(navilis1);
+    console.log(navilis1)
+    
 
     // e.preventdefault()
 
@@ -12,7 +15,7 @@ $(document).on('turbolinks:load', function(){
     var speed = 400;
     var href= $(this).attr("href");
     var target = $(href == "#a" || href == "" ? 'html' : href);
-    var position = target.offset().top + adjust;
+    var position = target.offset().top + adjust - navilis1 ;
     $('body,html').animate({scrollTop:position}, speed, 'swing');
     
     return false;
@@ -54,19 +57,32 @@ $(document).on('turbolinks:load', function(){
     return false;
   });
 
-  var navilis = $('.right_1000__up li').offset().top + 0 - $(window).scrollTop();
-  var ahomes = $('#aa').offset().top - navilis;
+  // var navilis = $('.right_1000__up li').offset().top + 0 - $(window).scrollTop();
+  // var ahomes = $('#aa').offset().top - navilis;
+  // // var bhomes = $('#ab').offset().top - navilis;
+  // var ehomes = $('#ae').offset().top
+  // var ghomes = $('#ag').offset().top - navilis;
+
+  // var fhomes = $('#af').offset().top - navilis;
+
+
+  // var bhomes = $('#ab').offset().top - navilis;
+
+   var navilis = $('.right_1000__up li').offset().top + 0 - $(window).scrollTop();
+  var ahomes = $('#aa').offset().top + navilis;
   // var bhomes = $('#ab').offset().top - navilis;
   var ehomes = $('#ae').offset().top
-  var ghomes = $('#ag').offset().top - navilis;
+  var ghomes = $('#ag').offset().top + navilis;
 
-  var fhomes = $('#af').offset().top - navilis;
+  var fhomes = $('#af').offset().top + navilis;
 
 
-  var bhomes = $('#ab').offset().top - navilis;
+  var bhomes = $('#ab').offset().top + navilis;
 
-  console.log(navilis)
-  console.log(ehomes)
+  
+
+  // console.log(navilis)
+  // console.log(ehomes)
 
 
 
@@ -75,19 +91,16 @@ $(document).on('turbolinks:load', function(){
 
   $(window).scroll(function () {
 
-    // if ($(this).scrollTop() >= 1) {
-    //   $('.TopContents__navi').css('background-color','black');
-    //   // $('.TopContents__navi').animate({
-    //   //   'background-color' : 'black'
-    //   // }, 'slow');
-    // }
+    if ($(this).scrollTop() >= 10) {
+      $('.TopContents__navi').css('background-color','black');
+    }
 
-    //   else if($(this).scrollTop() == 0)  {
+      else if($(this).scrollTop() == 0)  {
        
-    //     $('.TopContents__navi').css('background-color','transparent');
+        $('.TopContents__navi').css('background-color','transparent');
     
 
-    //   }
+      }
 
 
     if($(".interviews__question__answers").hasClass('minny')){
@@ -214,7 +227,7 @@ $(document).on('turbolinks:load', function(){
   // $(function(){
     $(document).on('click', '.interviews__question ul li', function(){
     // $(".interviews__question ul li").on("click", function() {
-      console.log(1)
+      // console.log(1)
       const commentId = $(this).data('question-id'); 
       if (!$("#slidetoggle_menu"+commentId).hasClass("minny")){
         $(".minny").slideToggle(); 

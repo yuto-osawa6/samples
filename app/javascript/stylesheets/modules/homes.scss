@@ -951,14 +951,18 @@
     position: relative;
     
     .ContactUs{
-      min-height: 100vh;
+      display: flex;
+      background-color: black;
+      justify-content: center;
+      flex-flow: column;
+      min-height: 90vh;
       height: 100%;
       // display: grid;
       // grid-template-columns: 1fr;
       // grid-template-rows: 1fr 4fr;
 
       box-sizing: border-box;
-      padding-bottom: 10vh;
+      // padding-bottom: 10vh;
       // padding-top: 15vh;
       color:#fff;
       @include mq-down(md){
@@ -1095,7 +1099,7 @@
     background-color: #000;
     opacity: 0.5;
     display: none;
-    z-index: 140;
+    z-index: 160;
 
   }
 
@@ -1174,6 +1178,9 @@ table th,table td{
 
 table tr:nth-child(odd){
   background-color: #eee
+}
+table tr:nth-child(even){
+  background-color: #fff
 }
 .admin__confirm__lists{
   text-align: center!important;
