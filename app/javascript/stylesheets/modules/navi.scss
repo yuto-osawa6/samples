@@ -8,6 +8,7 @@
     position: fixed;
 
     @include mq-down(lg){
+      // position: static;
       // background-color: black;
     }
 
@@ -17,6 +18,12 @@
     // justify-content: center;
     align-items: center;
     margin: 0px 20px;
+
+    @include mq-down(lg){
+      // position: static;
+      // background-color: black;
+    }
+
 
     img{
       width: 200px;
