@@ -43,7 +43,7 @@ $(document).on('turbolinks:load', function() {
 
   gsap.from('.About__left', { // .box => アニメーションさせる要素
     opacity:0,
-    y:400,
+    // y:400,
     delay: 1.0,
     duration: 2.5, // アニメーションの内容
     scrollTrigger: {
@@ -55,7 +55,7 @@ $(document).on('turbolinks:load', function() {
 
   gsap.from('.About__right', { // .box => アニメーションさせる要素
     opacity:0,
-    x:400,
+    // x:400,
     delay: 1.0,
     duration: 2.5, // アニメーションの内容
     scrollTrigger: {
@@ -79,7 +79,7 @@ $(document).on('turbolinks:load', function() {
 
   gsap.from('#elicse2', { // .box => アニメーションさせる要素
     opacity:0,
-    x:400,
+    // x:400,
     delay: 3.0,
     duration: 2.5, // アニメーションの内容
     scrollTrigger: {
@@ -91,7 +91,7 @@ $(document).on('turbolinks:load', function() {
 
   gsap.from('#elicse3', { // .box => アニメーションさせる要素
     opacity:0,
-    y:400,
+    // y:400,
     delay: 1.0,
     duration: 2.5, // アニメーションの内容
     scrollTrigger: {
@@ -103,7 +103,7 @@ $(document).on('turbolinks:load', function() {
 
   gsap.from('#elicse4', { // .box => アニメーションさせる要素
     opacity:0,
-    x:400,
+    // x:400,
     delay: 3.0,
     duration: 2.5, // アニメーションの内容
     scrollTrigger: {
