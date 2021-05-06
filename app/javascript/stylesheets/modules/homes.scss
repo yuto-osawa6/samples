@@ -210,10 +210,10 @@
 
   //
   .SectionBoxA{
-    display: grid;
-    grid-template-columns: 100vw;
-    grid-auto-rows: 1fr 1fr;
-    min-height:100vh ;
+    // display: grid;
+    // grid-template-columns: 100vw;
+    // grid-auto-rows: 1fr 1fr;
+    // min-height:100vh ;
   .SectionBoxB{
     margin: 20px;
     // margin: 10vh;
@@ -243,10 +243,10 @@
     margin-top: 10vh;
   }
   #ehomes__rendering{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // flex-flow: column;
   }
   #fhomes__rendering{
     display: flex;
