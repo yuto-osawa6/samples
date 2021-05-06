@@ -1,7 +1,11 @@
 .MainContents
   .TopContents
     .TopContents__container{id: "ahomes_area--box2-#{@ahomes.id}"}
-      = render partial: "ahomes/ahomes", locals: { ahomes: @ahomes }          
+      = render partial: "ahomes/ahomes", locals: { ahomes: @ahomes }
+    .viemp4 
+      -# = video_tag asset_pack_path "videos/Camera - 26531のコピー.mp4", playsinline: true, autoplay: true, loop: true, muted: true, width: "320", height: "240", class: "index-video"
+      -# -# poster:asset_pack_path:"images/alex-kotliarskyi-QBpZGqEMsKg-unsplash1.jpg"
+      = video_tag "/videos/Camera - 26531.mp4", playsinline: true,poster:"/videos/alex-kotliarskyi-QBpZGqEMsKg-unsplash1.jpg", autoplay: true, loop: true, muted: true, width: "320", height: "240", class: "index-video"          
 
     .TopContents__ahomes{id: "ahomes_area--box3-#{@ahomes.id}"}
       = render partial: "ahomes/admins_ahomes", locals: { ahomes: @ahomes }

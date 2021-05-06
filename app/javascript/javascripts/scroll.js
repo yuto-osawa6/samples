@@ -54,16 +54,20 @@ $(document).on('turbolinks:load', function(){
     return false;
   });
 
-  var navilis = $('.right_1000__up li').offset().top + 0;
+  var navilis = $('.right_1000__up li').offset().top + 0 - $(window).scrollTop();
   var ahomes = $('#aa').offset().top - navilis;
   // var bhomes = $('#ab').offset().top - navilis;
-  var ehomes = $('#ae').offset().top - navilis;
+  var ehomes = $('#ae').offset().top
   var ghomes = $('#ag').offset().top - navilis;
 
   var fhomes = $('#af').offset().top - navilis;
 
 
   var bhomes = $('#ab').offset().top - navilis;
+
+  console.log(navilis)
+  console.log(ehomes)
+
 
 
  

@@ -29,6 +29,12 @@
           padding: 30px 0px;
           border-bottom: solid 2px #eee;
 
+          svg{
+            @include mq-down(md){
+              display: none;
+            }
+          }
+
           .interviews__question__answers{
             font-weight: normal;
             margin-top: 25px;
