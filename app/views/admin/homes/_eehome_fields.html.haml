@@ -10,8 +10,8 @@
       = f.text_field :discribe, class:"aformd"
     .aformd__title
       .formtitles
-        = f.label :image
-      = f.file_field :image, class:"aformd"
+        video
+      = f.file_field :image,accept:"video/mp4", class:"aformd"
 .nested-fields__button2
   -# = link_to_remove_association "削除", f,class: "desvv2"
   = f.label '削除',class:"desvv2" do
