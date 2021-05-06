@@ -8,6 +8,7 @@
     position: fixed;
 
     @include mq-down(lg){
+      background-color: black;
       // position: static;
       // background-color: black;
     }
@@ -19,10 +20,27 @@
     align-items: center;
     margin: 0px 20px;
 
+    .image__logo{
+      
+
     @include mq-down(lg){
       // position: static;
       // background-color: black;
+      display: block!important;
     }
+    
+    }
+
+    .image__logo2{
+      
+
+      @include mq-down(lg){
+        // position: static;
+        // background-color: black;
+        display: none!important;
+      }
+      
+      }
 
 
     img{
@@ -174,7 +192,7 @@
         .fa-align-justify{
           width: 5vh;
           height: 5vh;
-          color: turquoise;
+          color: #fff;
         }
 
       }
@@ -190,7 +208,7 @@
         #align-justigy-icon2{
           width: 5vh;
           height: 5vh;
-          color: turquoise;
+          color: #fff;
           
         }
 
