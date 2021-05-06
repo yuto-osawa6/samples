@@ -8,7 +8,7 @@
     position: fixed;
 
     @include mq-down(lg){
-      background-color: black;
+      // background-color: black;
     }
 
   &__left{
@@ -167,7 +167,7 @@
         .fa-align-justify{
           width: 5vh;
           height: 5vh;
-          color: #fff;
+          color: turquoise;
         }
 
       }
@@ -183,7 +183,8 @@
         #align-justigy-icon2{
           width: 5vh;
           height: 5vh;
-          color: #fff;
+          color: turquoise;
+          
         }
 
       }
