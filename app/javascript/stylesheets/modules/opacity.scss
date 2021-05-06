@@ -35,7 +35,7 @@
 
 //video
 
-video{
+.index-video{
   @include mq-down(md){
     display: none;
   }
