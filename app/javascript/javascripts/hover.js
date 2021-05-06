@@ -24,7 +24,7 @@ const mql = window.matchMedia('(min-width: 769px)');
 const handleMediaQuery = function(mql) {
   if (mql.matches) {
     // 769px以上の場合の処理
-    console.log('769px以上');
+    // console.log('769px以上');
     $('.News__contents__lists__cover').hover(
       function() {
           
