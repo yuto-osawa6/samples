@@ -14,7 +14,7 @@
           .sectionboxE
             .S2__image
               - if e.image?
-                = video_tag(e.image.url, muted: :true,controls: :true)
+                = video_tag(e.image.url, muted: :true,controls: :true,playsinline:true)
             .sectionboxEA
               .S2__company
                 = e.title
