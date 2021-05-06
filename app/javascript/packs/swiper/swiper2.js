@@ -6,12 +6,12 @@ const swiper2 = new Swiper('.swiper-container2', {
   freeMode: true,
   slidesPerView: 6,
   centeredSlides : true,
-  allowTouchMove: false, // スワイプ操作をできないようにする
+  // allowTouchMove: false, // スワイプ操作をできないようにする
   // effect: 'slide',    //切り替わるときのアニメーション
       speed: 9000,        //画像の切替スピード
       autoplay: {         //自動で動かす
         delay: 1,
-        disableOnInteraction: false
+        disableOnInteraction: true
       },
       breakpoints: {
         1800:{
