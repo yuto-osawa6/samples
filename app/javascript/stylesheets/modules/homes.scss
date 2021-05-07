@@ -159,6 +159,9 @@
         }
 
         a{
+        border-radius: 10px;
+        background-color: turquoise;
+
         text-align: center;
         line-height: 50px;
         width: 200px;
@@ -167,20 +170,26 @@
         display: block;
         text-decoration: none;
         /* padding: 20px; */
-        background-color: #fff;
+        // background-color: #fff;
         color: #111111;
         }
 
         a:hover{
           transition: 0.1s;
           color:#fff;
-          background-color: black;
+          background-color: transparent;
+          border: solid 1px #fff;
         }
 
       }
 
       &__right{
         a{
+          background-color: transparent;
+          color: white;
+          border: solid 1px;
+          border-radius: 10px;
+
         text-align: center;
         line-height: 50px;
         width: 200px;
@@ -189,14 +198,15 @@
         display: block;
         text-decoration: none;
         /* padding: 20px; */
-        background-color: #fff;
-        color: #111111;
+        // background-color: #fff;
+        // color: #111111;
 
         }
         a:hover{
           transition: 0.15s;
-          color:#fff;
-          background-color: black;
+          color: black;
+          border: none;
+          background-color: turquoise;
         }
       }
 

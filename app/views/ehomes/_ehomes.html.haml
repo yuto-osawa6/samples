@@ -13,9 +13,11 @@
         .swiper-slide
           .sectionboxE
             .S2__image
-              - if e.image?
-                -# = video_tag(e.image.url, muted: :true,playsinline: :true,loop: :true,autoplay: :true,controls: :true)
-                = video_tag(e.image.url, muted: :true,controls: :true,poster:"#{e.poster}",controlslist: :nodownload)
+              - if e.youtube?
+                -#mp4下
+                -# = video_tag(e.image.url, muted: :true,controls: :true,poster:"#{e.poster}",controlslist: :nodownload)
+
+                %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/#{e.youtube.last(11)}", :width => "560"}
 
                   
             .sectionboxEA

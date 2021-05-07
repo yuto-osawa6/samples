@@ -10,17 +10,31 @@
       -# = video_tag asset_pack_path "videos/Camera - 26531のコピー.mp4", playsinline: true, autoplay: true, loop: true, muted: true, width: "320", height: "240", class: "index-video"
       -# -# poster:asset_pack_path:"images/alex-kotliarskyi-QBpZGqEMsKg-unsplash1.jpg"
       = video_tag "/videos/Camera - 26531.mp4", playsinline: true,poster:"/videos/alex-kotliarskyi-QBpZGqEMsKg-unsplash1.jpg", autoplay: true, loop: true, muted: true, width: "320", height: "240", class: "index-video"
+  
+  .SectionBoxA#ac
+    #ehomes__rendering
+      = render partial: "ehomes/ehomes", locals: { ehomes: @ehomes }
+
+  .sectionBoxAA#ab
+    .About#chomes__rendering
+      = render partial: "chomes/chomes", locals: { chomes: @chomes }
+
+  .sectionBoxAB
+    .sectionBocABC#dhomes__rendering
+      = render partial: "dhomes/dhomes", locals: { dhomes: @dhomes }
+  
+  
   .SectionBoxA#aa  
     #bbc
       = render partial: "bhomes/bhomes", locals: { bhomes: @bhomes }
 
   
 
-  
+  .sectionboxG#ae
+    #ihomes__rendering
+      = render partial: 'ihomes/ihomes', locals: {ihomes: @ihomes}
 
-  .SectionBoxA#ac
-    #ehomes__rendering
-      = render partial: "ehomes/ehomes", locals: { ehomes: @ehomes }
+  
   
   .SectionBoxA#ad
     -# #fhomes__rendering
@@ -29,17 +43,15 @@
       = render partial: 'interviews/interviews',locals:{interviews: @interviews}
     
   
-  .sectionboxG#ae
-    #ihomes__rendering
-      = render partial: 'ihomes/ihomes', locals: {ihomes: @ihomes}
   
-  .sectionBoxAA#ab
-    .About#chomes__rendering
-      = render partial: "chomes/chomes", locals: { chomes: @chomes }
+  
+  -# .sectionBoxAA#ab
+  -#   .About#chomes__rendering
+  -#     = render partial: "chomes/chomes", locals: { chomes: @chomes }
 
-  .sectionBoxAB
-    .sectionBocABC#dhomes__rendering
-      = render partial: "dhomes/dhomes", locals: { dhomes: @dhomes }
+  -# .sectionBoxAB
+  -#   .sectionBocABC#dhomes__rendering
+  -#     = render partial: "dhomes/dhomes", locals: { dhomes: @dhomes }
 
   .sectionboxN#af
     .News#bloghomes__rendering

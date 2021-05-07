@@ -13,23 +13,6 @@
       .TopContents__ahomes__edit__button{"data-ahomes__id": "#{@ahomes.id}"}
         = icon("fas","edit")
         編集する
-
-
-
-  -# %h1 Swiperを使ってカルーセル
-  / Slider main container
-  .SectionBoxA#aa
-    #bbc
-      = render partial: "bhomes/bhomes", locals: { bhomes: @bhomes }
-
-    .TopContents__ahomes{id: "bhomes_area--box3-#{@bhomes.id}"}
-      = render partial: "bhomes/admins_bhomes", locals: { bhomes: @bhomes }
-
-    .TopContents__bhomes__edit
-      .TopContents__bhomes__edit__button{"data-bhomes__id": "#{@bhomes.id}"}
-        = icon("fas","edit")
-        編集する
-    
   
   .SectionBoxA#ac
     #ehomes__rendering
@@ -39,38 +22,6 @@
       = render partial: "ehomes/admins_ehomes", locals: { ehomes: @ehomes } 
     .TopContents__ehomes__edit
       .TopContents__ehomes__edit__button{"data-ehomes__id": "#{@ehomes.id}"}
-        = icon("fas","edit")
-        編集する
-          
-          
-
-          
-  
-  .SectionBoxA#ad
-    -# #fhomes__rendering
-    -#   = render partial: 'fhomes/fhomes', locals: {fhomes: @fhomes} 
-    #interviews__rendering
-      = render partial: 'interviews/interviews',locals:{interviews: @interviews}
-    -# .TopContents__ahomes{id: "fhomes_area--box3-#{@fhomes.id}"}
-    -#   = render partial: 'fhomes/admins_fhomes', locals: {fhomes: @fhomes}
-    .TopContents__ahomes{id: "fhomes_area--box3-#{@homes.id}"}
-      -#   = render partial: 'fhomes/admins_fhomes', locals: {fhomes: @fhomes}
-      =render partial:'interviews/admin_interviews',locals:{homes: @homes}
-
-    .TopContents__fhomes__edit
-      .TopContents__fhomes__edit__button{"data-fhomes__id": "#{@homes.id}"}
-        = icon("fas","edit")
-        編集する
-  
-  .sectionboxG#ae
-    #ihomes__rendering
-      = render partial: 'ihomes/ihomes', locals: {ihomes: @ihomes}    
-    
-    .TopContents__ahomes{id: "ihomes_area--box3-#{@ihomes.id}"}
-      = render partial: 'ihomes/admins_ihomes', locals: {ihomes: @ihomes}
-
-    .TopContents__ihomes__edit
-      .TopContents__ihomes__edit__button{"data-ihomes__id": "#{@ihomes.id}"}
         = icon("fas","edit")
         編集する
   
@@ -99,6 +50,87 @@
       .TopContents__dhomes__edit__button{"data-dhomes__id": "#{@dhomes.id}"}
         = icon("fas","edit")
         編集する
+
+
+
+
+  -# %h1 Swiperを使ってカルーセル
+  / Slider main container
+  .SectionBoxA#aa
+    #bbc
+      = render partial: "bhomes/bhomes", locals: { bhomes: @bhomes }
+
+    .TopContents__ahomes{id: "bhomes_area--box3-#{@bhomes.id}"}
+      = render partial: "bhomes/admins_bhomes", locals: { bhomes: @bhomes }
+
+    .TopContents__bhomes__edit
+      .TopContents__bhomes__edit__button{"data-bhomes__id": "#{@bhomes.id}"}
+        = icon("fas","edit")
+        編集する
+    
+  
+  
+          
+          
+
+          
+  
+  
+  
+  .sectionboxG#ae
+    #ihomes__rendering
+      = render partial: 'ihomes/ihomes', locals: {ihomes: @ihomes}    
+    
+    .TopContents__ahomes{id: "ihomes_area--box3-#{@ihomes.id}"}
+      = render partial: 'ihomes/admins_ihomes', locals: {ihomes: @ihomes}
+
+    .TopContents__ihomes__edit
+      .TopContents__ihomes__edit__button{"data-ihomes__id": "#{@ihomes.id}"}
+        = icon("fas","edit")
+        編集する
+  
+
+  .SectionBoxA#ad
+    -# #fhomes__rendering
+    -#   = render partial: 'fhomes/fhomes', locals: {fhomes: @fhomes} 
+    #interviews__rendering
+      = render partial: 'interviews/interviews',locals:{interviews: @interviews}
+    -# .TopContents__ahomes{id: "fhomes_area--box3-#{@fhomes.id}"}
+    -#   = render partial: 'fhomes/admins_fhomes', locals: {fhomes: @fhomes}
+    .TopContents__ahomes{id: "fhomes_area--box3-#{@homes.id}"}
+      -#   = render partial: 'fhomes/admins_fhomes', locals: {fhomes: @fhomes}
+      =render partial:'interviews/admin_interviews',locals:{homes: @homes}
+
+    .TopContents__fhomes__edit
+      .TopContents__fhomes__edit__button{"data-fhomes__id": "#{@homes.id}"}
+        = icon("fas","edit")
+        編集する
+  
+  -# .sectionBoxAA#ab
+  -#   .About#chomes__rendering
+  -#     = render partial: "chomes/chomes", locals: { chomes: @chomes }
+      
+  -#   .TopContents__ahomes{id: "chomes_area--box3-#{@chomes.id}"}
+  -#     = render partial: "chomes/admins_chomes", locals: { chomes: @chomes }
+
+  -#   .TopContents__chomes__edit
+  -#     .TopContents__chomes__edit__button{"data-chomes__id": "#{@chomes.id}"}
+  -#       = icon("fas","edit")
+  -#       編集する
+
+
+  -# .sectionBoxAB
+  -#   .sectionBocABC#dhomes__rendering
+  -#     = render partial: "dhomes/dhomes", locals: { dhomes: @dhomes }
+
+  -#   .TopContents__ahomes{id: "dhomes_area--box3-#{@dhomes.id}"}
+  -#     = render partial: "dhomes/admins_dhomes", locals: { dhomes: @dhomes }
+
+
+  -#   .TopContents__dhomes__edit
+  -#     .TopContents__dhomes__edit__button{"data-dhomes__id": "#{@dhomes.id}"}
+  -#       = icon("fas","edit")
+  -#       編集する
 
 
   .sectionboxN#af

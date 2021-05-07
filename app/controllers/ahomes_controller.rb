@@ -33,7 +33,7 @@ class AhomesController < ApplicationController
   def ahomes_params 
 
 
-      params.require(:ahome).permit(:title,:title2,:discribe,:button_right,:button_left,:url_right,:url_left,:logo,:adress,aahomes_attributes:[:menu,:id])
+      params.require(:ahome).permit(:title,:title2,:discribe,:button_right,:button_left,:url_right,:url_left,:logo,:adress,aahomes_attributes:[:menu,:mainmenu,:id])
   
   
   end

@@ -24,7 +24,7 @@
               = image_pack_tag "S__330563589.png"
         .TopContents__navi__right
           %ul.right_1000__up
-            - @ahomes.aahomes.each_with_index do |aa,i|
+            - @ahomes.aahomes.order(:rank).each_with_index do |aa,i|
               %li
                 = link_to "#{aa.link}" do
                   =aa.mainmenu

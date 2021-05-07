@@ -3,6 +3,8 @@ class EhomesController < ApplicationController
   
   def update
     @ehomes = Ehome.find(1)
+    # @url = params[:ehome][:eehomes][:youtube_url]
+    
     # @bbhomes = @bhomes.bbhomes
     @msg = "アップデートが完了しました。"
     @ehomes.update(ehomes_params)
@@ -24,12 +26,9 @@ class EhomesController < ApplicationController
 
   def ehomes_params 
 
+      
+      params.require(:ehome).permit(:title,:discribe,eehomes_attributes:[:title,:discribe,:youtube, :id ,:_destroy])
 
-      # params.require(:bhome).permit(:title,:title2,:discribe,bbhomes_attributes:[:title,:discribe,:id])
-      params.require(:ehome).permit(:title,:discribe,eehomes_attributes:[:title,:discribe,:image,:poster, :id ,:_destroy])
-
-
-  
-  
+      # params.require(:ehome).permit(:title,:discribe,eehomes_attributes:[:title,:discribe,:youtube, :id ,:_destroy])
   end
 end
