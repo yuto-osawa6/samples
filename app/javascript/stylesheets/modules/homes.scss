@@ -435,7 +435,9 @@
         height: 100%;
         display: grid;
         grid-template-columns: 1fr;
-        grid-auto-rows: 50vh 50vh;
+        // grid-auto-rows: 50vh 50vh;
+        grid-auto-rows: auto;
+
         }
       
       .About3{
@@ -460,7 +462,8 @@
           }
 
         .About2__left{
-        height: 50vh;
+        // height: 50vh;
+        height: 100vh;
 
         flex-flow: column;
         display: flex;
@@ -501,7 +504,7 @@
         }
 
         .About2__right{
-          height: 50vh;
+          height: 100vh;
           @include mq-down(lg){
             height: auto;
             margin-top: 20px;

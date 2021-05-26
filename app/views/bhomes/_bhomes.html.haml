@@ -6,36 +6,47 @@
       =bhomes.title2
     .services__container2.ShareRows2
       =bhomes.discribe
-.SectionBoxC{id: "bhomes_area--box2bb"}
-  .swiper-container
-    / Additional required wrapper
-    .swiper-wrapper
-      / Slides
-      - bhomes.bbhomes.each_with_index do |b,i|
-        - i = i + 1
-        .swiper-slide 
-          .sectionboxD
-            .S__logo
-              = i
-            .S__title
-              =b.title
-            .S__discribe
-              =b.discribe
+-# .SectionBoxC{id: "bhomes_area--box2bb"}
+-#   .swiper-container
+-#     / Additional required wrapper
+-#     .swiper-wrapper
+-#       / Slides
+-#       - bhomes.bbhomes.each_with_index do |b,i|
+-#         - i = i + 1
+-#         .swiper-slide 
+-#           .sectionboxD
+-#             .S__logo
+-#               = i
+-#             .S__title
+-#               =b.title
+-#             .S__discribe
+-#               =b.discribe
       
           
-    / If we need pagination
-    .swiper-pagination
+-#     / If we need pagination
+-#     .swiper-pagination
       
-    / If we need navigation buttons
-    .swiper-button-prev
-      -# =icon("fas","chevron-circle-left",class:"mikan")
+-#     / If we need navigation buttons
+-#     .swiper-button-prev
+-#       -# =icon("fas","chevron-circle-left",class:"mikan")
 
       
-      -# = icon("fas","search",class: "mikan")
-    .swiper-button-next
-      -# = icon("fas","chevron-circle-right",class: "mikan")
+-#       -# = icon("fas","search",class: "mikan")
+-#     .swiper-button-next
+-#       -# = icon("fas","chevron-circle-right",class: "mikan")
 
-%script{:src => "https://unpkg.com/swiper/swiper-bundle.js"}
-%script{:src => "https://unpkg.com/swiper/swiper-bundle.min.js"}
-= javascript_pack_tag "swiper/swiper.js"
-    
+-# %script{:src => "https://unpkg.com/swiper/swiper-bundle.js"}
+-# %script{:src => "https://unpkg.com/swiper/swiper-bundle.min.js"}
+-# = javascript_pack_tag "swiper/swiper.js"
+
+.SectionBoxC{id: "bhomes_area--box2bb"}
+  .new__service__grid__row
+    - bhomes.bbhomes.each do |b|
+      .new__servuce__girid__row__box
+        .new__service__images
+          = image_pack_tag "about_image1.jpg"
+        .new__service__title
+          = b.title
+        .new__service__discribe
+          = b.discribe
+
