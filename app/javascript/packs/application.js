@@ -29,6 +29,7 @@ import "cocoon";
 require('../javascripts/homes.js')
 require('../javascripts/scroll.js')
 require('../javascripts/navi.js')
+require('../javascripts/youtube')
 
 // require('pagepiling.js')
 // require('pagepiling.js/dist/jquery.pagepiling.css')

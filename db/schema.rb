@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_07_143631) do
+ActiveRecord::Schema.define(version: 2021_05_26_151634) do
 
   create_table "aahomes", charset: "utf8mb4", force: :cascade do |t|
     t.string "menu"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 2021_05_07_143631) do
     t.bigint "bhome_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "image"
     t.index ["bhome_id"], name: "index_bbhomes_on_bhome_id"
   end
 
@@ -187,6 +188,8 @@ ActiveRecord::Schema.define(version: 2021_05_07_143631) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "ihome_id"
+    t.text "image"
+    t.string "youtube"
     t.index ["ihome_id"], name: "index_iihomes_on_ihome_id"
   end
 

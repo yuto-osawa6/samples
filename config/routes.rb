@@ -21,6 +21,10 @@ Rails.application.routes.draw do
   post  'inquiries/back' => 'inquiries#back'   # 確認画面
   post  'inquiries/thanks'  => 'inquiries#thanks'    # 送信完了画面
 
+  get  'iihomes/youtube'  => 'iihomes#youtube'    # 送信完了画面
+
+
+
 # resources :users, :only => [:show]
 
 resource :ahomes, only:[:edit,:update]
@@ -37,7 +41,10 @@ resource :ehomes, only:[:new,:create,:update]
 
 resource :fhomes, only:[:update]
 
-resource :ihomes, only:[:update]
+resource :ihomes, only:[:update] 
+
+
+  
 
 resource :contacts, only:[:update]
 

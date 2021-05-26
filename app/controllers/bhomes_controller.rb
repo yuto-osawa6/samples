@@ -31,7 +31,7 @@ class BhomesController < ApplicationController
 
 
       # params.require(:bhome).permit(:title,:title2,:discribe,bbhomes_attributes:[:title,:discribe,:id])
-      params.require(:bhome).permit(:title,:title2,:discribe,bbhomes_attributes:[:title,:discribe,:id])
+      params.require(:bhome).permit(:title,:title2,:discribe,bbhomes_attributes:[:title,:discribe,:image,:id])
 
 
   

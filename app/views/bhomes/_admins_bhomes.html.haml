@@ -26,8 +26,14 @@
       .form-group
         .aformd__title
           .formtitles
+            = c.label :image
+            = c.file_field :image, accept:"image/jpeg,image/png"
+          .formtitles
             = c.label :title
           = c.text_field :title,class:"aformd"
+          .formtitles
+            = c.label :discribe
+          = c.text_field :discribe,class:"aformd"
     -#     = c.label :discribe
     -#     = c.text_field :discribe
     

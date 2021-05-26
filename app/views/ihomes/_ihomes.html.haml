@@ -10,19 +10,33 @@
   .sectionboxG__grid__down
 
   
-.price__type
-  - ihomes.iihomes.each_with_index do |i,t|
-    .ihomes_t{class:"price__patarnA#{t}"}
-      .patarnAL__title
-        = i.title
-      .patarnAL__discribe
-        = i.discribe
-      .patarnAL__features
-        .ihomes_t1{class:"patarnAL__features__#{t}"}
-          = i.colum1
-        .ihomes_t1{class:"patarnAL__features__#{t}"}
-          = i.colum2
-        .ihomes_t1{class:"patarnAL__features__#{t}"}
-          = i.colum3
-      .patarnAL__price
-        = i.price
+-# .price__type
+-#   - ihomes.iihomes.each_with_index do |i,t|
+-#     .ihomes_t{class:"price__patarnA#{t}"}
+-#       .patarnAL__title
+-#         = i.title
+-#       .patarnAL__discribe
+-#         = i.discribe
+-#       .patarnAL__features
+-#         .ihomes_t1{class:"patarnAL__features__#{t}"}
+-#           = i.colum1
+-#         .ihomes_t1{class:"patarnAL__features__#{t}"}
+-#           = i.colum2
+-#         .ihomes_t1{class:"patarnAL__features__#{t}"}
+-#           = i.colum3
+-#       .patarnAL__price
+-#         = i.price
+.planning
+  .planing__grid
+    - ihomes.iihomes.each_with_index do |i,t|
+      .planing__grid__box
+        .planning__image{"data-youtube_id" => "#{i.id}"}
+          - if i.image?
+            = link_to iihomes_youtube_path() do
+              = image_tag i.image.url
+              .planning__players
+                = icon("far","play-circle",class:"players")
+        .planning__price
+          = i.price
+        .planning__title
+          = i.title
