@@ -47,13 +47,18 @@
             .TopContents__navi__smafo__icon2
               = icon("fas","times",id:"align-justigy-icon2")
         %ul.right_1000__down
-          - @ahomes.aahomes.each_with_index do |aa,i|
+          - @ahomes.aahomes.order(:rank).each_with_index do |aa,i|
             %li{id:"right__lists__navi__#{i}"}
               = link_to "#{aa.link}" do
                 .sublink__main
                   =aa.mainmenu
                   -# =aa.menu
-              
+            - break if i== 4
+
+          %li#right__lists__navi__5
+            = link_to @ahomes.aahomes.find(7).link do
+              .sublink__main
+                = @ahomes.aahomes.find(7).mainmenu             
 
 
       #header__down

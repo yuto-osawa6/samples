@@ -11,7 +11,8 @@ $(document).on('turbolinks:load', function(){
   }
 
 
-  $(".playzoon").on("click", function(e) {
+  // $(".playzoon").on("click", function(e) {
+    $(document).on("click",".playzoon", function (e) {
     e.preventDefault();  // デフォルトのイベント(HTMLデータ送信など)を無効にする
     // let inputText = $(".note_form-text").val();  // textareaの入力値を取得
     // let url = $(this).attr("action");  // action属性のurlを抽出
@@ -42,7 +43,7 @@ $(document).on('turbolinks:load', function(){
   });
 
 
-  $(".playzoon2").on("click", function(e) {
+  $(document).on("click",".playzoon2", function (e) {
     e.preventDefault();  // デフォルトのイベント(HTMLデータ送信など)を無効にする
     // let inputText = $(".note_form-text").val();  // textareaの入力値を取得
     // let url = $(this).attr("action");  // action属性のurlを抽出
