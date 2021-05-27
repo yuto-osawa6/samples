@@ -1,3 +1,13 @@
 <%= @inquiry.name %> 様 から問い合わせがありました。
 ・お問い合わせ内容
+
+--------------------------
+Name: <%= @inquiry.name %>
+Email: <%= @inquiry.email %>
+Message:
+<% if @inquiry.conpany.present?%>
+
+<%= @inquiry.conpany %>
+<% end%>
 <%= @inquiry.message %>
+--------------------------

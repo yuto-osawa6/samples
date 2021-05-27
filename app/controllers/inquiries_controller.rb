@@ -57,6 +57,7 @@ class InquiriesController < ApplicationController
     @inquiry = Inquiry.new(confirm_params)
     @inquiry.save
     InquiryMailer.received_email(@inquiry).deliver
+    InquiryMailer.send_mail(@inquiry).deliver
     @msg = "お問い合わせを承りました。"
     # redirect_to root_path
   end
