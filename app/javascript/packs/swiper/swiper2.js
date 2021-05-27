@@ -2,17 +2,21 @@ const swiper2 = new Swiper('.swiper-container2', {
   // Optional parameters
 
   direction: 'horizontal',
-  // loop: true,
+  loop: true,
   freeMode: true,
   slidesPerView: 6,
-  // centeredSlides : true,
+  // simulateTouch:false,
+  centeredSlides : true,
   // allowTouchMove: false, // スワイプ操作をできないようにする
-  // effect: 'slide',    //切り替わるときのアニメーション
-      // speed: 9000,        //画像の切替スピード
-      // autoplay: {         //自動で動かす
-      //   delay: 1,
-      //   disableOnInteraction: true
-      // },
+  effect: 'slide',    //切り替わるときのアニメーション
+      speed: 9000,        //画像の切替スピード
+      autoplay: {         //自動で動かす
+        delay: 1,
+        disableOnInteraction: true
+      },
+      mousewheel: {
+        forceToAxis: true,
+      },
       breakpoints: {
         1800:{
           slidesPerView: 5,

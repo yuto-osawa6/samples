@@ -22,6 +22,9 @@ class Admin::HomesController < ApplicationController
 
     @homes = Home.find(1)
 
+    @eehomes = @ehomes.eehomes.page(params[:pag2]).per(3)
+    
+
 
   end
 

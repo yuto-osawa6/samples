@@ -17,6 +17,8 @@ class HomesController < ApplicationController
 
     @interviews = Interview.all
 
+    @eehomes = @ehomes.eehomes.page(params[:pag2]).per(3)
+
     respond_to do |format|
       format.html
       format.js

@@ -25,6 +25,10 @@
 
 // newwprice__css
 
+.planing__grid__uti{
+  display: block!important;
+}
+
 .planing__grid{
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
@@ -33,6 +37,9 @@
   grid-auto-rows: auto;
   grid-gap: 50px;
   margin: 20px;
+  .swiper-slide{
+    margin-right: 20px;
+  }
 
   img{
       width: 100%;

@@ -44,7 +44,8 @@
     - bhomes.bbhomes.each do |b|
       .new__servuce__girid__row__box
         .new__service__images
-          = image_tag b.image.url
+          - if b.image?
+            = image_tag b.image.url
         .new__service__title
           = b.title
         .new__service__discribe

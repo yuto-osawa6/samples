@@ -4,28 +4,66 @@
       = ehomes.title
     .services__container2.ShareRows2
       = ehomes.discribe
-.SectionBoxC
-  .swiper-container2
-    / Additional required wrapper
-    .swiper-wrapper
-      / Slides
-      -ehomes.eehomes.each do |e|
-        .swiper-slide
-          .sectionboxE
-            .S2__image
-              - if e.youtube?
-                -#mp4下
-                -# = video_tag(e.image.url, muted: :true,controls: :true,poster:"#{e.poster}",controlslist: :nodownload)
+-# .SectionBoxC
+-#   .swiper-container2
+-#     / Additional required wrapper
+-#     .swiper-wrapper
+-#       / Slides
+-#       -ehomes.eehomes.each do |e|
+-#         .swiper-slide
+-#           .sectionboxE
+-#             .S2__image
+-#               - if e.youtube?
+-#                 -#mp4下
+-#                 -# = video_tag(e.image.url, muted: :true,controls: :true,poster:"#{e.poster}",controlslist: :nodownload)
 
-                %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/#{e.youtube.last(11)}", :width => "560"}
+-#                 %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/#{e.youtube.last(11)}", :width => "560"}
 
                   
-            .sectionboxEA
-              .S2__company
-                = e.title
-              .S2__discribe
-                = e.discribe
+-#             .sectionboxEA
+-#               .S2__company
+-#                 = e.title
+-#               .S2__discribe
+-#                 = e.discribe
       
-%script{:src => "https://unpkg.com/swiper/swiper-bundle.js"}
-%script{:src => "https://unpkg.com/swiper/swiper-bundle.min.js"}
-= javascript_pack_tag "swiper/swiper2.js"
+-# %script{:src => "https://unpkg.com/swiper/swiper-bundle.js"}
+-# %script{:src => "https://unpkg.com/swiper/swiper-bundle.min.js"}
+-# = javascript_pack_tag "swiper/swiper2.js"
+-# .planning
+-#   .planing__grid
+-#     - ehomes.eehomes.each_with_index do |i,t|
+-#       .planing__grid__box
+-#         .planning__image.playzoon2{"data-youtube_id2" => "#{i.id}"}
+-#           - if i.image?
+-#             = link_to eehomes_youtube_path() do
+-#               = image_tag i.image.url
+-#               .planning__players
+-#                 = icon("far","play-circle",class:"players")
+-#         .planning__price
+-#           = i.discribe
+-#         .planning__title
+-#           = i.title
+
+
+.planning
+  .swiper-container2.planing__grid__uti
+    .swiper-wrapper
+      - ehomes.eehomes.each_with_index do |i,t|
+        .swiper-slide
+          .planing__grid
+            .planing__grid__box
+              .planning__image.playzoon2{"data-youtube_id2" => "#{i.id}"}
+                - if i.image?
+                  = link_to eehomes_youtube_path() do
+                    = image_tag i.image.url
+                    .planning__players
+                      = icon("far","play-circle",class:"players")
+              .planning__price
+                = i.discribe
+              .planning__title
+                = i.title
+
+-# %script{:src => "https://unpkg.com/swiper/swiper-bundle.js"}
+-# %script{:src => "https://unpkg.com/swiper/swiper-bundle.min.js"}
+= javascript_pack_tag "swiper/swiper2.js", media: 'all', 'data-turbolinks-track': 'reload'
+   

@@ -30,7 +30,7 @@
   .planing__grid
     - ihomes.iihomes.each_with_index do |i,t|
       .planing__grid__box
-        .planning__image{"data-youtube_id" => "#{i.id}"}
+        .planning__image.playzoon{"data-youtube_id" => "#{i.id}"}
           - if i.image?
             = link_to iihomes_youtube_path() do
               = image_tag i.image.url

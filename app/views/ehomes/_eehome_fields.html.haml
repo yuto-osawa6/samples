@@ -9,10 +9,15 @@
         = f.label :discribe
       = f.text_field :discribe, class:"aformd"
 
-      .aformd__title
+    .aformd__title
       .formtitles
         youtube_url
       = f.text_field :youtube, class:"aformd"
+    
+    .aformd__title
+      .formtitles
+        thumbnail
+      = f.file_field :image, class:"aformd"
     
     -# .aformd__title
     -#   .formtitles

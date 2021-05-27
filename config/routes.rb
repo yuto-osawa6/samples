@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   post  'inquiries/thanks'  => 'inquiries#thanks'    # 送信完了画面
 
   get  'iihomes/youtube'  => 'iihomes#youtube'    # 送信完了画面
+  get  'eehomes/youtube'  => 'eehomes#youtube'    # 送信完了画面
 
 
 

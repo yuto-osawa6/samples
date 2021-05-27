@@ -15,12 +15,10 @@ require("gsap")
 require("../javascripts/gasp.js")
 
 
-// require ('swiper/swiper-bundle.js')
-// // require ('swiper/swiper-bundle.min.js')
-
-// import Swiper from 'swiper'
-// window.Swiper = Swiper
-// // require ('swiper.js')
+require ('swiper/swiper-bundle.js')
+import Swiper from 'swiper/bundle'
+window.Swiper = Swiper
+// const swiper = new Swiper(...);
 // // require('../packs/swiper/swiper.js')
 
 //  require ('../javascripts/spr.js')
@@ -30,6 +28,7 @@ require('../javascripts/homes.js')
 require('../javascripts/scroll.js')
 require('../javascripts/navi.js')
 require('../javascripts/youtube')
+// require('../packs/swiper/swiper2')
 
 // require('pagepiling.js')
 // require('pagepiling.js/dist/jquery.pagepiling.css')

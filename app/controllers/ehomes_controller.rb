@@ -27,7 +27,7 @@ class EhomesController < ApplicationController
   def ehomes_params 
 
       
-      params.require(:ehome).permit(:title,:discribe,eehomes_attributes:[:title,:discribe,:youtube, :id ,:_destroy])
+      params.require(:ehome).permit(:title,:discribe,eehomes_attributes:[:title,:discribe,:youtube,:image, :id ,:_destroy])
 
       # params.require(:ehome).permit(:title,:discribe,eehomes_attributes:[:title,:discribe,:youtube, :id ,:_destroy])
   end
