@@ -78,6 +78,11 @@
     margin: 20px 0px;
     text-align: center;
     font-weight: bold;
+    overflow-y: scroll;
+  }
+  .planning__price2{
+    height: 100px;
+    text-align: left!important;
   }
   .planning__title{
     background-color: black;

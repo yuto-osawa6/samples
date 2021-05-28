@@ -14,10 +14,12 @@
           .interviews__question__rows
             Q
             =":"
-            = interview.question 
+            -# = interview.question 
+            = safe_join(interview.question .split("\n"),tag(:br))
             =icon("fas","plus")
           .interviews__question__answers{id:"slidetoggle_menu#{interview.id}"}
-            = interview.answer
+            -# = interview.answer
+            = safe_join(interview.answer.split("\n"),tag(:br))
         
       
 

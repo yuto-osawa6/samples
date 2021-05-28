@@ -5,7 +5,8 @@
   .About__left__first__title
     = chomes.title2
   .About__left__first__discribe
-    = chomes.discribe
+    -# = simple_format(chomes.discribe)
+    = safe_join(chomes.discribe.split("\n"),tag(:br))
 
 .About__right
   = image_pack_tag "about_image1.jpg"

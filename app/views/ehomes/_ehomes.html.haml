@@ -50,7 +50,7 @@
     .swiper-wrapper
       - ehomes.eehomes.each_with_index do |i,t|
         .swiper-slide
-          .planing__grid
+          .planing__grid.milkkandy__box__service
             .planing__grid__box
               .planning__image.playzoon2{"data-youtube_id2" => "#{i.id}"}
                 - if i.image?
@@ -58,8 +58,9 @@
                     = image_tag i.image.url
                     .planning__players
                       = icon("far","play-circle",class:"players")
-              .planning__price
-                = i.discribe
+              .planning__price.planning__price2
+              
+                = safe_join(i.discribe.split("\n"),tag(:br))
               .planning__title
                 = i.title
 

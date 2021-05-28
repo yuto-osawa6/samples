@@ -16,7 +16,8 @@
       .About2__left__box__first__title2
         = dhomes.title
       .About2__left__box__first__discribe2
-        = dhomes.discribe
+        -# = dhomes.discribe
+        = safe_join(dhomes.discribe.split("\n"),tag(:br))
   
 -# .About2.About3
 -#   -# .About__BoxAA

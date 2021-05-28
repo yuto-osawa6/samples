@@ -20,12 +20,12 @@
       .ahomes__title.aformd__title
         .formtitles
           質問
-        = c.text_field :question, class: "fhomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-fhome-edit-#{homes.id}"
+        = c.text_area :question, class: "fhomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-fhome-edit-#{homes.id}"
       
       .ahomes__title.aformd__title
         .formtitles
           答え
-        = c.text_field :answer, class: "fhomes__title__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-fhome-edit-#{homes.id}"
+        = c.text_area :answer, class: "fhomes__title__field aformd",autocomplete: "off",placeholder:"下段のタイトルを入力してください",id:"js-fhome-edit-#{homes.id}"
     .kuuhu{style:"margin-bottom:60px;"}
   -#   .ahomes__title2.aformd__title
   -#     .formtitles

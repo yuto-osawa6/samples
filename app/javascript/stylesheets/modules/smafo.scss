@@ -1,0 +1,41 @@
+.new__service__grid__row{
+
+  @include mq-down(md) {
+    grid-gap: 20px;
+  }
+}
+
+
+.planing__grid{
+  @include mq-down(md) {
+    grid-gap: 20px;
+  }
+}
+
+.SectionBoxA{
+  @include mq-down(md) {
+    padding: 50px 10px;
+  }
+}
+#ihomes__rendering{
+  @include mq-down(md) {
+    padding: 50px 10px;
+  }
+}
+.ContactUs{
+  @include mq-down(md) {
+    padding: 50px 10px;
+  }
+}
+.donnaler{
+  @include mq-down(md) {
+    padding: 50px 10px;
+  }
+}
+
+.TopContents__navi{
+  @include mq-down(lg) {
+    position: absolute;
+    background-color: transparent!important;
+  }
+}
