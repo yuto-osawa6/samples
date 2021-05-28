@@ -2,6 +2,19 @@
   fourthPageの編集
 
 =form_with model: homes,url:admin_home_path(homes.id),method: :patch, remote:true do |f|
+  .ahomes__form
+    .ahomes__title.aformd__title
+      .formtitles
+        上段のタイトル
+      
+      = f.text_field :ititle, class: "ihomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-fhome-edit-#{homes.id}"
+    
+    .ahomes__title.aformd__title
+      .formtitles
+        上段のタイトル
+      
+      = f.text_field :ititle2, class: "ihomes__title__field aformd",autocomplete: "off",placeholder:"上段のタイトルを入力してください",id:"js-fhome-edit-#{homes.id}"
+
   = f.fields_for :interviews do |c| 
     .ahomes__form
       .ahomes__title.aformd__title

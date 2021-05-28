@@ -23,20 +23,11 @@
     
   = f.fields_for :iihomes do |c|       
     .form-group
-      .aformd__title
-        .formtitles
-          = c.label :image
-        = c.file_field :image, accept:"image/jpeg,image/png"
+      = render 'iihome_fields', f: c
 
-      .aformd__title
-        .formtitles
-          = c.label :youtube
-        = c.text_field :youtube,class:"aformd"
-
-      .aformd__title
-        .formtitles
-          = c.label :title
-        = c.text_field :title,class:"aformd"
+  .links.nested-fields__button2
+    = link_to_add_association '追加する' ,f, :iihomes
+  -# - end
       
       -# .aformd__title
       -#   .formtitles
@@ -57,10 +48,10 @@
       -#     = c.label :colum3
       -#   = c.text_field :colum3,class:"aformd"
       
-      .aformd__title
-        .formtitles
-          = c.label :praice
-        = c.text_field :price,class:"aformd"
+      -# .aformd__title
+      -#   .formtitles
+      -#     = c.label :praice
+      -#   = c.text_field :price,class:"aformd"
       
       
 

@@ -1,4 +1,9 @@
 .interviews
+  .interviews__ibox
+    .interviews__title
+      = interviews.find(1).home.ititle
+    .interviews__title2
+      = interviews.find(1).home.ititle2
   .interviews__question
     %ul
       - interviews.each_with_index do |interview,i|

@@ -15,16 +15,20 @@
         編集する
   
   .SectionBoxA#ac
-    #ehomes__rendering
-      = render partial: "ehomes/ehomes", locals: { ehomes: @ehomes } 
-  
-    .TopContents__ahomes{id: "ehomes_area--box3-#{@ehomes.id}"}
-      = render partial: "ehomes/admins_ehomes", locals: { ehomes: @ehomes } 
-    .TopContents__ehomes__edit
-      .TopContents__ehomes__edit__button{"data-ehomes__id": "#{@ehomes.id}"}
-        = icon("fas","edit")
-        編集する
-  
+    - if request.from_smartphone?
+
+    - else
+      #ehomes__rendering
+        = render partial: "ehomes/ehomes", locals: { ehomes: @ehomes } 
+    
+      .TopContents__ahomes{id: "ehomes_area--box3-#{@ehomes.id}"}
+        = render partial: "ehomes/admins_ehomes", locals: { ehomes: @ehomes } 
+      .TopContents__ehomes__edit
+        .TopContents__ehomes__edit__button{"data-ehomes__id": "#{@ehomes.id}"}
+          = icon("fas","edit")
+          編集する
+      
+    
   .sectionBoxAA#ab
     .About#chomes__rendering
       = render partial: "chomes/chomes", locals: { chomes: @chomes }
@@ -78,16 +82,20 @@
   
   
   .sectionboxG#ae
-    #ihomes__rendering
-      = render partial: 'ihomes/ihomes', locals: {ihomes: @ihomes}    
-    
-    .TopContents__ahomes{id: "ihomes_area--box3-#{@ihomes.id}"}
-      = render partial: 'ihomes/admins_ihomes', locals: {ihomes: @ihomes}
+    - if request.from_smartphone?
 
-    .TopContents__ihomes__edit
-      .TopContents__ihomes__edit__button{"data-ihomes__id": "#{@ihomes.id}"}
-        = icon("fas","edit")
-        編集する
+
+    - else
+      #ihomes__rendering
+        = render partial: 'ihomes/ihomes', locals: {ihomes: @ihomes}    
+      
+      .TopContents__ahomes{id: "ihomes_area--box3-#{@ihomes.id}"}
+        = render partial: 'ihomes/admins_ihomes', locals: {ihomes: @ihomes}
+
+      .TopContents__ihomes__edit
+        .TopContents__ihomes__edit__button{"data-ihomes__id": "#{@ihomes.id}"}
+          = icon("fas","edit")
+          編集する
   
 
   .SectionBoxA#ad

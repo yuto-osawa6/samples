@@ -1,0 +1,23 @@
+.nested-fields
+  .field
+    .aformd__title
+      .formtitles
+        = f.label :image
+      = f.file_field :image, accept:"image/jpeg,image/png"
+
+    .aformd__title
+      .formtitles
+        = f.label :youtube
+      = f.text_field :youtube,class:"aformd"
+    .aformd__title
+      .formtitles
+        = f.label :price
+      = f.text_field :price,class:"aformd"
+    .aformd__title
+      .formtitles
+        = f.label :title
+      = f.text_field :title,class:"aformd"
+.nested-fields__button2
+  = f.label '削除',class:"desvv2" do
+    削除
+    = f.check_box :_destroy,class:"desvv2"

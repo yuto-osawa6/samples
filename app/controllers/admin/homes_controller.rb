@@ -49,7 +49,7 @@ class Admin::HomesController < ApplicationController
 
   def fhomes_params 
     # params.require(:bhome).permit(:title,:title2,:discribe,bbhomes_attributes:[:title,:discribe,:id])
-    params.require(:home).permit(interviews_attributes:[:question,:answer,:id])
+    params.require(:home).permit(:ititle,:ititle2,interviews_attributes:[:question,:answer,:id])
 
   end
 end

@@ -12,8 +12,14 @@
       = video_tag "/videos/Camera - 26531.mp4", playsinline: true,poster:"/videos/alex-kotliarskyi-QBpZGqEMsKg-unsplash1.jpg", autoplay: true, loop: true, muted: true, width: "320", height: "240", class: "index-video"
   
   .SectionBoxA#ac
-    #ehomes__rendering
-      = render partial: "ehomes/ehomes", locals: { ehomes: @ehomes }
+    - if request.from_smartphone?
+      #ehomes__rendering
+        = render partial: "ehomes/smafo_ehomes", locals: { ehomes: @ehomes }
+    -else
+      #ehomes__rendering
+        = render partial: "ehomes/ehomes", locals: { ehomes: @ehomes }
+      -# #ehomes__rendering
+      -#   = render partial: "ehomes/smafo_ehomes", locals: { ehomes: @ehomes }
 
   .sectionBoxAA#ab
     .About#chomes__rendering
@@ -31,8 +37,17 @@
   
 
   .sectionboxG#ae
-    #ihomes__rendering
-      = render partial: 'ihomes/ihomes', locals: {ihomes: @ihomes}
+    - if request.from_smartphone?
+
+      #ihomes__rendering
+        = render partial: 'ihomes/smafo_ihomes', locals: {ihomes: @ihomes}
+    - else
+      #ihomes__rendering
+        = render partial: 'ihomes/ihomes', locals: {ihomes: @ihomes}
+
+      -# #ihomes__rendering
+      -#   = render partial: 'ihomes/smafo_ihomes', locals: {ihomes: @ihomes}
+
 
   
   

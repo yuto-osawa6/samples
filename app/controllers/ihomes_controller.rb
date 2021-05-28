@@ -25,7 +25,7 @@ class IhomesController < ApplicationController
 
 
       # params.require(:bhome).permit(:title,:title2,:discribe,bbhomes_attributes:[:title,:discribe,:id])
-      params.require(:ihome).permit(:title,:title2,:title3,iihomes_attributes:[:title,:discribe,:colum1,:colum2,:colum3,:price,:image,:youtube,:id])
+      params.require(:ihome).permit(:title,:title2,:title3,iihomes_attributes:[:title,:discribe,:colum1,:colum2,:colum3,:price,:image,:youtube,:id,:_destroy])
 
 
   

@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :ahome
 
+  before_action :set_request_variant
+
   def after_sign_in_path_for(resource)
     admin_homes_path
   end
@@ -22,6 +24,13 @@ class ApplicationController < ActionController::Base
 
 
   
+  end
+
+  private
+
+  # Action Pack Variants向け
+  def set_request_variant
+    request.variant = request.device_type # :pc, :smartphone, etc
   end
 
 

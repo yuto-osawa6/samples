@@ -16,6 +16,7 @@ class HomesController < ApplicationController
     @inquiry = Inquiry.new
 
     @interviews = Interview.all
+    @home = Home.find(1)
 
     @eehomes = @ehomes.eehomes.page(params[:pag2]).per(3)
 

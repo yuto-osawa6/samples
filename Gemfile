@@ -76,3 +76,5 @@ gem "fog-aws", "~> 3.8"
 gem 'aws-sdk-s3', require: false
 
 gem 'kaminari'
+
+gem 'rack-user_agent'

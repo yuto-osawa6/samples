@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_26_151634) do
+ActiveRecord::Schema.define(version: 2021_05_28_014334) do
 
   create_table "aahomes", charset: "utf8mb4", force: :cascade do |t|
     t.string "menu"
@@ -168,6 +168,8 @@ ActiveRecord::Schema.define(version: 2021_05_26_151634) do
   create_table "homes", charset: "utf8mb4", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "ititle"
+    t.string "ititle2"
   end
 
   create_table "ihomes", charset: "utf8mb4", force: :cascade do |t|
