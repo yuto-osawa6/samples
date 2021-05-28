@@ -19,12 +19,12 @@
 }
 #ihomes__rendering{
   @include mq-down(md) {
-    padding: 50px 10px;
+    padding: 50px 10px 0px 10px;
   }
 }
 .ContactUs{
   @include mq-down(md) {
-    padding: 50px 10px;
+    padding: 50px 10px!important;
   }
 }
 .donnaler{
@@ -37,5 +37,12 @@
   @include mq-down(lg) {
     position: absolute;
     background-color: transparent!important;
+  }
+}
+
+.swiper-slide{
+  margin: 20px;
+  @include mq-down(md) {
+    margin: 10px;
   }
 }

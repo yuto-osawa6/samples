@@ -10,12 +10,12 @@
     .swiper-wrapper
       - ehomes.eehomes.each_with_index do |i,t|
         .swiper-slide
-          .planing__grid
+          .planing__grid.milkkandy__box__service
             .planing__grid__box
               .planning__image{"data-youtube_id2" => "#{i.id}"}
                 .movie-wrap
                   %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/#{i.youtube.last(11)}", :width => "560"}
-              .planning__price
+              .planning__price.planning__price2
                 = i.discribe
               .planning__title
                 = i.title

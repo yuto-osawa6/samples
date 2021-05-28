@@ -8,7 +8,7 @@ const swiper2 = new Swiper('.swiper-container2', {
   // simulateTouch:false,
   centeredSlides : true,
   // allowTouchMove: false, // スワイプ操作をできないようにする
-  effect: 'slide',    //切り替わるときのアニメーション
+  effect: 'slide',
       speed: 9000,        //画像の切替スピード
       autoplay: {         //自動で動かす
         delay: 1,
@@ -44,12 +44,26 @@ const swiper2 = new Swiper('.swiper-container2', {
         },
         580: {
           slidesPerView: 2,
-          spaceBetween: 0
+          spaceBetween: 0,
+
+        },
+        480: {
+          slidesPerView: 1.5,
+          spaceBetween: 0,
+
+        },
+        450: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+          // freeMode: false,
+
         },
 
         399: {
-          slidesPerView: 1.5,
-          spaceBetween: 0
+          slidesPerView: 1,
+          spaceBetween: 0,
+          // freeMode: false,
+
         },
         200: {
           slidesPerView: 1,
