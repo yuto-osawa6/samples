@@ -23,6 +23,11 @@ class Admin::HomesController < ApplicationController
     @homes = Home.find(1)
 
     @eehomes = @ehomes.eehomes.page(params[:pag2]).per(3)
+
+    if request.from_smartphone?
+      redirect_to root_path
+    end
+      
     
 
 

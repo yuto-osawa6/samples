@@ -33,12 +33,12 @@
   }
 }
 
-.TopContents__navi{
-  @include mq-down(lg) {
-    position: absolute;
-    background-color: transparent!important;
-  }
-}
+// .TopContents__navi{
+//   @include mq-down(lg) {
+//     position: absolute;
+//     background-color: transparent!important;
+//   }
+// }
 
 // .swiper-slide{
 //   margin: 20px;
