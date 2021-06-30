@@ -47,9 +47,18 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+# production:
+#   <<: *default
+#   database: samples_production
+#   username: root
+#   password: <%= Rails.application.credentials.db[:password] %>
+#   socket: /var/lib/mysql/mysql.sock
+
 production:
   <<: *default
-  database: samples_production
+  database: filmmonkey_production
   username: root
-  password: <%= Rails.application.credentials.db[:password] %>
-  socket: /var/lib/mysql/mysql.sock
+  password: <%= Rails.application.credentials.db[:password2] %>
+  host: <%= Rails.application.credentials.db[:hostname] %>
+  # socket: /var/lib/mysql/mysql.sock
+

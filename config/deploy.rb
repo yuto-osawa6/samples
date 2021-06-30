@@ -5,7 +5,7 @@ set :application, "samples"
 set :repo_url, "git@github.com:yuto-osawa6/samples.git"
 set :rbenv_ruby, File.read('.ruby-version').strip
 
-set :deploy_to, "/var/www/rails/#{fetch(:application)}"
+# set :deploy_to, "/var/www/rails/#{fetch(:application)}"
 
 set :nginx_config_name, "#{fetch(:application)}.conf"
 set :nginx_sites_enabled_path, "/etc/nginx/conf.d"
