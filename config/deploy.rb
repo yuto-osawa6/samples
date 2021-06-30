@@ -1,5 +1,6 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.15.0"
+# lock "~> 3.14.1"
 
 set :application, "samples"
 set :repo_url, "git@github.com:yuto-osawa6/samples.git"
