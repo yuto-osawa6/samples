@@ -101,28 +101,28 @@
             [{
               menu:"SERVICE",
               mainmenu:"サービス紹介",
-              ahome_id:1
+              ahome_id:1,
               link:"#aa"
             },{
               menu:"WORKS",
               mainmenu:"映像制作実績",
-              ahome_id:1
+              ahome_id:1,
               link:"#ac"
             },{
               menu:"INTERVIEW",
               mainmenu:"お客様の声",
-              ahome_id:1
+              ahome_id:1,
               link:"#ad"
             },{
               menu:"PRICE",
               mainmenu:"料金",
-              ahome_id:1
+              ahome_id:1,
               link:"#ae"
 
             },{
               menu:"FILM MONKEY",
               mainmenu:"フィルムモンキーとは",
-              ahome_id:1
+              ahome_id:1,
               link:"#ab"
             },
             # {
@@ -135,7 +135,7 @@
               id:7
               menu:"CONTACT",
               mainmenu:"お問い合わせ",
-              ahome_id:1
+              ahome_id:1,
               link:"#ag"
             }   
           
