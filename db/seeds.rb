@@ -100,33 +100,41 @@
             Aahome.create!(
             [{
               menu:"SERVICE",
+              mainmenu:"サービス紹介",
               ahome_id:1
               link:"#aa"
             },{
-              menu:"ABOUT",
-              ahome_id:1
-              link:"#ab"
-            },{
-              menu:"PERFORMANCE",
+              menu:"WORKS",
+              mainmenu:"映像制作実績",
               ahome_id:1
               link:"#ac"
             },{
-              menu:"MERIT",
+              menu:"INTERVIEW",
+              mainmenu:"お客様の声",
               ahome_id:1
               link:"#ad"
-
             },{
-              menu:"PLAN",
+              menu:"PRICE",
+              mainmenu:"料金",
               ahome_id:1
               link:"#ae"
-            },
-            {
-              menu:"BLOG",
+
+            },{
+              menu:"FILM MONKEY",
+              mainmenu:"フィルムモンキーとは",
               ahome_id:1
-              link:"#af"
+              link:"#ab"
             },
+            # {
+            #   menu:"BLOG",
+            #   mainmenu:"ブログ",
+            #   ahome_id:1
+            #   link:"#af"
+            # },
             {
-              menu:"お問い合わせ",
+              id:7
+              menu:"CONTACT",
+              mainmenu:"お問い合わせ",
               ahome_id:1
               link:"#ag"
             }   
