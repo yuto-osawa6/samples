@@ -132,7 +132,7 @@
             #   link:"#af"
             # },
             {
-              id:7
+              id:7,
               menu:"CONTACT",
               mainmenu:"お問い合わせ",
               ahome_id:1,
