@@ -131,13 +131,13 @@
             #   ahome_id:1
             #   link:"#af"
             # },
-            {
-              id:7,
-              menu:"CONTACT",
-              mainmenu:"お問い合わせ",
-              ahome_id:1,
-              link:"#ag",
-            }   
+            # {
+            #   id:7,
+            #   menu:"CONTACT",
+            #   mainmenu:"お問い合わせ",
+            #   ahome_id:1,
+            #   link:"#ag",
+            # }   
           
           ]
             )
