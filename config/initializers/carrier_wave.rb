@@ -9,6 +9,6 @@ if Rails.env.production?
       aws_secret_access_key: Rails.application.credentials.dig(:aws2, :secret_access_key),
       region: "ap-northeast-1"
     }
-    config.fog_directory = "backetsamples"
+    config.fog_directory = "filmmonkey-baket"
   end
 end
