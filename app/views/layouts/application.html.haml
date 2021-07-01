@@ -16,12 +16,12 @@
     %header 
       .TopContents__navi
         .TopContents__navi__left
-          - if @ahomes.logo?
-            .image__logo
-              = image_pack_tag "S__329588743.png"
-              -# = image_tag(@ahomes.logo.url)
-            .image__logo2
-              = image_pack_tag "S__330563589.png"
+          -# - if @ahomes.logo?
+          .image__logo
+            = image_pack_tag "S__329588743.png"
+            -# = image_tag(@ahomes.logo.url)
+            -# .image__logo2
+            -#   = image_pack_tag "S__330563589.png"
         .TopContents__navi__right
           %ul.right_1000__up
             - @ahomes.aahomes.order(:rank).each_with_index do |aa,i|
